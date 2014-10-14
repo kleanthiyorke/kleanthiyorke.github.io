@@ -117,4 +117,9 @@ $(function() {
     offset: '85%'
   });
 
+
+  $('.js-apply').on('click', function () {
+    $('#wufoo-z10pti7q1v3jqdx').slideToggle();
+  });
+
 });
