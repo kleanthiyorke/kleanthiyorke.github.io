@@ -297,7 +297,7 @@ footer p { font-size: 13px; margin: 0; }
 
 .apply {
   width: 300px;
-  margin: 40px auto 0 auto;
+  margin: 100px auto 0 auto;
 }
 
 .btn {
@@ -799,4 +799,21 @@ fieldset[disabled] .btn-link:focus {
 
 .terms ul {
   list-style-type: disc;
+}
+
+.others h3 {
+  color: #848789;
+}
+
+.others {
+  font-size: 13px;
+  line-height: 17px;
+}
+
+#skype {
+  padding-top: 0;
+}
+
+#wufoo-z10pti7q1v3jqdx {
+  margin-bottom: 40px;
 }
