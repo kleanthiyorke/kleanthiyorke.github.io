@@ -173,7 +173,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 /* ==========================================================================
 Headings
 ========================================================================== */
-h1.chain { text-align: center; text-transform: uppercase; color: #353738; letter-spacing: 2px; font-size: 18px; font-weight: 600; background: url(../img/cog-icon.jpg) no-repeat top center; padding-top: 75px; }
+h1.chain { text-align: center; text-transform: uppercase; color: #353738; letter-spacing: 2px; font-size: 18px; font-weight: 600; }
 h2.frame { text-align: center; text-transform: uppercase; color: #353738; letter-spacing: 2px; font-size: 18px; font-weight: 600; background: url(../img/frame-icon.png) no-repeat top center; padding-top: 65px; margin-top: 70px; }
 h2.mech { text-align: center; text-transform: uppercase; color: #353738; letter-spacing: 2px; font-size: 18px; font-weight: 600; background: url(../img/mech-icon.png) no-repeat top center; padding-top: 65px; margin-top: 70px; }
 h2.front-frame { text-align: center; text-transform: uppercase; color: #353738; letter-spacing: 2px; font-size: 18px; font-weight: 600; background: url(../img/front-icon.png) no-repeat top center; padding-top: 65px; margin-top: 70px; }
@@ -208,7 +208,7 @@ margin-top: 25px;
 ul {list-style-type: none;}
 .hero { background: url(../img/hero-bg.jpg) no-repeat top center #f4f5fc; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; height: 685px; }
 nav { height: 140px; margin-top: 50px; position: relative; }
-.logo-holder { background: url(../img/logo.jpg) no-repeat center center; width: 90px; height: 99px; position: absolute; top: 0; left: 307px; }
+.logo-holder { background: url(../img/logo.jpg) no-repeat center center; width: 90px; height: 106px; position: absolute; top: 0; left: 307px; }
 .responsive-logo { display: hidden; }
 header { background-color: white; }
 header ul { padding: 35px 0 0 0; }
