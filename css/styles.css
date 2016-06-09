@@ -1,11 +1,11 @@
 /* ! normalize.css v1.0.0 | MIT License | git.io/normalize */
- 
+
 /* ==========================================================================
 HTML5 display definitions
 ========================================================================== */
- 
+
 /* * Corrects `block` display not defined in IE 6/7/8/9 and Firefox 3. */
- 
+
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary { display: block; }
 /* * Corrects `inline-block` display not defined in IE 6/7/8/9 and Firefox 3. */
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
@@ -22,7 +22,7 @@ Base
 *    `em` units.
 * 2. Prevents iOS text size adjust after orientation change, without disabling
 *    user zoom. */
- 
+
 html { font-size: 100%; /* 1 */
 	-webkit-text-size-adjust: 100%; /* 2 */
 -ms-text-size-adjust: 100%; /* 2 */ }
@@ -36,7 +36,7 @@ html, body { width: auto !important; overflow-x: hidden !important; }
 Links
 ========================================================================== */
 /* * Addresses `outline` inconsistency between Chrome and other browsers. */
- 
+
 a:focus { outline: thin dotted; }
 /* * Improves readability when focused and also mouse hovered in all browsers. */
 a:active, a:hover { outline: 0; }
@@ -45,7 +45,7 @@ Typography
 ========================================================================== */
 /* * Addresses font sizes and margins set differently in IE 6/7.
 * Addresses font sizes within `section` and `article` in Firefox 4+, Safari 5, * and Chrome. */
- 
+
 h1 { font-size: 2em; margin: 0.67em 0; }
 h2 { font-size: 1.5em; margin: 0.83em 0; }
 h3 { font-size: 1.17em; margin: 1em 0; }
@@ -80,7 +80,7 @@ sub { bottom: -0.25em; }
 Lists
 ========================================================================== */
 /* * Addresses margins set differently in IE 6/7. */
- 
+
 dl, menu, ol, ul { margin: 1em 0; }
 dd { margin: 0 0 0 40px; }
 /* * Addresses paddings set differently in IE 6/7. */
@@ -92,7 +92,7 @@ Embedded content
 ========================================================================== */
 /* * 1. Removes border when inside `a` element in IE 6/7/8/9 and Firefox 3.
 * 2. Improves image quality when scaled in IE 7. */
- 
+
 img { border: 0; /* 1 */
 -ms-interpolation-mode: bicubic; /* 2 */ }
 /* * Corrects overflow displayed oddly in IE 9. */
@@ -101,13 +101,13 @@ svg:not(:root) { overflow: hidden; }
 Figures
 ========================================================================== */
 /* * Addresses margin not present in IE 6/7/8/9, Safari 5, and Opera 11. */
- 
+
 figure { margin: 0; }
 /* ==========================================================================
 Forms
 ========================================================================== */
 /* * Corrects margin displayed oddly in IE 6/7. */
- 
+
 form { margin: 0; }
 /* * Define consistent border, margin, and padding. */
 fieldset { border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em; }
@@ -167,7 +167,7 @@ vertical-align: top; /* 2 */ }
 Tables
 ========================================================================== */
 /* * Remove most spacing between table cells. */
- 
+
 table { border-collapse: collapse; border-spacing: 0; }
 /* * Remove most spacing between table cells. */
 /* ==========================================================================
@@ -196,7 +196,7 @@ User Styles
 a { color: #282f35; -webkit-transition: all .25s ease; -moz-transition: all .25s ease; -ms-transition: all .25s ease; -o-transition: all .25s ease; transition: all .25s ease; }
 a:hover { color: #64c29e; text-decoration: none; }
 p { /*text-align: center;*/ font-size: 14px; color: #848789; font-weight: 300; word-spacing: 2px; line-height: 1.8em; }
-.text-intro { 
+.text-intro {
   font-size: 18px;
 /*text-align: center;*/
 color: #848789;
@@ -277,11 +277,19 @@ footer p { font-size: 13px; margin: 0; }
 .footer-midcol li a:hover { opacity: 0.5; }
 .twitter-icon { background: url(../img/twitter-icon.png); height: 34px; width: 35px; display: block; text-indent: -9999px; }
 .facebook-icon { background: url(../img/facebook-icon.png); height: 34px; width: 35px; display: block; text-indent: -9999px; }
+.instagram-icon {
+  background: url(../img/instagram-icon.png);
+  background-size: 35px 34px;
+  height: 34px;
+  width: 35px;
+  display: block;
+  text-indent: -9999px;
+}
 .pintrest-icon { background: url(../img/pintrest-icon.png); height: 34px; width: 35px; display: block; text-indent: -9999px; }
 .wp1, .wp2, .wp3, .wp4, .wp5, .wp6 { visibility: hidden; }
 .bounceInLeft, .bounceInRight, .fadeInUp { visibility: visible; }
 
-#wufoo-z10pti7q1v3jqdx { 
+#wufoo-z10pti7q1v3jqdx {
   display: none;
   max-width: 50%;
   margin: 0 auto;
@@ -290,7 +298,7 @@ footer p { font-size: 13px; margin: 0; }
 
 @media screen and (max-width:640px) {
 
-#wufoo-z10pti7q1v3jqdx { 
+#wufoo-z10pti7q1v3jqdx {
   max-width: 80%;
 }
 }
