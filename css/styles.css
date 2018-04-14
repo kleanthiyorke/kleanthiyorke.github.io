@@ -121,7 +121,7 @@ Lists
 dl, menu, ol, ul { margin: 1em 0; }
 dd { margin: 0 0 0 40px; }
 /* * Addresses paddings set differently in IE 6/7. */
-menu, ol, ul { padding: 0 0 0 40px; }
+menu, ol, ul { padding: 0; }
 /* * Corrects list images handled incorrectly in IE 7. */
 nav ul, nav ol { list-style: none; list-style-image: none; }
 /* ==========================================================================
@@ -218,7 +218,7 @@ h2.twitter-post-username { color: #353738; letter-spacing: 2px; font-size: 18px;
 h2.twitter-post-username span { color: #848789; font-weight: 300; }
 h2.logo-header { text-align: center; color: #848789; letter-spacing: 1px; font-size: 24px; font-weight: 300; background: url(../img/logo.jpg) no-repeat top center; padding-top: 120px; margin: 70px 0 40px 0; font-style: italic; }
 h2 {text-align: center;}
-h3 {color: black;}
+h3 {color: #848789; font-size: 1em; }
 /* ==========================================================================
 User Styles
 ========================================================================== */
@@ -846,7 +846,7 @@ fieldset[disabled] .btn-link:focus {
   list-style-type: disc;
 }
 
-.others h3 {
+.others {
   color: #848789;
 }
 
