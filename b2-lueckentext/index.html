@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="description" content="Πιλοτικός κύκλος B2: Lückentext + Fehlerkorrektur, πέντε εβδομάδες με προσωπική διόρθωση. Κλεάνθη Λιοδάκη.">
+<meta property="og:title" content="B2 Lückentext + Fehlerkorrektur · Κλεάνθη Λιοδάκη">
+<meta property="og:image" content="https://kleanthiliodaki.com/b2-lueckentext/cover.jpg">
+<title>B2 Lückentext + Fehlerkorrektur · Κλεάνθη Λιοδάκη</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Commissioner:wght@400;500;600&display=swap">
+<style>
+/* Layout: μία στήλη ανάγνωσης που κατεβαίνει σαν τη διαδρομή της εβδομάδας· δείγματα docs ως «φύλλα» πάνω στο χαρτί. Παλέτα από τα docs της Κλεάνθης. */
+:root{
+  --paper:#FBFAF7; --ink:#24302D; --muted:#5D6966; --sage:#5E7F78; --sage-soft:#E6EEEC;
+  --clay:#C2683F; --clay-soft:#F6E6DC; --line:#D5DFDC; --sheet:#FFFFFF;
+  --display:"Literata", Georgia, "Times New Roman", serif;
+  --body:"Literata", Georgia, "Times New Roman", serif;
+  --ui:"Commissioner", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#161C1B; --ink:#E8EEEC; --muted:#A3B1AD; --sage:#8FB3AA; --sage-soft:#22302D;
+  --clay:#E0906B; --clay-soft:#3A2A22; --line:#33413E; --sheet:#1E2624; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#161C1B; --ink:#E8EEEC; --muted:#A3B1AD; --sage:#8FB3AA; --sage-soft:#22302D;
+  --clay:#E0906B; --clay-soft:#3A2A22; --line:#33413E; --sheet:#1E2624; color-scheme:dark}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;padding-inline:20px;padding-block:0 64px}
+.wrap{max-width:720px;margin:0 auto}
+.draft{font-family:var(--ui);font-size:13px;letter-spacing:.04em;background:var(--clay-soft);color:var(--clay);border:1px dashed var(--clay);padding:8px 12px;margin-top:20px;border-radius:6px}
+header{padding-block:32px 24px}
+.cover{display:block;width:100%;height:auto;border-radius:8px;margin-bottom:28px;box-shadow:0 12px 32px -20px rgba(36,48,45,.5)}
+.eyebrow{font-family:var(--ui);font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sage)}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(32px,6vw,48px);line-height:1.12;margin:.35em 0 .4em;text-wrap:balance}
+h1 em{font-style:italic;font-weight:400;color:var(--clay)}
+.lead{font-size:19px;color:var(--muted);max-width:60ch}
+h2{font-family:var(--display);font-size:clamp(24px,4vw,30px);line-height:1.2;margin:0 0 .5em;text-wrap:balance}
+h3{font-family:var(--ui);font-size:15px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--sage);margin:0 0 .4em}
+section{padding-block:40px;border-top:1px solid var(--line)}
+p{margin:0 0 1em;max-width:65ch}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.pill{font-family:var(--ui);font-size:14px;background:var(--sage-soft);color:var(--ink);padding:6px 12px;border-radius:999px}
+/* ο κύκλος της εβδομάδας */
+.loop{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;margin:24px 0 8px;counter-reset:s}
+.loop div{position:relative;padding:14px 10px 0;border-top:3px solid var(--sage);font-family:var(--ui);font-size:14px;line-height:1.35;min-width:0}
+.loop div:nth-child(3){border-top-color:var(--clay)}
+.loop b{display:block;font-family:var(--display);font-size:17px;margin-bottom:4px}
+.loop div::before{content:"";position:absolute;top:-8px;left:10px;width:13px;height:13px;border-radius:50%;background:var(--paper);border:3px solid var(--sage)}
+.loop div:nth-child(3)::before{border-color:var(--clay)}
+.loopnote{font-family:var(--ui);font-size:14px;color:var(--muted)}
+@media (max-width:620px){.loop{grid-template-columns:1fr;gap:4px}.loop div{border-top:0;border-left:3px solid var(--sage);padding:4px 0 12px 18px}.loop div:nth-child(3){border-left-color:var(--clay)}.loop div::before{top:6px;left:-8px}}
+/* βήματα */
+ol.steps{list-style:none;padding:0;margin:20px 0;display:grid;gap:14px;counter-reset:st}
+ol.steps li{counter-increment:st;display:grid;grid-template-columns:40px minmax(0,1fr);gap:12px;align-items:baseline}
+ol.steps li::before{content:counter(st);font-family:var(--display);font-size:22px;font-weight:700;color:var(--sage);text-align:center}
+ol.steps .t{font-family:var(--ui);font-size:14px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+ol.steps strong{font-weight:600}
+.total{font-family:var(--ui);font-size:15px;border-top:1px solid var(--line);padding-top:10px;display:flex;justify-content:space-between;gap:12px}
+/* δείγματα */
+figure{margin:28px 0}
+.sheet{background:var(--sheet);border:1px solid var(--line);padding:10px;border-radius:4px;box-shadow:0 10px 30px -18px rgba(36,48,45,.45);transform:rotate(-.6deg);overflow:hidden;max-height:340px;position:relative}
+figure:nth-of-type(even) .sheet{transform:rotate(.5deg)}
+.sheet img{display:block;width:100%;height:auto}
+.sheet::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(to bottom,rgba(255,255,255,0),var(--sheet))}
+figcaption{font-family:var(--ui);font-size:14px;color:var(--muted);margin-top:12px;max-width:60ch}
+figcaption b{color:var(--ink);font-weight:600}
+/* εβδομάδα */
+.tablebox{overflow-x:auto;margin:20px 0}
+table{border-collapse:collapse;width:100%;font-family:var(--ui);font-size:15px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--sage)}
+td.m{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+tr.wait td{color:var(--muted);font-style:italic}
+tr.sum td{font-weight:600;border-bottom:0}
+.note{background:var(--sage-soft);padding:16px 18px;border-radius:6px;font-size:16px}
+.note p:last-child{margin:0}
+.packs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0}
+.pack{border:1px solid var(--line);padding:16px;border-radius:6px;min-width:0}
+.pack .n{font-family:var(--display);font-size:26px;font-weight:700;color:var(--sage)}
+.pack p{font-family:var(--ui);font-size:14px;color:var(--muted);margin:4px 0 0}
+@media (max-width:620px){.packs{grid-template-columns:1fr}}
+dl{margin:0}
+dt{font-weight:600;margin-top:18px}
+dd{margin:4px 0 0;color:var(--muted)}
+.sign{font-family:var(--display);font-style:italic;font-size:20px;margin-top:24px}
+a{color:var(--clay)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <img class="cover" src="cover.jpg" alt="Lückentext + Fehlerkorrektur · Paket 1 · 5 Wochen + Test" width="1200" height="900">
+  <div class="eyebrow">Προετοιμασία B2 · ÖSD και Goethe-Zertifikat</div>
+  <h1>Ενεργητική εξάσκηση για το B2, <em>στις ώρες που μπορείς</em></h1>
+  <p class="lead">Χωρίς τμήμα και χωρίς να τρέχεις να προλάβεις μάθημα. Πέντε εβδομάδες με κείμενα που σε προπονούν σε πραγματικά κομμάτια των εξετάσεων, εμβάθυνση στη Γραμματική και στη Σύνταξη, και τα μάτια μου πάνω σε ό,τι γράφεις και λες.</p>
+  <div class="pills"><span class="pill">5 Lückentexte</span><span class="pill">5 Fehlerkorrekturen</span><span class="pill">10 Begleithefte</span><span class="pill">Τεστ στην 6η εβδομάδα</span></div>
+</header>
+
+<section>
+  <h2>Για ποιον είναι</h2>
+  <p>Για σένα, αν έχεις αφήσει πίσω το No-Brainer, ετοιμάζεσαι να δώσεις εξετάσεις B2 και θέλεις να μπεις σε πιο πρακτική εξάσκηση. Σου διδάσκω πώς να σκέφτεσαι στα Lückentexte ώστε να βρίσκεις τις λύσεις, και πώς να γράφεις επίσημα γράμματα, όπως στο Teil 2 του Schreiben στο Goethe-Zertifikat B2.</p>
+  <p>Αν δεν χωράει στο πρόγραμμά σου ένα τμήμα με σταθερή ώρα, αλλά θέλεις κάποιον να βλέπει τη δουλειά σου και να σου λέει πού ακριβώς σκοντάφτεις.</p>
+  <p>Δουλεύεις όποτε μπορείς μέσα στην εβδομάδα. Εγώ διορθώνω προσωπικά ό,τι μου στέλνεις.</p>
+</section>
+
+<section>
+  <h2>Κάθε εβδομάδα, ο ίδιος κύκλος</h2>
+  <div class="loop" aria-label="Ο κύκλος της εβδομάδας">
+    <div><b>Κάνεις</b>το Lückentext και τη Fehlerkorrektur</div>
+    <div><b>Στέλνεις</b>τις απαντήσεις σου</div>
+    <div><b>Παίρνεις πίσω</b>τη διόρθωση και τα Begleithefte</div>
+    <div><b>Εμβαθύνεις</b>σε λεξιλόγιο, Γραμματική, Σύνταξη</div>
+    <div><b>Μου λες, μου γράφεις</b>περίληψη και E-Mail</div>
+  </div>
+  <p class="loopnote">Ο κύκλος κλείνει μέσα στην εβδομάδα και ξαναρχίζει με το επόμενο κείμενο.</p>
+</section>
+
+<section>
+  <h3>Μέρος 1</h3>
+  <h2>Το Lückentext</h2>
+  <p>Ένα κείμενο με δώδεκα κενά, του ίδιου τύπου με το Lückentext του ÖSD B2 (εκεί τα κενά είναι δέκα). Αυτό είναι μόνο η αρχή: μετά το κείμενο γίνεται δικό σου.</p>
+  <ol class="steps">
+    <li><span><strong>Λύνεις το Lückentext</strong> και μου το στέλνεις.</span></li>
+    <li><span><strong>Παίρνεις πίσω τη διόρθωση και το Begleitheft</strong> την ίδια μέρα ή την επόμενη: ολόκληρο το κείμενο με το λεξιλόγιο αριθμημένο μέσα του, και ασκήσεις λεξιλογίου.</span></li>
+    <li><span><strong>Γραμματική και Σύνταξη από το ίδιο κείμενο,</strong> πάντα με αφετηρία τα Ελληνικά. Οι λύσεις είναι μέσα στο Begleitheft.</span></li>
+    <li><span><strong>Μου λες μια περίληψη στα Γερμανικά,</strong> ένα με δύο λεπτά. Μια ηχογράφηση από το κινητό αρκεί.</span></li>
+  </ol>
+  <div class="total"><span>Σύνολο για το Lückentext</span><span>από 1 ώρα 15' ως 2 ώρες 25'</span></div>
+
+  <figure>
+    <div class="sheet"><img src="probe-text.jpg" alt="Πρώτη σελίδα Begleitheft: το κείμενο Kinderarmut με αριθμημένες λέξεις και πίνακα λεξιλογίου" width="879" height="708"></div>
+    <figcaption><b>Το λεξιλόγιο μέσα στο κείμενο,</b> ώστε να βλέπεις κάθε λέξη εκεί που ζει και όχι σε μια λίστα. Κάθε αριθμός σε στέλνει στον πίνακα με τη μετάφραση και ό,τι πρέπει να προσέξεις.</figcaption>
+  </figure>
+  <figure>
+    <div class="sheet"><img src="probe-grammatik.jpg" alt="Άσκηση Γραμματικής: αναφορική πρόταση με πρόθεση, με εξήγηση από τα Ελληνικά" width="879" height="357"></div>
+    <figcaption><b>Η Γραμματική ξεκινά από τα Ελληνικά,</b> ώστε να καταλαβαίνεις γιατί η πρόταση στήνεται έτσι.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h3>Μέρος 2</h3>
+  <h2>Η Fehlerkorrektur</h2>
+  <p>Ένα επίσημο γράμμα με δώδεκα λάθη. Τα βρίσκεις, και μετά μαθαίνεις το σωστό γράμμα σχεδόν απέξω, με κρύβε-λέγε. Έτσι, όταν στην εξέταση γράφεις το δικό σου επίσημο κείμενο στο δεύτερο μέρος του Schreiben στο Goethe-Zertifikat B2, οι φράσεις βγαίνουν χωρίς σκέψη.</p>
+  <ol class="steps">
+    <li><span><strong>Βρίσκεις τα λάθη</strong> και μου το στέλνεις.</span></li>
+    <li><span><strong>Παίρνεις πίσω τη διόρθωση και το Begleitheft</strong> την ίδια μέρα ή την επόμενη: γιατί ήταν λάθος κάθε λάθος.</span></li>
+    <li><span><strong>Κρύβε-λέγε:</strong> το γράμμα πρόταση πρόταση, Ελληνικά δίπλα στα Γερμανικά. Κρύβεις τη μία στήλη, λες την άλλη, και την επόμενη μέρα το ξαναπιάνεις.</span></li>
+    <li><span><strong>Γράφεις το δικό σου E-Mail</strong> πάνω στο ίδιο θέμα και μου το στέλνεις.</span></li>
+  </ol>
+  <div class="total"><span>Σύνολο για τη Fehlerkorrektur</span><span>από 1 ώρα 5' ως 2 ώρες 10'</span></div>
+
+  <figure>
+    <div class="sheet"><img src="probe-kryve.jpg" alt="Πίνακας κρύβε-λέγε: ελληνική απόδοση δίπλα στο γερμανικό επίσημο γράμμα" width="879" height="387"></div>
+    <figcaption><b>Αριστερά τι λες, δεξιά πώς το λες.</b> Με έντονα οι φράσεις που ξαναχρειάζεσαι σε κάθε επίσημο γράμμα, ώστε να μαζεύεις έτοιμα κομμάτια για την εξέταση.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>Η εβδομάδα σου</h2>
+  <p>Από δυόμισι ως τεσσεράμισι ώρες την εβδομάδα, ανάλογα με τον ρυθμό σου: γύρω στα 20 με 40 λεπτά τη μέρα. Ένα παράδειγμα για το πώς μοιράζονται:</p>
+  <div class="tablebox"><table>
+    <thead><tr><th>Μέρα</th><th>Τι κάνεις</th></tr></thead>
+    <tbody>
+      <tr><td>Δευτέρα</td><td>Lückentext και Fehlerkorrektur, τα στέλνεις</td></tr>
+      <tr><td>Τρίτη</td><td>Begleitheft Fehlerkorrektur: γιατί ήταν λάθος, και κρύβε-λέγε</td></tr>
+      <tr><td>Τετάρτη</td><td>Begleitheft Lückentext: κείμενο και λεξιλόγιο</td></tr>
+      <tr><td>Πέμπτη</td><td>Begleitheft Lückentext: Γραμματική και Σύνταξη, με τις λύσεις</td></tr>
+      <tr><td>Παρασκευή</td><td>Περίληψη (ηχογράφηση) και το γράμμα απέξω</td></tr>
+      <tr><td>Σάββατο</td><td>Το δικό σου E-Mail</td></tr>
+      <tr><td>Κυριακή</td><td>Επανάληψη του γράμματος</td></tr>
+      <tr class="sum"><td>Σύνολο</td><td>από 2 ώρες 15' ως 4 ώρες 30'</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><p>Η σειρά είναι πρόταση, όχι κανόνας. Αν η Δευτέρα σου είναι γεμάτη, ξεκινάς την Τρίτη. Αρκεί να κρατάς το ρυθμό: ένα Lückentext και μία Fehlerkorrektur την εβδομάδα.</p></div>
+</section>
+
+<section>
+  <h2>Η 6η εβδομάδα: το τεστ</h2>
+  <p>Μετά τα πέντε κείμενα παίρνεις ένα βοήθημα με πλάνο πέντε ημερών: τι να ξαναδείς και με ποια σειρά, η Γραμματική που θα χρειαστείς και ένα Self-Test. Στο τέλος γράφεις το τεστ πάνω στα πέντε κείμενα.</p>
+  <div class="total"><span>Βοήθημα (5 μέρες) και τεστ</span><span>από 2 ώρες ως 3 ώρες 30'</span></div>
+</section>
+
+<section>
+  <h2>Τι κάνω εγώ</h2>
+  <p>Διορθώνω προσωπικά το Lückentext, την περίληψή σου, τη Fehlerkorrektur και το E-Mail σου. Σου στέλνω πίσω τις διορθώσεις την ίδια μέρα ή την επόμενη, για να μη χάνεις τον ρυθμό της εβδομάδας.</p>
+</section>
+
+<section>
+  <h2>Τρία πακέτα, δεκαπέντε κείμενα</h2>
+  <p>Τα κείμενα είναι δεκαπέντε, χωρισμένα σε τρία πακέτα. Το καθένα κρατά έξι εβδομάδες: πέντε για τα κείμενα και μία για το τεστ.</p>
+  <div class="packs">
+    <div class="pack"><div class="n">1-5</div><p>Kinderarmut, Rollenverteilung, Magersucht, Cluburlaub, Internet</p></div>
+    <div class="pack"><div class="n">6-10</div><p>Πέντε νέα κείμενα και πέντε νέα γράμματα</p></div>
+    <div class="pack"><div class="n">11-15</div><p>Πέντε νέα κείμενα και πέντε νέα γράμματα</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Πώς ξεκινάς</h2>
+  <p>Επειδή όλα τα διορθώνω προσωπικά, οι θέσεις στον πιλοτικό κύκλο είναι λίγες, γύρω στις 5-6.</p>
+  <div class="note"><p><b>Πιλοτικός κύκλος: 155€</b> για το πρώτο πακέτο (πέντε κείμενα, πέντε γράμματα, τεστ, έξι εβδομάδες). Η πρώτη εβδομάδα ανοίγει μόλις εγγραφείς.</p></div>
+  <p><a href="https://kleanthi.thrivecart.com/b2-lueckentext-fehlerkorrektur/">Κράτα τη θέση σου</a></p>
+</section>
+
+<section>
+  <h2>Ερωτήσεις</h2>
+  <dl>
+    <dt>Πόσο χρόνο θέλει την εβδομάδα;</dt>
+    <dd>Από δυόμισι ως τεσσεράμισι ώρες, ανάλογα με τον ρυθμό σου, μοιρασμένες όπως σε βολεύει. Στην 6η εβδομάδα, από δύο ως τρεισήμισι.</dd>
+    <dt>Πρέπει να είμαι κάπου σε συγκεκριμένη ώρα;</dt>
+    <dd>Όχι. Δεν υπάρχει τμήμα ούτε σταθερό μάθημα. Δουλεύεις όποτε μπορείς και μου στέλνεις.</dd>
+    <dt>Η περίληψη είναι γραπτή;</dt>
+    <dd>Όχι, προφορική. Μια ηχογράφηση ενός-δύο λεπτών από το κινητό σου.</dd>
+    <dt>Για ποια εξέταση είναι;</dt>
+    <dd>Το Lückentext είναι κομμάτι του ÖSD B2. Η Fehlerkorrektur σε προετοιμάζει για το επίσημο γράμμα στο Schreiben του Goethe-Zertifikat B2. Και τα δύο χτίζουν τη Γραμματική και τη Σύνταξη που ζητά κάθε εξέταση B2.</dd>
+  </dl>
+  <p class="sign">Κλεάνθη Λιοδάκη</p>
+</section>
+</div>
+
+</body>
+</html>
