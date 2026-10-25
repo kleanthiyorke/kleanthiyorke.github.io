@@ -319,6 +319,5379 @@ const HANDOUTS = [
   { id: "2.1", title: "Τα άτονα προθέματα", week: "Woche 2" }
 ];
 
+// Τα υπόλοιπα Handouts ζουν στο cards/<id>.json και μπαίνουν εδώ με: python3 merge_cards.py
+// @EXTRA_CARDS_START
+const EXTRA = [
+ {
+  "id": "2.2",
+  "title": "Η κλίση των ρημάτων",
+  "week": "Woche 2",
+  "cards": [
+   {
+    "id": "h22-drei-verben",
+    "tag": "Τα τρία βασικά",
+    "type": "flip",
+    "front": "Ποια τρία ρήματα φτιάχνουν σχεδόν όλους τους χρόνους και τη Γραμματική του Γερμανού;",
+    "back": "sein (είμαι) και haben (έχω): Παρακείμενος, Υπερσυντέλικος. werden (γίνομαι): Μέλλοντας, Παθητική φωνή."
+   },
+   {
+    "id": "h22-werden-sein",
+    "tag": "Τα τρία βασικά",
+    "type": "flip",
+    "front": "werden ή sein: ποιο δείχνει τη διαδικασία και ποιο το αποτέλεσμα;",
+    "back": "werden = η διαδικασία: βρίσκεσαι πάνω στη διαδικασία, κάτι γίνεται. sein = το αποτέλεσμα: κάτι είναι."
+   },
+   {
+    "id": "h22-kategor",
+    "tag": "Κατηγορούμενο",
+    "type": "choice",
+    "prompt": "Τι είναι συντακτικά το der Lehrer;",
+    "front": "Petros ist <mark>der Lehrer<\/mark> des Dorfes.",
+    "options": [
+     "κατηγορούμενο",
+     "αντικείμενο σε αιτιατική",
+     "υποκείμενο"
+    ],
+    "answer": "κατηγορούμενο",
+    "explain": "Γραμματικά είναι ουσιαστικό, συντακτικά όμως κατηγορούμενο: βάζει τον Πέτρο σε μια κατηγορία, όπως το groß στο Petros ist groß."
+   },
+   {
+    "id": "h22-sein-ihr",
+    "tag": "Κλίση",
+    "type": "type",
+    "prompt": "Γράψε τον τύπο.",
+    "front": "ihr ___ (sein)",
+    "answers": [
+     "seid"
+    ],
+    "explain": "ihr seid: το d στο τέλος ακούγεται τ. Το sein είναι ανώμαλο παντού, μαθαίνεις την κλίση του απ’ έξω."
+   },
+   {
+    "id": "h22-haben-du",
+    "tag": "Κλίση",
+    "type": "type",
+    "prompt": "Γράψε τον τύπο.",
+    "front": "du ___ (haben)",
+    "answers": [
+     "hast"
+    ],
+    "explain": "Λείπει το b στο du και στο er (du hast, er hat). Και το α εδώ είναι βραχύ, ενώ στο ich habe μακρό, γιατί είναι ανώμαλο."
+   },
+   {
+    "id": "h22-stammformen",
+    "tag": "Αρχικοί χρόνοι",
+    "type": "flip",
+    "front": "sein, werden, haben: Αόριστος και Μετοχή;",
+    "back": "sein, war, gewesen (ich bin gewesen) · werden, wurde, geworden (ich bin geworden) · haben, hatte, gehabt (ich habe gehabt). Στον Αόριστο το 1ο και το 3ο ενικό είναι ίδια: ich war, er war."
+   },
+   {
+    "id": "h22-b1",
+    "tag": "sein ή werden;",
+    "type": "choice",
+    "front": "Es ___ dunkel. (σκοτεινιάζει)",
+    "options": [
+     "wird",
+     "ist"
+    ],
+    "answer": "wird",
+    "explain": "Διαδικασία, κάτι γίνεται: werden. Es wird dunkel = σκοτεινιάζει."
+   },
+   {
+    "id": "h22-b2",
+    "tag": "sein ή werden;",
+    "type": "choice",
+    "front": "Es ___ dunkel. (σκοτείνιασε)",
+    "options": [
+     "wird",
+     "ist"
+    ],
+    "answer": "ist",
+    "explain": "Αποτέλεσμα, κάτι είναι: sein. Es ist dunkel = σκοτείνιασε."
+   },
+   {
+    "id": "h22-b3",
+    "tag": "sein ή werden;",
+    "type": "choice",
+    "front": "Ich ___ alt. (γερνάω)",
+    "options": [
+     "werde",
+     "bin"
+    ],
+    "answer": "werde",
+    "explain": "Ο Γερμανός δεν έχει λέξη για το «γερνάω», τη φτιάχνει: γίνομαι γέρος, Ich werde alt."
+   },
+   {
+    "id": "h22-b4",
+    "tag": "sein ή werden;",
+    "type": "choice",
+    "front": "Es ___ Nacht. (νύχτωσε)",
+    "options": [
+     "wird",
+     "ist"
+    ],
+    "answer": "ist",
+    "explain": "Αποτέλεσμα: Es ist Nacht = νύχτωσε. Es wird Nacht = νυχτώνει."
+   },
+   {
+    "id": "h22-b5",
+    "tag": "sein ή werden;",
+    "type": "choice",
+    "front": "Du ___ müde. (κουράζεσαι, γίνεσαι κουρασμένος)",
+    "options": [
+     "wirst",
+     "bist",
+     "werdest"
+    ],
+    "answer": "wirst",
+    "explain": "Διαδικασία: werden. Και όχι «du werdest», αλλά du wirst."
+   },
+   {
+    "id": "h22-b6",
+    "tag": "sein ή werden;",
+    "type": "choice",
+    "front": "Wir ___ Griechen. (είμαστε Έλληνες)",
+    "options": [
+     "sind",
+     "seid",
+     "werden"
+    ],
+    "answer": "sind",
+    "explain": "είμαστε = sein: wir sind. Το seid είναι για το ihr."
+   },
+   {
+    "id": "h22-endungen",
+    "tag": "Ομαλά ρήματα",
+    "type": "flip",
+    "front": "Οι καταλήξεις του Ενεστώτα, σαν ρυθμό;",
+    "back": "e, st, t, en, t, en, en: frage, fragst, fragt, fragen, fragt, fragen, fragen. Βγάζεις το -en και μένει το θέμα frag-."
+   },
+   {
+    "id": "h22-handeln",
+    "tag": "Κλίση",
+    "type": "type",
+    "prompt": "Γράψε τον τύπο.",
+    "front": "ich ___ (handeln)",
+    "answers": [
+     "handle",
+     "handele"
+    ],
+    "explain": "Ο Γερμανός δεν συμπαθεί το -ele εκεί και συχνά ρίχνει το πρώτο e: ich handle (και: ich handele). Και τα δύο υπάρχουν."
+   },
+   {
+    "id": "h22-uhu",
+    "tag": "Η κόλλα UHU",
+    "type": "flip",
+    "front": "Τι είναι η «κόλλα UHU» και πότε μπαίνει;",
+    "back": "Ένα e ανάμεσα στο θέμα και στην κατάληξη, στο du, στο er και στο ihr, όταν το θέμα τελειώνει σε d, t, chn, ffn, ckn: du antwortest, er öffnet. Αλλιώς η γλώσσα μπερδεύεται (du antwortst)."
+   },
+   {
+    "id": "h22-zeichnen",
+    "tag": "Κλίση",
+    "type": "type",
+    "prompt": "Γράψε τον τύπο.",
+    "front": "er ___ (zeichnen)",
+    "answers": [
+     "zeichnet"
+    ],
+    "explain": "Θέμα σε chn: μπαίνει η κόλλα UHU. er zeichnet."
+   },
+   {
+    "id": "h22-braten",
+    "tag": "Κλίση",
+    "type": "type",
+    "prompt": "Γράψε τον τύπο.",
+    "front": "er ___ (braten)",
+    "answers": [
+     "brät"
+    ],
+    "explain": "Ιδιότροπο: Umlaut και καμία κατάληξη. Το t του θέματος κάνει τη δουλειά, δύο t στη σειρά θα ήταν περίεργο."
+   },
+   {
+    "id": "h22-halten-ihr",
+    "tag": "Κλίση",
+    "type": "type",
+    "prompt": "Γράψε τον τύπο.",
+    "front": "ihr ___ (halten)",
+    "answers": [
+     "haltet"
+    ],
+    "explain": "Στον πληθυντικό η κόλλα UHU επιστρέφει: ihr haltet, ihr ladet."
+   },
+   {
+    "id": "h22-halt",
+    "tag": "Η κόλλα UHU",
+    "type": "flip",
+    "front": "Από πού βγαίνει το ελληνικό «αλτ!»;",
+    "back": "Από το γερμανικό Halt!, την προστακτική του halten (κρατάω, σταματάω). Το h στην αρχή είναι εκπνοή, γι' αυτό το ελληνικό αυτί δεν το άκουσε."
+   },
+   {
+    "id": "h22-plural",
+    "tag": "Ανώμαλα",
+    "type": "flip",
+    "front": "Στα ανώμαλα ρήματα, σε ποια πρόσωπα αλλάζει το φωνήεν του θέματος;",
+    "back": "Μόνο στο du και στο er. Ο πληθυντικός είναι πάντα ομαλός: ihr seht, ihr sprecht, ihr nehmt, ihr fahrt."
+   },
+   {
+    "id": "h22-dosolipsia",
+    "tag": "Ανώμαλα",
+    "type": "flip",
+    "front": "Ποια δύο ρήματα έχουν μακρό e αλλά παίρνουν βραχύ i (όχι ie);",
+    "back": "nehmen και geben: το «παίρνω-δίνω», η δοσοληψία. du nimmst, er nimmt · du gibst, er gibt."
+   },
+   {
+    "id": "h22-faehrst",
+    "tag": "Ανώμαλα",
+    "type": "choice",
+    "prompt": "Το ä είναι μακρό ή βραχύ;",
+    "front": "du f<mark>ä<\/mark>hrst",
+    "options": [
+     "μακρό",
+     "βραχύ"
+    ],
+    "answer": "μακρό",
+    "explain": "Το a γεννήθηκε μακρό, και μακρό μένει, όσα σύμφωνα κι αν φέρει η κατάληξη. Εξαίρεση το haben."
+   },
+   {
+    "id": "h22-fahren-bed",
+    "tag": "Σημασία",
+    "type": "choice",
+    "prompt": "Τι σημαίνει ακριβώς;",
+    "front": "fahren",
+    "options": [
+     "κινούμαι με όχημα",
+     "πηγαίνω, με οποιονδήποτε τρόπο",
+     "περπατάω"
+    ],
+    "answer": "κινούμαι με όχημα",
+    "explain": "fahren σημαίνει κινούμαι (ή μεταφέρω κάποιον) με όχημα. Όχι απλώς «πηγαίνω»."
+   },
+   {
+    "id": "h22-tragen-bed",
+    "tag": "Σημασία",
+    "type": "choice",
+    "prompt": "Τι σημαίνει εδώ το tragen;",
+    "front": "Er trägt eine Brille.",
+    "options": [
+     "φοράει (έχει πάνω του)",
+     "βάζει (τώρα, πάνω του)"
+    ],
+    "answer": "φοράει (έχει πάνω του)",
+    "explain": "tragen = φοράω με την έννοια «έχω πάνω μου». Για το «βάζω πάνω μου» τα Γερμανικά έχουν άλλο ρήμα."
+   },
+   {
+    "id": "h22-praedikativ",
+    "tag": "Κατηγ. συμπλήρωμα",
+    "type": "flip",
+    "front": "Τι είναι το κατηγορηματικό συμπλήρωμα (Karten spielen, Auto fahren);",
+    "back": "Λέξη που πάει παρέα με το ρήμα, σχεδόν σαν ένα πρόθεμα που δεν κόλλησε. Δεν είναι αιτιατική αντικειμένου, γι' αυτό το λεξικό τα γράφει μαζί και δεν παίρνουν άρθρο."
+   },
+   {
+    "id": "h22-a-fragen-er",
+    "tag": "Κλίση",
+    "type": "type",
+    "prompt": "Κλίνε στο πρόσωπο που ζητείται.",
+    "front": "er ___ (fragen)",
+    "answers": [
+     "fragt"
+    ],
+    "explain": "Ο οδηγός μας: frag + t."
+   },
+   {
+    "id": "h22-a-antworten-du",
+    "tag": "Κλίση",
+    "type": "type",
+    "prompt": "Κλίνε στο πρόσωπο που ζητείται.",
+    "front": "du ___ (antworten)",
+    "answers": [
+     "antwortest"
+    ],
+    "explain": "Θέμα σε t: η κόλλα UHU. Όχι «du antwortst»."
+   },
+   {
+    "id": "h22-a-lesen-er",
+    "tag": "Κλίση",
+    "type": "type",
+    "prompt": "Κλίνε στο πρόσωπο που ζητείται.",
+    "front": "er ___ (lesen)",
+    "answers": [
+     "liest"
+    ],
+    "explain": "e μακρό → ie. Και du liest: υπάρχει ήδη s, δεν βάζεις δεύτερο."
+   },
+   {
+    "id": "h22-a-sitzen-du",
+    "tag": "Κλίση",
+    "type": "type",
+    "prompt": "Κλίνε στο πρόσωπο που ζητείται.",
+    "front": "du ___ (sitzen)",
+    "answers": [
+     "sitzt"
+    ],
+    "explain": "Το z διώχνει το s, όπως στο sechzehn: du sitzt."
+   },
+   {
+    "id": "h22-a-sehen-er",
+    "tag": "Κλίση",
+    "type": "type",
+    "prompt": "Κλίνε στο πρόσωπο που ζητείται.",
+    "front": "er ___ (sehen)",
+    "answers": [
+     "sieht"
+    ],
+    "explain": "e μακρό (μαγικό h) → ie: er sieht."
+   },
+   {
+    "id": "h22-a-sprechen-du",
+    "tag": "Κλίση",
+    "type": "type",
+    "prompt": "Κλίνε στο πρόσωπο που ζητείται.",
+    "front": "du ___ (sprechen)",
+    "answers": [
+     "sprichst"
+    ],
+    "explain": "e βραχύ (δύο σύμφωνα μετά) → i: du sprichst."
+   },
+   {
+    "id": "h22-a-nehmen-er",
+    "tag": "Κλίση",
+    "type": "type",
+    "prompt": "Κλίνε στο πρόσωπο που ζητείται.",
+    "front": "er ___ (nehmen)",
+    "answers": [
+     "nimmt"
+    ],
+    "explain": "Η δοσοληψία: βραχύ i, άρα δύο m. er nimmt."
+   },
+   {
+    "id": "h22-a-geben-er",
+    "tag": "Κλίση",
+    "type": "type",
+    "prompt": "Κλίνε στο πρόσωπο που ζητείται.",
+    "front": "er ___ (geben)",
+    "answers": [
+     "gibt"
+    ],
+    "explain": "Η δοσοληψία: βραχύ i. Το b όμως δεν διπλασιάζεται: er gibt."
+   },
+   {
+    "id": "h22-a-fahren-du",
+    "tag": "Κλίση",
+    "type": "type",
+    "prompt": "Κλίνε στο πρόσωπο που ζητείται.",
+    "front": "du ___ (fahren)",
+    "answers": [
+     "fährst"
+    ],
+    "explain": "a → ä στο du και στο er: du fährst, με μακρό ä."
+   },
+   {
+    "id": "h22-a-halten-du",
+    "tag": "Κλίση",
+    "type": "type",
+    "prompt": "Κλίνε στο πρόσωπο που ζητείται.",
+    "front": "du ___ (halten)",
+    "answers": [
+     "hältst"
+    ],
+    "explain": "Ιδιότροπο: όχι κόλλα UHU, αλλά Umlaut. du hältst."
+   },
+   {
+    "id": "h22-a-laden-du",
+    "tag": "Κλίση",
+    "type": "type",
+    "prompt": "Κλίνε στο πρόσωπο που ζητείται.",
+    "front": "du ___ (laden)",
+    "answers": [
+     "lädst"
+    ],
+    "explain": "Ιδιότροπο: Umlaut στο du και στο er. du lädst."
+   },
+   {
+    "id": "h22-a-werden-du",
+    "tag": "Κλίση",
+    "type": "type",
+    "prompt": "Κλίνε στο πρόσωπο που ζητείται.",
+    "front": "du ___ (werden)",
+    "answers": [
+     "wirst"
+    ],
+    "explain": "Όχι «du werdest», αλλά du wirst."
+   },
+   {
+    "id": "h22-a-werden-er",
+    "tag": "Κλίση",
+    "type": "type",
+    "prompt": "Κλίνε στο πρόσωπο που ζητείται.",
+    "front": "er ___ (werden)",
+    "answers": [
+     "wird"
+    ],
+    "explain": "Όχι «er werdet», αλλά er wird."
+   },
+   {
+    "id": "h22-g-heisst",
+    "tag": "Βρες το λάθος",
+    "type": "type",
+    "prompt": "Βρες το λάθος και γράψε τον σωστό τύπο.",
+    "front": "du heißst",
+    "answers": [
+     "du heißt",
+     "heißt"
+    ],
+    "explain": "Το ß είναι σαν δύο s: δεν βάζεις άλλο s, μόνο -t."
+   },
+   {
+    "id": "h22-g-antwortet",
+    "tag": "Βρες το λάθος",
+    "type": "type",
+    "prompt": "Βρες το λάθος και γράψε τον σωστό τύπο.",
+    "front": "er antwortt",
+    "answers": [
+     "er antwortet",
+     "antwortet"
+    ],
+    "explain": "Θέμα σε t: θέλει την κόλλα UHU."
+   },
+   {
+    "id": "h22-g-nimmst",
+    "tag": "Βρες το λάθος",
+    "type": "type",
+    "prompt": "Βρες το λάθος και γράψε τον σωστό τύπο.",
+    "front": "du nehmst",
+    "answers": [
+     "du nimmst",
+     "nimmst"
+    ],
+    "explain": "nehmen, η δοσοληψία: βραχύ i και δύο m."
+   },
+   {
+    "id": "h22-g-haelt",
+    "tag": "Βρες το λάθος",
+    "type": "type",
+    "prompt": "Βρες το λάθος και γράψε τον σωστό τύπο.",
+    "front": "er haltet",
+    "answers": [
+     "er hält",
+     "hält"
+    ],
+    "explain": "Umlaut και καμία κατάληξη: το t του θέματος κάνει τη δουλειά."
+   },
+   {
+    "id": "h22-g-gibst",
+    "tag": "Βρες το λάθος",
+    "type": "type",
+    "prompt": "Βρες το λάθος και γράψε τον σωστό τύπο.",
+    "front": "du gebst",
+    "answers": [
+     "du gibst",
+     "gibst"
+    ],
+    "explain": "geben, η δοσοληψία: e → i στο du και στο er."
+   },
+   {
+    "id": "h22-g-laedt",
+    "tag": "Βρες το λάθος",
+    "type": "type",
+    "prompt": "Βρες το λάθος και γράψε τον σωστό τύπο.",
+    "front": "er ladet",
+    "answers": [
+     "er lädt",
+     "lädt"
+    ],
+    "explain": "Umlaut στο er. Το laden τελειώνει σε d, γι' αυτό παίρνει κανονικά -t."
+   },
+   {
+    "id": "h22-g-liest",
+    "tag": "Βρες το λάθος",
+    "type": "type",
+    "prompt": "Βρες το λάθος και γράψε τον σωστό τύπο.",
+    "front": "du lesst",
+    "answers": [
+     "du liest",
+     "liest"
+    ],
+    "explain": "Υπάρχει ήδη s, άρα μόνο -t. Και e → ie."
+   },
+   {
+    "id": "h22-g-hat",
+    "tag": "Βρες το λάθος",
+    "type": "type",
+    "prompt": "Βρες το λάθος και γράψε τον σωστό τύπο.",
+    "front": "er hatt",
+    "answers": [
+     "er hat",
+     "hat"
+    ],
+    "explain": "Στο haben λείπει το b στο du και στο er: du hast, er hat."
+   },
+   {
+    "id": "h22-d-lehrerin",
+    "tag": "Άρθρο ή όχι;",
+    "type": "choice",
+    "front": "Ich bin ___ Lehrerin.",
+    "options": [
+     "eine",
+     "χωρίς άρθρο"
+    ],
+    "answer": "χωρίς άρθρο",
+    "explain": "Επάγγελμα είναι ιδιότητα: χωρίς άρθρο, όπως Ich bin Arzt."
+   },
+   {
+    "id": "h22-d-mantel",
+    "tag": "Άρθρο ή όχι;",
+    "type": "choice",
+    "front": "Das ist ___ Mantel.",
+    "options": [
+     "ein",
+     "χωρίς άρθρο"
+    ],
+    "answer": "ein",
+    "explain": "Ό,τι μετριέται παίρνει αόριστο άρθρο, όπως και στα Αγγλικά (a coat)."
+   },
+   {
+    "id": "h22-d-montag",
+    "tag": "Άρθρο ή όχι;",
+    "type": "choice",
+    "front": "Es ist ___ Montag.",
+    "options": [
+     "ein",
+     "χωρίς άρθρο"
+    ],
+    "answer": "χωρίς άρθρο",
+    "explain": "Μέρες, μήνες, εποχές: χωρίς άρθρο. Es ist Montag, Januar, Sommer."
+   },
+   {
+    "id": "h22-d-grieche",
+    "tag": "Άρθρο ή όχι;",
+    "type": "choice",
+    "front": "Er ist ___ Grieche.",
+    "options": [
+     "ein",
+     "χωρίς άρθρο"
+    ],
+    "answer": "χωρίς άρθρο",
+    "explain": "Εθνικότητα είναι ιδιότητα: χωρίς άρθρο."
+   },
+   {
+    "id": "h22-d-buch",
+    "tag": "Άρθρο ή όχι;",
+    "type": "choice",
+    "front": "Das ist ___ Buch.",
+    "options": [
+     "ein",
+     "χωρίς άρθρο"
+    ],
+    "answer": "ein",
+    "explain": "Μετριέται: ein Buch."
+   },
+   {
+    "id": "h22-d-karten",
+    "tag": "Άρθρο ή όχι;",
+    "type": "choice",
+    "front": "Ich spiele ___ Karten.",
+    "options": [
+     "eine",
+     "χωρίς άρθρο"
+    ],
+    "answer": "χωρίς άρθρο",
+    "explain": "Κατηγορηματικό συμπλήρωμα: πάει παρέα με το ρήμα (Karten spielen), γι' αυτό δεν παίρνει άρθρο."
+   },
+   {
+    "id": "h22-e-nimmst",
+    "tag": "Γιατί;",
+    "type": "flip",
+    "front": "Γιατί du nimmst με δύο m, αλλά du gibst με ένα b;",
+    "back": "Το i είναι βραχύ, άρα θέλει δύο σύμφωνα. Το b όμως σχεδόν ποτέ δεν διπλασιάζεται (η παρεούλα b, d, g)."
+   },
+   {
+    "id": "h22-e-alt",
+    "tag": "Γιατί;",
+    "type": "flip",
+    "front": "Ποια η διαφορά ανάμεσα στο «Ich werde alt» και στο «Ich bin alt»;",
+    "back": "Ich werde alt: γερνάω, η διαδικασία. Ich bin alt: γέρασα, το αποτέλεσμα."
+   },
+   {
+    "id": "h22-e-auto",
+    "tag": "Γιατί;",
+    "type": "flip",
+    "front": "Τι μπορεί να σημαίνει το «Ich fahre Auto»; (δύο πράγματα)",
+    "back": "Οδηγώ τώρα, ή ξέρω να οδηγώ, έχω δίπλωμα."
+   },
+   {
+    "id": "h22-e-haelt",
+    "tag": "Γιατί;",
+    "type": "flip",
+    "front": "Γιατί er hält χωρίς κατάληξη, αλλά er lädt με -t;",
+    "back": "Στο hält το t του θέματος κάνει τη δουλειά της κατάληξης. Το laden τελειώνει σε d, γι' αυτό παίρνει -t."
+   }
+  ]
+ },
+ {
+  "id": "3.1",
+  "title": "Αιτιατική και Δοτική",
+  "week": "Woche 3",
+  "cards": [
+   {
+    "id": "h31-akk-bild",
+    "tag": "Η εικόνα",
+    "type": "flip",
+    "front": "Τι κάνει η αιτιατική; Ποια εικόνα κρατάς;",
+    "back": "Άμεση μεταφορά ενέργειας: «Δέρνω εσένα». Η ενέργεια φαίνεται πάνω σου, έχεις τα δακτυλικά μου αποτυπώματα."
+   },
+   {
+    "id": "h31-dat-bild",
+    "tag": "Η εικόνα",
+    "type": "flip",
+    "front": "Τι κάνει η δοτική; Ποια εικόνα κρατάς;",
+    "back": "Έμμεση μεταφορά ενέργειας: «Θα σου δείρω τον αδερφό!» Τα δακτυλικά αποτυπώματα τα έχει ο αδερφός (αιτιατική), σε σένα η ενέργεια φτάνει έμμεσα (δοτική)."
+   },
+   {
+    "id": "h31-postit",
+    "tag": "Η εικόνα",
+    "type": "flip",
+    "front": "Τι γράφεις στο post-it για τη δοτική;",
+    "back": "Η δοτική υπάρχει στα Γερμανικά για να κάνει τον άλλον να λυπάται ή να χαίρεται (σου δέρνω τον αδερφό, σου αγοράζω ένα αυτοκίνητο)."
+   },
+   {
+    "id": "h31-regel",
+    "tag": "Σκέψου στα Ελληνικά",
+    "type": "flip",
+    "front": "Ποιος κανόνας σου γλιτώνει την αποστήθιση ρημάτων με αιτιατική;",
+    "back": "Ό,τι πάει με αιτιατική στα Ελληνικά (ρωτάω τον άντρα, τρώω το φαγητό) είναι πολύ πιθανό να πάει με αιτιατική και στα Γερμανικά."
+   },
+   {
+    "id": "h31-genus",
+    "tag": "Το άρθρο",
+    "type": "choice",
+    "front": "Στην αιτιατική, ποιο άρθρο αλλάζει;",
+    "options": [
+     "μόνο το αρσενικό",
+     "μόνο το θηλυκό",
+     "όλα"
+    ],
+    "answer": "μόνο το αρσενικό",
+    "explain": "der → den. Όπως και στα Ελληνικά: «το παιδί» είναι ίδιο σε ονομαστική και αιτιατική."
+   },
+   {
+    "id": "h31-er-ihn",
+    "tag": "Αντωνυμία",
+    "type": "type",
+    "prompt": "Γράψε την αντωνυμία.",
+    "front": "er → ___ (αιτιατική)",
+    "answers": [
+     "ihn"
+    ],
+    "explain": "Πρόσεξε το n: der γίνεται den, er γίνεται ihn. Το χαρακτηριστικό γραμματάκι της αιτιατικής στο αρσενικό."
+   },
+   {
+    "id": "h31-dat-dem",
+    "tag": "Το άρθρο",
+    "type": "type",
+    "prompt": "Γράψε το άρθρο.",
+    "front": "der Mann → ___ Mann (δοτική)",
+    "answers": [
+     "dem"
+    ],
+    "explain": "dem → ihm: κοινά γράμματα ανάμεσα στο άρθρο και στην αντωνυμία (αρσενικό και ουδέτερο)."
+   },
+   {
+    "id": "h31-dat-pl",
+    "tag": "Το άρθρο",
+    "type": "type",
+    "prompt": "Γράψε το άρθρο.",
+    "front": "die Kinder → ___ Kindern (δοτική)",
+    "answers": [
+     "den"
+    ],
+    "explain": "Δοτική πληθυντικού: den → ihnen."
+   },
+   {
+    "id": "h31-dat-n",
+    "tag": "Δοτική πληθυντικού",
+    "type": "type",
+    "prompt": "Γράψε το ουσιαστικό στη δοτική.",
+    "front": "die Männer → den ___",
+    "answers": [
+     "Männern"
+    ],
+    "explain": "Στον πληθυντικό της δοτικής και το ουσιαστικό παίρνει -n, αν δεν το έχει ήδη (den Frauen). Εξαίρεση όσα κάνουν πληθυντικό σε -s: den Autos."
+   },
+   {
+    "id": "h31-danken",
+    "tag": "Πρώτη εξαίρεση",
+    "type": "choice",
+    "front": "Σας ευχαριστώ, κύριε Παναγιωτόπουλε. Ich danke ___.",
+    "options": [
+     "Ihnen",
+     "Sie"
+    ],
+    "answer": "Ihnen",
+    "explain": "Στα Ελληνικά «σε ευχαριστώ» (αιτιατική), ο Γερμανός όμως λέει «ευχαριστώ στον κύριο»: δοτική."
+   },
+   {
+    "id": "h31-reihenfolge",
+    "tag": "Η σειρά",
+    "type": "flip",
+    "front": "Δύο αντικείμενα, δοτική και αιτιατική: ποια σειρά;",
+    "back": "Δύο ουσιαστικά: πρώτα δοτική, στο τέλος αιτιατική (Der Lehrer gibt dem Schüler das Heft). Δύο προσωπικές αντωνυμίες: πρώτα αιτιατική, μετά δοτική (Er gibt es ihm). Ναι, ανάποδα."
+   },
+   {
+    "id": "h31-triaden",
+    "tag": "Με μια ματιά",
+    "type": "flip",
+    "front": "Πες τις προσωπικές αντωνυμίες σε τριάδες (ονομαστική, αιτιατική, δοτική).",
+    "back": "ich mich mir · du dich dir · er ihn ihm · sie sie ihr · es es ihm · wir uns uns · ihr euch euch · sie sie ihnen · Sie Sie Ihnen"
+   },
+   {
+    "id": "h31-a1",
+    "tag": "Αιτιατική ή δοτική;",
+    "type": "choice",
+    "prompt": "Η λέξη που ξεχωρίζει θα γίνει στα Γερμανικά:",
+    "front": "Ρωτάω <mark>τον δάσκαλο<\/mark>.",
+    "options": [
+     "αιτιατική",
+     "δοτική"
+    ],
+    "answer": "αιτιατική",
+    "explain": "Ρωτάω τον άντρα: αιτιατική και στα Ελληνικά, άρα και στα Γερμανικά."
+   },
+   {
+    "id": "h31-a2",
+    "tag": "Αιτιατική ή δοτική;",
+    "type": "choice",
+    "prompt": "Η λέξη που ξεχωρίζει θα γίνει στα Γερμανικά:",
+    "front": "Απαντάω <mark>στη μητέρα μου<\/mark>.",
+    "options": [
+     "αιτιατική",
+     "δοτική"
+    ],
+    "answer": "δοτική",
+    "explain": "σε + ουσιαστικό: έτσι λέμε στα Ελληνικά τη γερμανική δοτική."
+   },
+   {
+    "id": "h31-a3",
+    "tag": "Αιτιατική ή δοτική;",
+    "type": "choice",
+    "prompt": "Η λέξη που ξεχωρίζει θα γίνει στα Γερμανικά:",
+    "front": "Τρώω <mark>το φαγητό<\/mark>.",
+    "options": [
+     "αιτιατική",
+     "δοτική"
+    ],
+    "answer": "αιτιατική",
+    "explain": "Άμεση μεταφορά: το φαγητό τρώει την ενέργεια κατευθείαν."
+   },
+   {
+    "id": "h31-a4",
+    "tag": "Αιτιατική ή δοτική;",
+    "type": "choice",
+    "prompt": "Η λέξη που ξεχωρίζει θα γίνει στα Γερμανικά:",
+    "front": "<mark>Σου<\/mark> απαντάω αύριο.",
+    "options": [
+     "αιτιατική",
+     "δοτική"
+    ],
+    "answer": "δοτική",
+    "explain": "σου απαντάω = απαντάω σε σένα: δοτική (dir)."
+   },
+   {
+    "id": "h31-a5",
+    "tag": "Αιτιατική ή δοτική;",
+    "type": "choice",
+    "prompt": "Η λέξη που ξεχωρίζει θα γίνει στα Γερμανικά:",
+    "front": "<mark>Σε<\/mark> ρωτάω κάτι.",
+    "options": [
+     "αιτιατική",
+     "δοτική"
+    ],
+    "answer": "αιτιατική",
+    "explain": "σε ρωτάω = ρωτάω εσένα: αιτιατική (dich)."
+   },
+   {
+    "id": "h31-a6",
+    "tag": "Αιτιατική ή δοτική;",
+    "type": "choice",
+    "prompt": "Η λέξη που ξεχωρίζει θα γίνει στα Γερμανικά:",
+    "front": "Θα <mark>σου<\/mark> αγοράσω ένα δώρο.",
+    "options": [
+     "αιτιατική",
+     "δοτική"
+    ],
+    "answer": "δοτική",
+    "explain": "Η ενέργεια φτάνει σε σένα έμμεσα: δοτική. Για να χαρείς!"
+   },
+   {
+    "id": "h31-a7",
+    "tag": "Αιτιατική ή δοτική;",
+    "type": "choice",
+    "prompt": "Η λέξη που ξεχωρίζει θα γίνει στα Γερμανικά:",
+    "front": "Θα σου αγοράσω <mark>ένα δώρο<\/mark>.",
+    "options": [
+     "αιτιατική",
+     "δοτική"
+    ],
+    "answer": "αιτιατική",
+    "explain": "Τα δακτυλικά αποτυπώματα τα έχει το δώρο: αιτιατική."
+   },
+   {
+    "id": "h31-a8",
+    "tag": "Αιτιατική ή δοτική;",
+    "type": "choice",
+    "prompt": "Η λέξη που ξεχωρίζει θα γίνει στα Γερμανικά:",
+    "front": "Ζωγραφίζω <mark>τη θάλασσα<\/mark>.",
+    "options": [
+     "αιτιατική",
+     "δοτική"
+    ],
+    "answer": "αιτιατική",
+    "explain": "Αιτιατική στα Ελληνικά, αιτιατική και στα Γερμανικά."
+   },
+   {
+    "id": "h31-b1",
+    "tag": "Αντωνυμία",
+    "type": "type",
+    "prompt": "Γράψε την προσωπική αντωνυμία.",
+    "front": "Peter fragt ___. (εμένα)",
+    "answers": [
+     "mich"
+    ],
+    "explain": "ρωτάω = αιτιατική: mich."
+   },
+   {
+    "id": "h31-b2",
+    "tag": "Αντωνυμία",
+    "type": "type",
+    "prompt": "Γράψε την προσωπική αντωνυμία.",
+    "front": "Peter antwortet ___. (σε μένα)",
+    "answers": [
+     "mir"
+    ],
+    "explain": "απαντάω σε = δοτική: mir."
+   },
+   {
+    "id": "h31-b3",
+    "tag": "Αντωνυμία",
+    "type": "type",
+    "prompt": "Γράψε την προσωπική αντωνυμία.",
+    "front": "Ich frage ___. (αυτόν)",
+    "answers": [
+     "ihn"
+    ],
+    "explain": "Αιτιατική αρσενικού: το n, ihn."
+   },
+   {
+    "id": "h31-b4",
+    "tag": "Αντωνυμία",
+    "type": "type",
+    "prompt": "Γράψε την προσωπική αντωνυμία.",
+    "front": "Ich antworte ___. (σε αυτόν)",
+    "answers": [
+     "ihm"
+    ],
+    "explain": "dem → ihm."
+   },
+   {
+    "id": "h31-b5",
+    "tag": "Αντωνυμία",
+    "type": "type",
+    "prompt": "Γράψε την προσωπική αντωνυμία.",
+    "front": "Wir fragen ___. (αυτή)",
+    "answers": [
+     "sie"
+    ],
+    "explain": "Το θηλυκό δεν αλλάζει στην αιτιατική: sie."
+   },
+   {
+    "id": "h31-b6",
+    "tag": "Αντωνυμία",
+    "type": "type",
+    "prompt": "Γράψε την προσωπική αντωνυμία.",
+    "front": "Wir antworten ___. (σε αυτή)",
+    "answers": [
+     "ihr"
+    ],
+    "explain": "der → ihr."
+   },
+   {
+    "id": "h31-b7",
+    "tag": "Αντωνυμία",
+    "type": "type",
+    "prompt": "Γράψε την προσωπική αντωνυμία.",
+    "front": "Sie fragt ___. (εσένα)",
+    "answers": [
+     "dich"
+    ],
+    "explain": "du, dich, dir: αιτιατική dich."
+   },
+   {
+    "id": "h31-b8",
+    "tag": "Αντωνυμία",
+    "type": "type",
+    "prompt": "Γράψε την προσωπική αντωνυμία.",
+    "front": "Er antwortet ___. (σε εσάς, ευγένεια)",
+    "answers": [
+     "Ihnen"
+    ],
+    "explain": "Sie, Sie, Ihnen. Με κεφαλαίο, γιατί είναι ευγένεια."
+   },
+   {
+    "id": "h31-b9",
+    "tag": "Αντωνυμία",
+    "type": "type",
+    "prompt": "Γράψε την προσωπική αντωνυμία.",
+    "front": "Ich antworte ___. (σε αυτούς)",
+    "answers": [
+     "ihnen"
+    ],
+    "explain": "den → ihnen."
+   },
+   {
+    "id": "h31-b10",
+    "tag": "Αντωνυμία",
+    "type": "type",
+    "prompt": "Γράψε την προσωπική αντωνυμία.",
+    "front": "Sie fragen ___. (εμάς)",
+    "answers": [
+     "uns"
+    ],
+    "explain": "wir, uns, uns: εδώ αιτιατική και δοτική είναι ίδιες."
+   },
+   {
+    "id": "h31-g1",
+    "tag": "Το άρθρο",
+    "type": "type",
+    "prompt": "Γράψε το οριστικό άρθρο.",
+    "front": "Ich frage ___ Mann.",
+    "answers": [
+     "den"
+    ],
+    "explain": "fragen = αιτιατική. Αρσενικό: der → den."
+   },
+   {
+    "id": "h31-g2",
+    "tag": "Το άρθρο",
+    "type": "type",
+    "prompt": "Γράψε το οριστικό άρθρο.",
+    "front": "Ich antworte ___ Mann.",
+    "answers": [
+     "dem"
+    ],
+    "explain": "antworten = δοτική. Αρσενικό: dem."
+   },
+   {
+    "id": "h31-g3",
+    "tag": "Το άρθρο",
+    "type": "type",
+    "prompt": "Γράψε το οριστικό άρθρο.",
+    "front": "Ich frage ___ Frau.",
+    "answers": [
+     "die"
+    ],
+    "explain": "Το θηλυκό δεν αλλάζει στην αιτιατική: die."
+   },
+   {
+    "id": "h31-g4",
+    "tag": "Το άρθρο",
+    "type": "type",
+    "prompt": "Γράψε το οριστικό άρθρο.",
+    "front": "Ich antworte ___ Frau.",
+    "answers": [
+     "der"
+    ],
+    "explain": "Δοτική θηλυκού: der (→ ihr)."
+   },
+   {
+    "id": "h31-g5",
+    "tag": "Το άρθρο",
+    "type": "type",
+    "prompt": "Γράψε το οριστικό άρθρο.",
+    "front": "Ich frage ___ Kind.",
+    "answers": [
+     "das"
+    ],
+    "explain": "Το ουδέτερο δεν αλλάζει στην αιτιατική, όπως «ρωτάω το παιδί»."
+   },
+   {
+    "id": "h31-g6",
+    "tag": "Το άρθρο",
+    "type": "type",
+    "prompt": "Γράψε το οριστικό άρθρο.",
+    "front": "Ich antworte ___ Kind.",
+    "answers": [
+     "dem"
+    ],
+    "explain": "Δοτική ουδετέρου: dem, όπως το αρσενικό."
+   },
+   {
+    "id": "h31-g7",
+    "tag": "Το άρθρο",
+    "type": "type",
+    "prompt": "Γράψε τα δύο άρθρα, με τη σειρά.",
+    "front": "Der Lehrer gibt ___ Schüler ___ Heft.",
+    "answers": [
+     "dem, das",
+     "dem das",
+     "dem / das",
+     "dem/das"
+    ],
+    "explain": "Δύο ουσιαστικά: πρώτα δοτική (dem Schüler), στο τέλος αιτιατική (das Heft)."
+   },
+   {
+    "id": "h31-d1",
+    "tag": "Η σειρά",
+    "type": "choice",
+    "front": "Ποια σειρά είναι σωστή;",
+    "options": [
+     "Der Lehrer gibt dem Schüler das Heft.",
+     "Der Lehrer gibt das Heft dem Schüler."
+    ],
+    "answer": "Der Lehrer gibt dem Schüler das Heft.",
+    "explain": "Δύο ουσιαστικά: πρώτα δοτική, στο τέλος αιτιατική."
+   },
+   {
+    "id": "h31-d2",
+    "tag": "Η σειρά",
+    "type": "choice",
+    "front": "Ποια σειρά είναι σωστή;",
+    "options": [
+     "Ich zeige das Foto dem Mann.",
+     "Ich zeige dem Mann das Foto."
+    ],
+    "answer": "Ich zeige dem Mann das Foto.",
+    "explain": "Δύο ουσιαστικά: πρώτα δοτική, στο τέλος αιτιατική."
+   },
+   {
+    "id": "h31-d3",
+    "tag": "Η σειρά",
+    "type": "choice",
+    "front": "Ποια σειρά είναι σωστή;",
+    "options": [
+     "Er gibt es ihm.",
+     "Er gibt ihm es."
+    ],
+    "answer": "Er gibt es ihm.",
+    "explain": "Δύο αντωνυμίες: ανάποδα, πρώτα αιτιατική (es), μετά δοτική (ihm)."
+   },
+   {
+    "id": "h31-d4",
+    "tag": "Η σειρά",
+    "type": "choice",
+    "front": "Ποια σειρά είναι σωστή;",
+    "options": [
+     "Ich zeige ihr es.",
+     "Ich zeige es ihr."
+    ],
+    "answer": "Ich zeige es ihr.",
+    "explain": "Δύο αντωνυμίες: πρώτα αιτιατική, μετά δοτική."
+   },
+   {
+    "id": "h31-e1",
+    "tag": "Γιατί;",
+    "type": "flip",
+    "front": "«Θα σου δείρω τον αδερφό»: γιατί το «σου» είναι δοτική και το «τον αδερφό» αιτιατική;",
+    "back": "Η ενέργεια πάει κατευθείαν στον αδερφό (άμεση, αιτιατική), σε σένα φτάνει έμμεσα (δοτική)."
+   },
+   {
+    "id": "h31-e2",
+    "tag": "Γιατί;",
+    "type": "flip",
+    "front": "«Έλα σε μένα το βράδυ»: το «σε μένα» γίνεται mir;",
+    "back": "Όχι: εδώ το «σε μένα» σημαίνει τόπο, στο σπίτι μου (bei mir), δεν είναι αντικείμενο. Wir treffen uns bei mir."
+   },
+   {
+    "id": "h31-e3",
+    "tag": "Γιατί;",
+    "type": "flip",
+    "front": "«Ο γάτος μου»: το «μου» είναι δοτική;",
+    "back": "Όχι, είναι κτητική αντωνυμία. Οι ίδιες ακριβώς λέξεις, δυστυχώς, για να μπερδευόμαστε εμείς."
+   },
+   {
+    "id": "h31-e4",
+    "tag": "Γιατί;",
+    "type": "flip",
+    "front": "Τι μπορεί να σημαίνει το «Ich lerne Deutsch» και τι είναι κάθε φορά το Deutsch;",
+    "back": "Μαθαίνω Γερμανικά, είμαι μαθητής (Deutsch = κατηγορηματικό συμπλήρωμα). Διαβάζω, μελετάω Γερμανικά τώρα (Deutsch = αιτιατικής αντικείμενο)."
+   }
+  ]
+ },
+ {
+  "id": "3.2",
+  "title": "Τα εμπρόθετα αντικείμενα",
+  "week": "Woche 3",
+  "cards": [
+   {
+    "id": "h32-guide",
+    "tag": "Ο οδηγός μας",
+    "type": "flip",
+    "front": "Ποιος είναι ο οδηγός μας για τα ανάποδα ρήματα;",
+    "back": "Ό,τι λέω στα Ελληνικά, το λέω και στα Γερμανικά. Μαθαίνουμε απ’ έξω μόνο όσα είναι διαφορετικά: αυτά είναι οι τρεις πίνακες."
+   },
+   {
+    "id": "h32-tab1",
+    "tag": "Πίνακας 1",
+    "type": "flip",
+    "front": "Πίνακας 1 (danken, helfen, folgen, glauben, gratulieren): τι αλλάζει και πώς το θυμάσαι;",
+    "back": "σε → σου: εμείς λέμε «σε ευχαριστώ», ο Γερμανός βάζει δοτική. Σκέψου ότι σου δίνει κάτι: σου λέω ευχαριστώ, σου δίνω βοήθεια, σου λέω συγχαρητήρια."
+   },
+   {
+    "id": "h32-tab2",
+    "tag": "Πίνακας 2",
+    "type": "flip",
+    "front": "Πίνακας 2 (kosten, erinnern, anrufen, anlächeln): τι αλλάζει;",
+    "back": "μου → με: εμείς λέμε «μου κόστισε», ο Γερμανός βάζει αιτιατική, «με κόστισε», όπως θα το έλεγε ένας Θεσσαλονικιός."
+   },
+   {
+    "id": "h32-anrufen",
+    "tag": "Πίνακας 2",
+    "type": "flip",
+    "front": "Πες το παραμυθάκι του anrufen.",
+    "back": "Παλιά ο Γερμανός φώναζε (rufen) πάνω στο τηλέφωνο (an das Telefon). Η λέξη Telefon «πέθανε» και το an έμεινε ορφανό: από πρόθεση έγινε πρόθεμα."
+   },
+   {
+    "id": "h32-an",
+    "tag": "Τα εργαλεία",
+    "type": "choice",
+    "prompt": "Το πρόθεμα an- (anrufen, anlächeln), για τώρα:",
+    "front": "an-",
+    "options": [
+     "ακουμπάω",
+     "στοχεύω",
+     "μπαίνω μέσα σε"
+    ],
+    "answer": "ακουμπάω",
+    "explain": "an- = ακουμπάω. Τα προθέματα είναι μεγάλο κεφάλαιο, θα τα μαζέψουμε αργότερα."
+   },
+   {
+    "id": "h32-rot",
+    "tag": "Τα εργαλεία",
+    "type": "flip",
+    "front": "Τι είναι τα «κόκκινα», τα εργαλεία της γλώσσας;",
+    "back": "Κομματάκια λέξης (προθέματα ή προθέσεις) που τα μεταφράζουμε με ρήμα για να πατήσουμε κάπου, π.χ. an- = ακουμπάω. Με αυτά σιγά σιγά βρίσκουμε την άκρη."
+   },
+   {
+    "id": "h32-praep-obj",
+    "tag": "Πίνακας 3",
+    "type": "flip",
+    "front": "Τι είναι το εμπρόθετο αντικείμενο;",
+    "back": "Στα Ελληνικά λέμε αιτιατική, ο Γερμανός όμως βάζει πρόθεση και ουσιαστικό. Όπως στα Αγγλικά: όχι «I wait somebody», αλλά «I wait for somebody»."
+   },
+   {
+    "id": "h32-t-auf",
+    "tag": "Τα εργαλεία",
+    "type": "choice",
+    "prompt": "Τι σημαίνει το εργαλείο;",
+    "front": "auf + αιτιατική",
+    "options": [
+     "στοχεύω",
+     "στέλνω",
+     "μπαίνω μέσα σε"
+    ],
+    "answer": "στοχεύω",
+    "explain": "warten auf: σαν να σημαδεύεις αυτό που περιμένεις."
+   },
+   {
+    "id": "h32-t-an",
+    "tag": "Τα εργαλεία",
+    "type": "choice",
+    "prompt": "Τι σημαίνει το εργαλείο;",
+    "front": "an + αιτιατική",
+    "options": [
+     "στοχεύω",
+     "στέλνω",
+     "μπαίνω μέσα σε"
+    ],
+    "answer": "στέλνω",
+    "explain": "denken an: όταν σκέφτεσαι κάποιον, του στέλνεις τις σκέψεις σου, όπως στέλνεις ένα γράμμα (schreiben an)."
+   },
+   {
+    "id": "h32-t-in",
+    "tag": "Τα εργαλεία",
+    "type": "choice",
+    "prompt": "Τι σημαίνει το εργαλείο;",
+    "front": "in + αιτιατική",
+    "options": [
+     "στοχεύω",
+     "στέλνω",
+     "μπαίνω μέσα σε"
+    ],
+    "answer": "μπαίνω μέσα σε",
+    "explain": "sich verlieben in: όταν ερωτεύεσαι, μπαίνεις στον κόσμο του άλλου."
+   },
+   {
+    "id": "h32-baer",
+    "tag": "Τα εργαλεία",
+    "type": "flip",
+    "front": "Τι εννοώ όταν λέω ότι ένα ρήμα είναι «αρκούδα»;",
+    "back": "Ότι πάει με vor + δοτική. Στο δάσος φοβάσαι την αρκούδα όταν είναι μπροστά (vor) σου, όχι όταν είναι πίσω σου: Angst haben vor."
+   },
+   {
+    "id": "h32-vor-kasus",
+    "tag": "Τα εργαλεία",
+    "type": "choice",
+    "front": "Angst haben vor + ___",
+    "options": [
+     "δοτική",
+     "αιτιατική"
+    ],
+    "answer": "δοτική",
+    "explain": "vor + δοτική, η αρκούδα. Τα άλλα τρία εργαλεία (auf, an, in) εδώ πάνε με αιτιατική."
+   },
+   {
+    "id": "h32-meinem",
+    "tag": "Πίνακας 3",
+    "type": "type",
+    "prompt": "Γράψε τον σωστό τύπο.",
+    "front": "Ich habe Angst vor ___ Englischlehrer. (mein)",
+    "answers": [
+     "meinem"
+    ],
+    "explain": "vor + δοτική: vor meinem Englischlehrer, φοβάμαι τον καθηγητή μου των Αγγλικών."
+   },
+   {
+    "id": "h32-schreiben",
+    "tag": "Πίνακας 3",
+    "type": "choice",
+    "front": "Ich schreibe ___ meine Mutter.",
+    "options": [
+     "an",
+     "auf",
+     "für"
+    ],
+    "answer": "an",
+    "explain": "schreiben an + αιτιατική: an = στέλνω, όπως στέλνεις ένα γράμμα."
+   },
+   {
+    "id": "h32-verlieben",
+    "tag": "Πίνακας 3",
+    "type": "flip",
+    "front": "Γιατί sich verlieben; Τι κάνει εκεί το ver- και το sich;",
+    "back": "ver- = χάνω τον εαυτό μου (Woche 2). Αν εγώ είμαι του μπουζουκιού και ο άλλος του μέταλ, ερωτεύομαι και αλλάζω: χάνω (ver-) τον εαυτό μου (mich) μέσα από την αγάπη (lieben)."
+   },
+   {
+    "id": "h32-wen-was",
+    "tag": "Η ερώτηση",
+    "type": "choice",
+    "prompt": "Ρώτα για αυτό που περιμένει.",
+    "front": "Ich warte auf den Bus.",
+    "options": [
+     "Auf was wartest du?",
+     "Auf wen wartest du?",
+     "Was wartest du?"
+    ],
+    "answer": "Auf was wartest du?",
+    "explain": "Η πρόθεση μπαίνει και στην ερώτηση: auf wen για άνθρωπο, auf was για πράγμα."
+   },
+   {
+    "id": "h32-artikel",
+    "tag": "Απ’ έξω",
+    "type": "flip",
+    "front": "Το οριστικό άρθρο, με ποια σειρά το μαθαίνεις;",
+    "back": "Ονομαστική der die das die · Γενική des der des der · Δοτική dem der dem den · Αιτιατική den die das die."
+   },
+   {
+    "id": "h32-gen-des",
+    "tag": "Απ’ έξω",
+    "type": "type",
+    "prompt": "Γράψε το άρθρο.",
+    "front": "Γενική του αρσενικού (der):  ___",
+    "answers": [
+     "des"
+    ],
+    "explain": "Γενική: des, der, des, der."
+   },
+   {
+    "id": "h32-triaden",
+    "tag": "Απ’ έξω",
+    "type": "flip",
+    "front": "Οι προσωπικές αντωνυμίες σε τριάδες: με ποια σειρά;",
+    "back": "Ονομαστική, αιτιατική, δοτική: ich mich mir · du dich dir · er ihn ihm … Αν το έμαθες αλλιώς (ich, mir, mich), προσπάθησε να το ξεμάθεις: έτσι θα μιλάμε σε όλο το No-Brainer."
+   },
+   {
+    "id": "h32-a1",
+    "tag": "Πίνακας 1 και 2",
+    "type": "type",
+    "prompt": "Γράψε την προσωπική αντωνυμία.",
+    "front": "Ich danke ___. (εσένα)",
+    "answers": [
+     "dir"
+    ],
+    "explain": "Πίνακας 1, σε → σου: ο Γερμανός σου λέει ευχαριστώ."
+   },
+   {
+    "id": "h32-a2",
+    "tag": "Πίνακας 1 και 2",
+    "type": "type",
+    "prompt": "Γράψε την προσωπική αντωνυμία.",
+    "front": "Ich helfe ___. (αυτόν)",
+    "answers": [
+     "ihm"
+    ],
+    "explain": "Πίνακας 1: σου δίνω βοήθεια, δοτική."
+   },
+   {
+    "id": "h32-a3",
+    "tag": "Πίνακας 1 και 2",
+    "type": "type",
+    "prompt": "Γράψε την προσωπική αντωνυμία.",
+    "front": "Wir gratulieren ___. (αυτή)",
+    "answers": [
+     "ihr"
+    ],
+    "explain": "Πίνακας 1: της λέω συγχαρητήρια, δοτική."
+   },
+   {
+    "id": "h32-a4",
+    "tag": "Πίνακας 1 και 2",
+    "type": "type",
+    "prompt": "Γράψε την προσωπική αντωνυμία.",
+    "front": "Er folgt ___. (εμάς)",
+    "answers": [
+     "uns"
+    ],
+    "explain": "Πίνακας 1: folgen + δοτική. Το uns είναι ίδιο σε αιτιατική και δοτική."
+   },
+   {
+    "id": "h32-a5",
+    "tag": "Πίνακας 1 και 2",
+    "type": "type",
+    "prompt": "Γράψε την προσωπική αντωνυμία.",
+    "front": "Ich glaube ___. (εσάς, ευγένεια)",
+    "answers": [
+     "Ihnen"
+    ],
+    "explain": "Πίνακας 1: glauben + δοτική. Ihnen με κεφαλαίο."
+   },
+   {
+    "id": "h32-a6",
+    "tag": "Πίνακας 1 και 2",
+    "type": "type",
+    "prompt": "Γράψε την προσωπική αντωνυμία.",
+    "front": "Das kostet ___ zu viel. (εμένα)",
+    "answers": [
+     "mich"
+    ],
+    "explain": "Πίνακας 2, μου → με: «με κοστίζει», σαν Θεσσαλονικιός."
+   },
+   {
+    "id": "h32-a7",
+    "tag": "Πίνακας 1 και 2",
+    "type": "type",
+    "prompt": "Γράψε την προσωπική αντωνυμία.",
+    "front": "Du erinnerst ___ an meine Mutter. (εμένα)",
+    "answers": [
+     "mich"
+    ],
+    "explain": "Πίνακας 2: «με θυμίζεις τη μάνα μου»."
+   },
+   {
+    "id": "h32-a8",
+    "tag": "Πίνακας 1 και 2",
+    "type": "type",
+    "prompt": "Γράψε την προσωπική αντωνυμία.",
+    "front": "Ich rufe ___ morgen an. (εσένα)",
+    "answers": [
+     "dich"
+    ],
+    "explain": "Πίνακας 2: anrufen + αιτιατική."
+   },
+   {
+    "id": "h32-a9",
+    "tag": "Πίνακας 1 και 2",
+    "type": "type",
+    "prompt": "Γράψε την προσωπική αντωνυμία.",
+    "front": "Sie lächelt ___ an. (αυτόν)",
+    "answers": [
+     "ihn"
+    ],
+    "explain": "Πίνακας 2: anlächeln + αιτιατική, ihn."
+   },
+   {
+    "id": "h32-b1",
+    "tag": "Πίνακας 3",
+    "type": "type",
+    "prompt": "Γράψε την πρόθεση.",
+    "front": "Ich warte ___ den Bus.",
+    "answers": [
+     "auf"
+    ],
+    "explain": "warten auf + αιτιατική: στοχεύω."
+   },
+   {
+    "id": "h32-b2",
+    "tag": "Πίνακας 3",
+    "type": "type",
+    "prompt": "Γράψε την πρόθεση.",
+    "front": "Ich denke oft ___ dich.",
+    "answers": [
+     "an"
+    ],
+    "explain": "denken an + αιτιατική: σου στέλνω τις σκέψεις μου."
+   },
+   {
+    "id": "h32-b3",
+    "tag": "Πίνακας 3",
+    "type": "type",
+    "prompt": "Γράψε την πρόθεση.",
+    "front": "Er hat sich ___ meine Schwester verliebt.",
+    "answers": [
+     "in"
+    ],
+    "explain": "sich verlieben in + αιτιατική: μπαίνω μέσα στον κόσμο του άλλου."
+   },
+   {
+    "id": "h32-b4",
+    "tag": "Πίνακας 3",
+    "type": "type",
+    "prompt": "Γράψε την πρόθεση.",
+    "front": "Ich habe Angst ___ der Dunkelheit.",
+    "answers": [
+     "vor"
+    ],
+    "explain": "Angst haben vor + δοτική: η αρκούδα."
+   },
+   {
+    "id": "h32-b5",
+    "tag": "Πίνακας 3",
+    "type": "type",
+    "prompt": "Γράψε την πρόθεση.",
+    "front": "Hast du ___ den Schlüssel gedacht?",
+    "answers": [
+     "an"
+    ],
+    "explain": "denken an μπορεί να σημαίνει και «θυμάμαι»: θυμήθηκες τα κλειδιά;"
+   },
+   {
+    "id": "h32-b6",
+    "tag": "Πίνακας 3",
+    "type": "type",
+    "prompt": "Γράψε την πρόθεση.",
+    "front": "Wir warten ___ dich.",
+    "answers": [
+     "auf"
+    ],
+    "explain": "warten auf: σαν να σημαδεύεις αυτό που περιμένεις."
+   },
+   {
+    "id": "h32-g1",
+    "tag": "Η ερώτηση",
+    "type": "type",
+    "prompt": "Γράψε την ερώτηση.",
+    "front": "Ich warte auf meine Freundin.",
+    "answers": [
+     "Auf wen wartest du?"
+    ],
+    "explain": "Η πρόθεση μπαίνει και στην ερώτηση. Για άνθρωπο: auf wen."
+   },
+   {
+    "id": "h32-g2",
+    "tag": "Η ερώτηση",
+    "type": "type",
+    "prompt": "Γράψε την ερώτηση.",
+    "front": "Ich denke an den Urlaub.",
+    "answers": [
+     "An was denkst du?"
+    ],
+    "explain": "Για πράγμα: an was.",
+    "alsoOk": [
+     "Woran denkst du?"
+    ],
+    "alsoNote": "Σωστό! 🌱 Το Woran είναι η γραπτή, πιο επίσημη μορφή. Στον προφορικό λόγο οι Γερμανοί λένε πολύ συχνά An was denkst du?"
+   },
+   {
+    "id": "h32-g3",
+    "tag": "Η ερώτηση",
+    "type": "type",
+    "prompt": "Γράψε την ερώτηση.",
+    "front": "Ich habe Angst vor meinem Lehrer.",
+    "answers": [
+     "Vor wem hast du Angst?"
+    ],
+    "explain": "vor + δοτική, άρα και στην ερώτηση δοτική: vor wem."
+   },
+   {
+    "id": "h32-g4",
+    "tag": "Η ερώτηση",
+    "type": "type",
+    "prompt": "Γράψε την ερώτηση.",
+    "front": "Ich bin in Maria verliebt.",
+    "answers": [
+     "In wen bist du verliebt?"
+    ],
+    "explain": "Για άνθρωπο: in wen."
+   },
+   {
+    "id": "h32-d1",
+    "tag": "Πες το στα Γερμανικά",
+    "type": "type",
+    "prompt": "Πες το στα Γερμανικά.",
+    "front": "Σε περιμένω.",
+    "answers": [
+     "Ich warte auf dich."
+    ],
+    "explain": "warten auf + αιτιατική."
+   },
+   {
+    "id": "h32-d2",
+    "tag": "Πες το στα Γερμανικά",
+    "type": "type",
+    "prompt": "Πες το στα Γερμανικά.",
+    "front": "Σε σκέφτομαι.",
+    "answers": [
+     "Ich denke an dich."
+    ],
+    "explain": "denken an + αιτιατική."
+   },
+   {
+    "id": "h32-d3",
+    "tag": "Πες το στα Γερμανικά",
+    "type": "type",
+    "prompt": "Πες το στα Γερμανικά.",
+    "front": "Σε φοβάμαι.",
+    "answers": [
+     "Ich habe Angst vor dir."
+    ],
+    "explain": "Ο Γερμανός δεν σε φοβάται, έχει φόβο, μπροστά σου: vor + δοτική."
+   },
+   {
+    "id": "h32-d4",
+    "tag": "Πες το στα Γερμανικά",
+    "type": "type",
+    "prompt": "Πες το στα Γερμανικά.",
+    "front": "Σε ευχαριστώ.",
+    "answers": [
+     "Ich danke dir."
+    ],
+    "explain": "Πίνακας 1: σε → σου."
+   },
+   {
+    "id": "h32-d5",
+    "tag": "Πες το στα Γερμανικά",
+    "type": "type",
+    "prompt": "Πες το στα Γερμανικά.",
+    "front": "Μου τηλεφώνησες.",
+    "answers": [
+     "Du hast mich angerufen."
+    ],
+    "explain": "Πίνακας 2: μου → με."
+   },
+   {
+    "id": "h32-e1",
+    "tag": "Γιατί;",
+    "type": "flip",
+    "front": "Γιατί το «Ich warte dich» είναι λάθος;",
+    "back": "Το warten δεν παίρνει αιτιατική, θέλει auf + αιτιατική (στοχεύω): Ich warte auf dich."
+   },
+   {
+    "id": "h32-e2",
+    "tag": "Γιατί;",
+    "type": "flip",
+    "front": "Γιατί «Angst vor» και όχι «Angst für»;",
+    "back": "Γιατί ο φόβος είναι μπροστά (vor) σε αυτό που φοβάσαι, η αρκούδα. Το für σημαίνει «για»."
+   },
+   {
+    "id": "h32-e3",
+    "tag": "Γιατί;",
+    "type": "flip",
+    "front": "Γιατί δεν λέμε «Ich gehe in Peter» για το «πάω στον Πέτρο»;",
+    "back": "Γιατί το in + αιτιατική με άνθρωπο σημαίνει «μπαίνω μέσα του», όχι «πάω στο σπίτι του»."
+   },
+   {
+    "id": "h32-e4",
+    "tag": "Γιατί;",
+    "type": "flip",
+    "front": "Τι σημαίνει το «Hast du an den Schlüssel gedacht?»;",
+    "back": "Θυμήθηκες τα κλειδιά; Τα σκέφτηκες, τα πήρες μαζί σου;"
+   }
+  ]
+ },
+ {
+  "id": "3.3",
+  "title": "Οι αυτοπάθειες",
+  "week": "Woche 3",
+  "cards": [
+   {
+    "id": "h33-ti-einai",
+    "tag": "Η αυτοπάθεια",
+    "type": "flip",
+    "front": "Τι είναι η αυτοπάθεια;",
+    "back": "Ως τώρα η ενέργεια του ρήματος έφευγε από εμένα και πήγαινε στον άλλον. Στην αυτοπάθεια η ενέργεια γυρίζει πίσω σε μένα: παθαίνω εγώ ο ίδιος, «αυτο-παθαίνω»."
+   },
+   {
+    "id": "h33-dyo",
+    "tag": "Η αυτοπάθεια",
+    "type": "flip",
+    "front": "Ποιες δύο αυτοπάθειες έχουν τα Γερμανικά; Ποια δεν την έχουμε στα Ελληνικά;",
+    "back": "Άμεση: Ich wasche mich (πλένομαι). Έμμεση: Ich wasche mir die Hände («πλένω σε εμένα τα χέρια»). Την έμμεση δεν την έχουμε στα Ελληνικά."
+   },
+   {
+    "id": "h33-a-mich",
+    "tag": "Άμεση αυτοπάθεια",
+    "type": "type",
+    "prompt": "Άμεση αυτοπάθεια: γράψε την αυτοπαθή αντωνυμία.",
+    "front": "Ich wasche ___.",
+    "answers": [
+     "mich"
+    ],
+    "explain": "Πλένομαι σημαίνει πλένω εμένα. Η ενέργεια πάει κατευθείαν σε μένα, άρα αιτιατική."
+   },
+   {
+    "id": "h33-a-dich",
+    "tag": "Άμεση αυτοπάθεια",
+    "type": "type",
+    "prompt": "Άμεση αυτοπάθεια: γράψε την αυτοπαθή αντωνυμία.",
+    "front": "Du wäschst ___.",
+    "answers": [
+     "dich"
+    ],
+    "explain": "Ίδιο με την προσωπική αντωνυμία στην αιτιατική: dich."
+   },
+   {
+    "id": "h33-a-sich-er",
+    "tag": "Άμεση αυτοπάθεια",
+    "type": "type",
+    "prompt": "Άμεση αυτοπάθεια: γράψε την αυτοπαθή αντωνυμία.",
+    "front": "Er wäscht ___.",
+    "answers": [
+     "sich"
+    ],
+    "explain": "Er wäscht ihn = ο Πέτρος πλένει τον Παύλο. Για να φαίνεται ότι πλένει τον εαυτό του, ο Γερμανός έβαλε μια καινούρια λέξη: το sich."
+   },
+   {
+    "id": "h33-a-uns",
+    "tag": "Άμεση αυτοπάθεια",
+    "type": "type",
+    "prompt": "Άμεση αυτοπάθεια: γράψε την αυτοπαθή αντωνυμία.",
+    "front": "Wir waschen ___.",
+    "answers": [
+     "uns"
+    ],
+    "explain": "Σχεδόν όλα έμειναν ίδια με την αιτιατική: uns."
+   },
+   {
+    "id": "h33-a-euch",
+    "tag": "Άμεση αυτοπάθεια",
+    "type": "type",
+    "prompt": "Άμεση αυτοπάθεια: γράψε την αυτοπαθή αντωνυμία.",
+    "front": "Ihr wascht ___.",
+    "answers": [
+     "euch"
+    ],
+    "explain": "Ίδιο με την προσωπική αντωνυμία στην αιτιατική: euch."
+   },
+   {
+    "id": "h33-a-sich-sie",
+    "tag": "Άμεση αυτοπάθεια",
+    "type": "type",
+    "prompt": "Άμεση αυτοπάθεια: γράψε την αυτοπαθή αντωνυμία.",
+    "front": "Sie (ευγένεια) waschen ___.",
+    "answers": [
+     "sich"
+    ],
+    "explain": "Η ευγένεια είναι ένα από τα τρία πρόσωπα που πήραν sich. Και το sich γράφεται πάντα με μικρό, ακόμα και στην ευγένεια."
+   },
+   {
+    "id": "h33-b-mir",
+    "tag": "Έμμεση αυτοπάθεια",
+    "type": "type",
+    "prompt": "Έμμεση αυτοπάθεια: γράψε την αυτοπαθή αντωνυμία.",
+    "front": "Ich wasche ___ die Hände.",
+    "answers": [
+     "mir"
+    ],
+    "explain": "Η ενέργεια (το νερό) πάει άμεσα στα χέρια: die Hände, αιτιατική. Σε μένα φτάνει έμμεσα: mir, δοτική."
+   },
+   {
+    "id": "h33-b-dir",
+    "tag": "Έμμεση αυτοπάθεια",
+    "type": "type",
+    "prompt": "Έμμεση αυτοπάθεια: γράψε την αυτοπαθή αντωνυμία.",
+    "front": "Du wäschst ___ die Haare.",
+    "answers": [
+     "dir"
+    ],
+    "explain": "Το die Haare είναι ήδη το αιτιατικής αντικείμενο, άρα δοτική: dir."
+   },
+   {
+    "id": "h33-b-sich-sie",
+    "tag": "Έμμεση αυτοπάθεια",
+    "type": "type",
+    "prompt": "Έμμεση αυτοπάθεια: γράψε την αυτοπαθή αντωνυμία.",
+    "front": "Sie (αυτή) wäscht ___ die Hände.",
+    "answers": [
+     "sich"
+    ],
+    "explain": "Τρίτο ενικό: sich, αυτή τη φορά «κλεμμένο» από τη στήλη της δοτικής, γι’ αυτό είναι μπλε."
+   },
+   {
+    "id": "h33-b-uns",
+    "tag": "Έμμεση αυτοπάθεια",
+    "type": "type",
+    "prompt": "Έμμεση αυτοπάθεια: γράψε την αυτοπαθή αντωνυμία.",
+    "front": "Wir kaufen ___ ein Auto.",
+    "answers": [
+     "uns"
+    ],
+    "explain": "Κάνουμε κάτι καλό στον εαυτό μας, και ο εαυτός μας χαίρεται: wir kaufen uns ein Auto."
+   },
+   {
+    "id": "h33-b-euch",
+    "tag": "Έμμεση αυτοπάθεια",
+    "type": "type",
+    "prompt": "Έμμεση αυτοπάθεια: γράψε την αυτοπαθή αντωνυμία.",
+    "front": "Ihr kauft ___ ein Haus.",
+    "answers": [
+     "euch"
+    ],
+    "explain": "Το ein Haus είναι η αιτιατική, εσείς παίρνετε το δώρο: euch."
+   },
+   {
+    "id": "h33-b-sich-pl",
+    "tag": "Έμμεση αυτοπάθεια",
+    "type": "type",
+    "prompt": "Έμμεση αυτοπάθεια: γράψε την αυτοπαθή αντωνυμία.",
+    "front": "Sie (αυτοί) waschen ___ die Hände.",
+    "answers": [
+     "sich"
+    ],
+    "explain": "Τρίτο πληθυντικό: sich, «κλεμμένο» από τη στήλη της δοτικής."
+   },
+   {
+    "id": "h33-g-1",
+    "tag": "Ροζ ή μπλε;",
+    "type": "choice",
+    "prompt": "Το sich είναι αιτιατική ή δοτική;",
+    "front": "Er wäscht <mark>sich<\/mark>.",
+    "options": [
+     "αιτιατική",
+     "δοτική"
+    ],
+    "answer": "αιτιατική",
+    "explain": "Πλένεται: η ενέργεια γυρίζει κατευθείαν σε αυτόν. Ροζ, κλεμμένο από τη στήλη της αιτιατικής."
+   },
+   {
+    "id": "h33-g-2",
+    "tag": "Ροζ ή μπλε;",
+    "type": "choice",
+    "prompt": "Το sich είναι αιτιατική ή δοτική;",
+    "front": "Er wäscht <mark>sich<\/mark> die Hände.",
+    "options": [
+     "αιτιατική",
+     "δοτική"
+    ],
+    "answer": "δοτική",
+    "explain": "Υπάρχει ήδη αιτιατικής αντικείμενο (die Hände), άρα το sich δεν μπορεί να είναι κι αυτό αιτιατική."
+   },
+   {
+    "id": "h33-g-3",
+    "tag": "Ροζ ή μπλε;",
+    "type": "choice",
+    "prompt": "Το sich είναι αιτιατική ή δοτική;",
+    "front": "Sie kauft <mark>sich<\/mark> ein Kleid.",
+    "options": [
+     "αιτιατική",
+     "δοτική"
+    ],
+    "answer": "δοτική",
+    "explain": "Το ein Kleid είναι η αιτιατική. Αγοράζει (στον εαυτό της) ένα φόρεμα: δοτική."
+   },
+   {
+    "id": "h33-g-4",
+    "tag": "Ροζ ή μπλε;",
+    "type": "choice",
+    "prompt": "Το sich είναι αιτιατική ή δοτική;",
+    "front": "Die Kinder waschen <mark>sich<\/mark>.",
+    "options": [
+     "αιτιατική",
+     "δοτική"
+    ],
+    "answer": "αιτιατική",
+    "explain": "Πλένονται: κανένα άλλο αντικείμενο, η ενέργεια γυρίζει σε αυτά. Αιτιατική."
+   },
+   {
+    "id": "h33-g-5",
+    "tag": "Ροζ ή μπλε;",
+    "type": "choice",
+    "prompt": "Το sich είναι αιτιατική ή δοτική;",
+    "front": "Peter kämmt <mark>sich<\/mark>. (χτενίζεται)",
+    "options": [
+     "αιτιατική",
+     "δοτική"
+    ],
+    "answer": "αιτιατική",
+    "explain": "Χτενίζει τον εαυτό του, χωρίς άλλο αντικείμενο: αιτιατική."
+   },
+   {
+    "id": "h33-g-6",
+    "tag": "Ροζ ή μπλε;",
+    "type": "choice",
+    "prompt": "Το sich είναι αιτιατική ή δοτική;",
+    "front": "Peter kämmt <mark>sich<\/mark> die Haare.",
+    "options": [
+     "αιτιατική",
+     "δοτική"
+    ],
+    "answer": "δοτική",
+    "explain": "Το die Haare είναι το αιτιατικής αντικείμενο, άρα το sich είναι δοτική."
+   },
+   {
+    "id": "h33-d-1",
+    "tag": "mich ή mir;",
+    "type": "choice",
+    "front": "Ich wasche ___.",
+    "options": [
+     "mich",
+     "mir"
+    ],
+    "answer": "mich",
+    "explain": "Πλένω εμένα: η ενέργεια πάει κατευθείαν σε μένα, αιτιατική."
+   },
+   {
+    "id": "h33-d-2",
+    "tag": "mich ή mir;",
+    "type": "choice",
+    "front": "Ich wasche ___ die Hände.",
+    "options": [
+     "mich",
+     "mir"
+    ],
+    "answer": "mir",
+    "explain": "Πλένω σε εμένα τα χέρια. Το die Hände είναι ήδη η αιτιατική, άρα mir."
+   },
+   {
+    "id": "h33-d-3",
+    "tag": "mich ή mir;",
+    "type": "choice",
+    "front": "Ich kaufe ___ ein Auto.",
+    "options": [
+     "mich",
+     "mir"
+    ],
+    "answer": "mir",
+    "explain": "Αγοράζω (στον εαυτό μου) ένα αυτοκίνητο: κάνω καλό στον εαυτό μου. Το ein Auto είναι η αιτιατική."
+   },
+   {
+    "id": "h33-d-4",
+    "tag": "mich ή mir;",
+    "type": "choice",
+    "front": "Ich sehe ___ im Spiegel. (βλέπω τον εαυτό μου στον καθρέφτη)",
+    "options": [
+     "mich",
+     "mir"
+    ],
+    "answer": "mich",
+    "explain": "Δεν υπάρχει άλλο αιτιατικής αντικείμενο: βλέπω εμένα, άρα mich."
+   },
+   {
+    "id": "h33-e-ihn",
+    "tag": "Εξήγησε",
+    "type": "flip",
+    "front": "Ποια η διαφορά ανάμεσα στο «Er wäscht sich» και στο «Er wäscht ihn»;",
+    "back": "Er wäscht sich: πλένεται, η ενέργεια γυρίζει σε αυτόν. Er wäscht ihn: πλένει κάποιον άλλον (ο Πέτρος τον Παύλο)."
+   },
+   {
+    "id": "h33-e-mich-hande",
+    "tag": "Εξήγησε",
+    "type": "flip",
+    "front": "Γιατί δεν λέμε «Ich wasche mich die Hände»;",
+    "back": "Γιατί το die Hände είναι ήδη το αιτιατικής αντικείμενο, άρα το mir είναι δοτική: πλένω σε εμένα τα χέρια, όχι «πλένω εμένα τα χέρια»."
+   },
+   {
+    "id": "h33-e-mou",
+    "tag": "Εξήγησε",
+    "type": "flip",
+    "front": "«Πλένω τα χέρια μου» και «μου πλένω τα χέρια»: τι είναι κάθε φορά το «μου»;",
+    "back": "Μετά το ουσιαστικό (τα χέρια μου): κτητική αντωνυμία (my hands). Πριν το ρήμα (μου πλένω): προσωπική αντωνυμία, η γερμανική δοτική."
+   },
+   {
+    "id": "h33-e-bein",
+    "tag": "Εξήγησε",
+    "type": "flip",
+    "front": "Γιατί ο Γερμανός λέει «Er hat das Bein im Krieg verloren» χωρίς sein;",
+    "back": "Για οικονομία: φαίνεται ότι είναι το δικό του πόδι, η κτητική περισσεύει. Ποιανού άλλου να έχασε;"
+   },
+   {
+    "id": "h33-drei",
+    "tag": "Το sich",
+    "type": "flip",
+    "front": "Σε σύγκριση με την προσωπική αντωνυμία στην αιτιατική, ποια πρόσωπα άλλαξαν στην αυτοπάθεια;",
+    "back": "Μόνο τρία: το τρίτο ενικό, το τρίτο πληθυντικό και η ευγένεια. Εκεί ο Γερμανός έβαλε το sich, για να φαίνεται ότι η ενέργεια γυρίζει πίσω."
+   },
+   {
+    "id": "h33-rosa-blau",
+    "tag": "Το sich",
+    "type": "flip",
+    "front": "Γιατί το sich είναι μια φορά ροζ και μια φορά μπλε;",
+    "back": "Στην άμεση αυτοπάθεια είναι «κλεμμένο» από τη στήλη της αιτιατικής (ροζ). Στην έμμεση είναι «κλεμμένο» από τη στήλη της δοτικής (μπλε). Η λέξη είναι ίδια, γι’ αυτό διαβάζεις όλη την πρόταση."
+   },
+   {
+    "id": "h33-ihm",
+    "tag": "Το sich",
+    "type": "choice",
+    "prompt": "Τι σημαίνει;",
+    "front": "Er wäscht <mark>ihm<\/mark> die Hände.",
+    "options": [
+     "ο Πέτρος πλένει τα χέρια σε άλλον (στον Παύλο)",
+     "ο Πέτρος πλένει τα χέρια του"
+    ],
+    "answer": "ο Πέτρος πλένει τα χέρια σε άλλον (στον Παύλο)",
+    "explain": "Με το ihm η ενέργεια πάει σε άλλον. Για τα δικά του χέρια: Er wäscht sich die Hände."
+   },
+   {
+    "id": "h33-energeia",
+    "tag": "Έμμεση αυτοπάθεια",
+    "type": "flip",
+    "front": "Ich wasche mir die Hände: πού πάει η ενέργεια άμεσα και πού έμμεσα;",
+    "back": "Άμεσα στα χέρια: εκεί πάει το νερό (die Hände, αιτιατική). Σε μένα φτάνει έμμεσα, γιατί χαίρομαι που πλένονται τα χέρια μου (mir, δοτική)."
+   },
+   {
+    "id": "h33-liebt-sich",
+    "tag": "Έμμεση αυτοπάθεια",
+    "type": "flip",
+    "front": "Τι αποδεικνύει η πρόταση «Ich wasche mir die Hände»;",
+    "back": "Ότι ο Γερμανός αγαπάει τον εαυτό του: ό,τι κάνει στους άλλους, το κάνει και στον εαυτό του."
+   },
+   {
+    "id": "h33-auto",
+    "tag": "Έμμεση αυτοπάθεια",
+    "type": "flip",
+    "front": "Ich kaufe mir ein Auto: ποια είναι η λογική;",
+    "back": "Κάνω κάτι καλό στον εαυτό μου, και ο εαυτός μου χαίρεται. Γι’ αυτό ο Γερμανός λέει πράγματα όπως «μου βλέπω μια ταινία» ή «μου αγοράζω ένα αυτοκίνητο»."
+   },
+   {
+    "id": "h33-stil",
+    "tag": "Χωρίς κτητική",
+    "type": "choice",
+    "front": "Ποια πρόταση προτιμά ο Γερμανός;",
+    "options": [
+     "Ich wasche mir die Hände.",
+     "Ich wasche meine Hände.",
+     "Ich wasche mir meine Hände."
+    ],
+    "answer": "Ich wasche mir die Hände.",
+    "explain": "Με το mir φαίνεται ήδη ότι τα χέρια είναι δικά σου, άρα οριστικό άρθρο. Το «meine Hände» είναι σωστό αλλά λιγότερο ωραίο, το «mir meine Hände» είναι σαν να το λες δύο φορές."
+   },
+   {
+    "id": "h33-mir-meine",
+    "tag": "Χωρίς κτητική",
+    "type": "choice",
+    "prompt": "Σωστό ή λάθος;",
+    "front": "Ich wasche mir meine Hände.",
+    "options": [
+     "λάθος: είναι σαν να το λες δύο φορές",
+     "σωστό, αλλά λιγότερο ωραίο στιλιστικά",
+     "έτσι το προτιμούν"
+    ],
+    "answer": "λάθος: είναι σαν να το λες δύο φορές",
+    "explain": "Το mir δείχνει ήδη ότι τα χέρια είναι δικά σου. Πες: Ich wasche mir die Hände."
+   },
+   {
+    "id": "h33-meine",
+    "tag": "Χωρίς κτητική",
+    "type": "choice",
+    "prompt": "Σωστό ή λάθος;",
+    "front": "Ich wasche meine Hände.",
+    "options": [
+     "σωστό, αλλά λιγότερο ωραίο στιλιστικά",
+     "λάθος: είναι σαν να το λες δύο φορές",
+     "έτσι το προτιμούν"
+    ],
+    "answer": "σωστό, αλλά λιγότερο ωραίο στιλιστικά",
+    "explain": "Ο Γερμανός, όταν μπορεί, παραλείπει την κτητική. Προτιμά: Ich wasche mir die Hände."
+   }
+  ]
+ },
+ {
+  "id": "4.1",
+  "title": "in, an, auf: πώς βλέπει ο Γερμανός τον τόπο",
+  "week": "Woche 4",
+  "cards": [
+   {
+    "id": "h41-stasi",
+    "tag": "Στάση",
+    "type": "flip",
+    "front": "Τι σημαίνει στάση για τον Γερμανό;",
+    "back": "Ότι δεν υπάρχει μετατόπιση από ένα σημείο σε άλλο. Αν τρέχω γύρους στο σαλόνι, παραμένω στο ίδιο σημείο: στάση. Από την καρέκλα στον καναπέ (από το Α στο Β): μετατόπιση. Και τη μετατόπιση πρέπει να τη λέει η πρόταση, με λέξεις."
+   },
+   {
+    "id": "h41-dativ",
+    "tag": "Στάση",
+    "type": "choice",
+    "front": "Στη στάση: δίπτωτη πρόθεση + ___",
+    "options": [
+     "δοτική",
+     "αιτιατική"
+    ],
+    "answer": "δοτική",
+    "explain": "Ο κανόνας είναι απλός: δίπτωτη πρόθεση + δοτική. Υπενθύμιση: im = in dem, am = an dem."
+   },
+   {
+    "id": "h41-neun",
+    "tag": "Οι εννιά δίπτωτες",
+    "type": "flip",
+    "front": "Πες τις εννιά δίπτωτες προθέσεις με τη σειρά (το τραπέζι με το συρτάρι).",
+    "back": "in · an · auf · neben · über · unter · vor · hinter · zwischen"
+   },
+   {
+    "id": "h41-regel",
+    "tag": "in, an, auf",
+    "type": "flip",
+    "front": "Πότε in, πότε auf, πότε an;",
+    "back": "in: κλειστός χώρος, είμαι μέσα. auf: ανοιχτή επιφάνεια, με το βάρος μου, με επαφή. an: όταν δεν ταιριάζει ούτε το in ούτε το auf (δεν χρειάζεται να ακουμπάς). Ο κανόνας της Κλεάνθης: όταν δεν σε βολεύει ούτε το in ούτε το auf, πήγαινε στο an."
+   },
+   {
+    "id": "h41-apenanti",
+    "tag": "Ο Γερμανός και ο τόπος",
+    "type": "flip",
+    "front": "Γιατί στα Ελληνικά ένα «σε» αρκεί, αλλά στα Γερμανικά όχι;",
+    "back": "Εμείς τα έχουμε απλοποιήσει: ένα σε και ένα άρθρο (στην καρέκλα, στην κατσαρόλα, στον δρόμο). Ο Γερμανός είναι αυστηρός με τον τόπο και τα περιγράφει όλα: απέναντι σημαίνει ακριβώς απέναντι."
+   },
+   {
+    "id": "h41-a-sessel",
+    "tag": "Στο σπίτι",
+    "type": "type",
+    "prompt": "Γράψε in, an ή auf μαζί με το άρθρο.",
+    "front": "Ich sitze ___ Sessel.",
+    "answers": [
+     "im"
+    ],
+    "explain": "Η πολυθρόνα έχει μπράτσα δεξιά και αριστερά: χουχουλιάζεις μέσα της.",
+    "alsoOk": [
+     "in dem"
+    ],
+    "alsoNote": "Σωστό, αλλά ο Γερμανός το συναιρεί: <b>im<\/b> (= in dem)."
+   },
+   {
+    "id": "h41-a-boden",
+    "tag": "Στο σπίτι",
+    "type": "type",
+    "prompt": "Γράψε in, an ή auf μαζί με το άρθρο.",
+    "front": "Die Kinder spielen ___ Boden.",
+    "answers": [
+     "auf dem"
+    ],
+    "explain": "Το πάτωμα είναι ανοιχτή επιφάνεια: auf, με το βάρος μου."
+   },
+   {
+    "id": "h41-a-wand",
+    "tag": "Στο σπίτι",
+    "type": "type",
+    "prompt": "Γράψε in, an ή auf μαζί με το άρθρο.",
+    "front": "Das Bild ist ___ Wand.",
+    "answers": [
+     "an der"
+    ],
+    "explain": "Η κορνίζα: μέσα στον τοίχο δεν είναι, πάνω στον τοίχο δεν κάθεται. Μένει το an."
+   },
+   {
+    "id": "h41-a-decke",
+    "tag": "Στο σπίτι",
+    "type": "type",
+    "prompt": "Γράψε in, an ή auf μαζί με το άρθρο.",
+    "front": "Die Lampe ist ___ Decke.",
+    "answers": [
+     "an der"
+    ],
+    "explain": "Το φωτιστικό σε ένα σημείο του ταβανιού: an. Και το ταβάνι είναι θηλυκό, «η ταβάνα»."
+   },
+   {
+    "id": "h41-a-topf",
+    "tag": "Στο σπίτι",
+    "type": "type",
+    "prompt": "Γράψε in, an ή auf μαζί με το άρθρο.",
+    "front": "Die Suppe ist ___ Topf.",
+    "answers": [
+     "im"
+    ],
+    "explain": "Στην κατσαρόλα, με ή χωρίς καπάκι: in.",
+    "alsoOk": [
+     "in dem"
+    ],
+    "alsoNote": "Σωστό, αλλά ο Γερμανός το συναιρεί: <b>im<\/b> (= in dem)."
+   },
+   {
+    "id": "h41-a-teller",
+    "tag": "Στο σπίτι",
+    "type": "type",
+    "prompt": "Γράψε in, an ή auf μαζί με το άρθρο.",
+    "front": "Das Brot ist ___ Teller.",
+    "answers": [
+     "auf dem"
+    ],
+    "explain": "Το πιάτο είναι ανοιχτή επιφάνεια: auf."
+   },
+   {
+    "id": "h41-a-toilette",
+    "tag": "Στο σπίτι",
+    "type": "type",
+    "prompt": "Γράψε in, an ή auf μαζί με το άρθρο.",
+    "front": "Er ist ___ Toilette.",
+    "answers": [
+     "auf der"
+    ],
+    "explain": "die Toilette = η λεκάνη, άρα σαν καρέκλα: auf."
+   },
+   {
+    "id": "h41-a-bett-schlafen",
+    "tag": "Στο σπίτι",
+    "type": "type",
+    "prompt": "Γράψε in, an ή auf μαζί με το άρθρο.",
+    "front": "Ich schlafe ___ Bett.",
+    "answers": [
+     "im"
+    ],
+    "explain": "Κοιμάμαι, ξεκουράζομαι: είμαι μέσα στο κρεβάτι.",
+    "alsoOk": [
+     "in dem"
+    ],
+    "alsoNote": "Σωστό, αλλά ο Γερμανός το συναιρεί: <b>im<\/b> (= in dem)."
+   },
+   {
+    "id": "h41-a-bett-waesche",
+    "tag": "Στο σπίτι",
+    "type": "type",
+    "prompt": "Γράψε in, an ή auf μαζί με το άρθρο.",
+    "front": "Die Wäsche ist ___ Bett.",
+    "answers": [
+     "auf dem"
+    ],
+    "explain": "Τα ασιδέρωτα πάνω στο κρεβάτι: εδώ το κρεβάτι είναι επιφάνεια."
+   },
+   {
+    "id": "h41-a-computer",
+    "tag": "Στο σπίτι",
+    "type": "type",
+    "prompt": "Γράψε in, an ή auf μαζί με το άρθρο.",
+    "front": "Ich arbeite ___ Computer.",
+    "answers": [
+     "am"
+    ],
+    "explain": "Στον υπολογιστή ούτε μέσα είμαι, ούτε πάνω. Μένει το an.",
+    "alsoOk": [
+     "an dem"
+    ],
+    "alsoNote": "Σωστό, αλλά ο Γερμανός το συναιρεί: <b>am<\/b> (= an dem)."
+   },
+   {
+    "id": "h41-b-meer-kaffee",
+    "tag": "Έξω",
+    "type": "type",
+    "prompt": "Γράψε in, an ή auf μαζί με το άρθρο.",
+    "front": "Wir trinken Kaffee ___ Meer.",
+    "answers": [
+     "am"
+    ],
+    "explain": "Στη θάλασσα για καφέ ή ηλιοθεραπεία: είμαι εκεί, όχι μέσα.",
+    "alsoOk": [
+     "an dem"
+    ],
+    "alsoNote": "Σωστό, αλλά ο Γερμανός το συναιρεί: <b>am<\/b> (= an dem)."
+   },
+   {
+    "id": "h41-b-meer-schwimmen",
+    "tag": "Έξω",
+    "type": "type",
+    "prompt": "Γράψε in, an ή auf μαζί με το άρθρο.",
+    "front": "Ich schwimme ___ Meer.",
+    "answers": [
+     "im"
+    ],
+    "explain": "Κολυμπάω: είμαι μέσα στη θάλασσα.",
+    "alsoOk": [
+     "in dem"
+    ],
+    "alsoNote": "Σωστό, αλλά ο Γερμανός το συναιρεί: <b>im<\/b> (= in dem)."
+   },
+   {
+    "id": "h41-b-boot",
+    "tag": "Έξω",
+    "type": "type",
+    "prompt": "Γράψε in, an ή auf μαζί με το άρθρο.",
+    "front": "Das Boot ist ___ Meer.",
+    "answers": [
+     "auf dem"
+    ],
+    "explain": "Η βάρκα επιπλέει: auf."
+   },
+   {
+    "id": "h41-b-voegel",
+    "tag": "Έξω",
+    "type": "type",
+    "prompt": "Γράψε in, an ή auf μαζί με το άρθρο.",
+    "front": "Die Vögel sind ___ Himmel.",
+    "answers": [
+     "am"
+    ],
+    "explain": "Τα σύννεφα και τα πουλιά: am Himmel. Im Himmel είναι μόνο ο Θεός και οι νεκροί.",
+    "alsoOk": [
+     "an dem"
+    ],
+    "alsoNote": "Σωστό, αλλά ο Γερμανός το συναιρεί: <b>am<\/b> (= an dem)."
+   },
+   {
+    "id": "h41-b-garten",
+    "tag": "Έξω",
+    "type": "type",
+    "prompt": "Γράψε in, an ή auf μαζί με το άρθρο.",
+    "front": "Die Kinder sind ___ Garten.",
+    "answers": [
+     "im"
+    ],
+    "explain": "Ο Garten είναι φυσικός κλειστός χώρος. Δεν χρειάζεται ταβάνι για να είναι κάτι κλειστός χώρος.",
+    "alsoOk": [
+     "in dem"
+    ],
+    "alsoNote": "Σωστό, αλλά ο Γερμανός το συναιρεί: <b>im<\/b> (= in dem)."
+   },
+   {
+    "id": "h41-b-hof",
+    "tag": "Έξω",
+    "type": "type",
+    "prompt": "Γράψε in, an ή auf μαζί με το άρθρο.",
+    "front": "Wir trinken Kaffee ___ Hof.",
+    "answers": [
+     "auf dem"
+    ],
+    "explain": "Το κομμάτι με τα πλακάκια, με τραπέζι για Kaffee und Kuchen στον ήλιο: επιφάνεια."
+   },
+   {
+    "id": "h41-b-chania",
+    "tag": "Έξω",
+    "type": "type",
+    "prompt": "Γράψε την πρόθεση.",
+    "front": "Ich wohne ___ Chania.",
+    "answers": [
+     "in"
+    ],
+    "explain": "Η πόλη είναι κλειστός χώρος (ψηλά κτίρια): in Chania, χωρίς άρθρο."
+   },
+   {
+    "id": "h41-b-markt",
+    "tag": "Έξω",
+    "type": "type",
+    "prompt": "Γράψε in, an ή auf μαζί με το άρθρο.",
+    "front": "Wir sind ___ Markt.",
+    "answers": [
+     "auf dem"
+    ],
+    "explain": "Στη λαϊκή: auf, γιατί οι λαϊκές γίνονται στις πλατείες (auf dem Platz)."
+   },
+   {
+    "id": "h41-g-regal",
+    "tag": "Πες το στα Γερμανικά",
+    "type": "type",
+    "prompt": "Η ραφιέρα είναι στον τοίχο.",
+    "front": "Das Regal ist ___ Wand.",
+    "answers": [
+     "an der"
+    ],
+    "explain": "Σε εξωτερικό τοίχο βολεύει μόνο το an. Όχι neben der Wand."
+   },
+   {
+    "id": "h41-g-kino",
+    "tag": "Πες το στα Γερμανικά",
+    "type": "type",
+    "prompt": "Ο Πέτρος κάθεται δίπλα μου στο σινεμά.",
+    "front": "Peter sitzt im Kino ___ mir.",
+    "answers": [
+     "neben"
+    ],
+    "explain": "Στο σινεμά, στη διπλανή θέση: ώμο με ώμο και κοιτάμε προς την ίδια κατεύθυνση, άρα neben."
+   },
+   {
+    "id": "h41-g-kamin",
+    "tag": "Πες το στα Γερμανικά",
+    "type": "type",
+    "prompt": "Η γιαγιά κάθεται στο τζάκι.",
+    "front": "Die Oma sitzt ___ Kamin.",
+    "answers": [
+     "am"
+    ],
+    "explain": "Μέσα στο τζάκι δεν είναι, πάνω του δεν κάθεται. Άρα an.",
+    "alsoOk": [
+     "an dem"
+    ],
+    "alsoNote": "Σωστό, αλλά ο Γερμανός το συναιρεί: <b>am<\/b> (= an dem)."
+   },
+   {
+    "id": "h41-g-lampe",
+    "tag": "Πες το στα Γερμανικά",
+    "type": "type",
+    "prompt": "Το φωτιστικό είναι πάνω από το τραπέζι.",
+    "front": "Die Lampe ist ___ Tisch.",
+    "answers": [
+     "über dem"
+    ],
+    "explain": "Πάνω από, χωρίς επαφή: über. Με επαφή θα ήταν auf dem Tisch."
+   },
+   {
+    "id": "h41-g-strasse",
+    "tag": "Πες το στα Γερμανικά",
+    "type": "type",
+    "prompt": "Το αμάξι είναι στον δρόμο.",
+    "front": "Das Auto ist ___ Straße.",
+    "answers": [
+     "auf der"
+    ],
+    "explain": "Το αμάξι στον δρόμο, με το βάρος του: auf."
+   },
+   {
+    "id": "h41-d-sofa",
+    "tag": "Εξήγησε",
+    "type": "flip",
+    "front": "Γιατί auf dem Sofa, αλλά im Sessel;",
+    "back": "Ο καναπές είναι ανοιχτή επιφάνεια, ενώ η πολυθρόνα έχει μπράτσα και χουχουλιάζεις μέσα της (κλειστός χώρος)."
+   },
+   {
+    "id": "h41-d-gras",
+    "tag": "Εξήγησε",
+    "type": "flip",
+    "front": "Γιατί εγώ είμαι auf dem Gras, αλλά το τσιμπούρι im Gras;",
+    "back": "Για εμένα το γρασίδι είναι επιφάνεια, για το τσιμπούρι είναι σαν δάσος. Σκεφτόμαστε πώς το βλέπει ο καθένας."
+   },
+   {
+    "id": "h41-d-bahnhof",
+    "tag": "Εξήγησε",
+    "type": "flip",
+    "front": "Γιατί εγώ είμαι im Hauptbahnhof, αλλά το τρένο φτάνει am Hauptbahnhof;",
+    "back": "Εγώ είμαι μέσα στο κτίριο. Για το τρένο ο σταθμός είναι σημείο στον χάρτη."
+   },
+   {
+    "id": "h41-d-neben-wand",
+    "tag": "Εξήγησε",
+    "type": "flip",
+    "front": "Γιατί δεν λέμε «Das Regal ist neben der Wand» για έναν εξωτερικό τοίχο;",
+    "back": "Γιατί neben σημαίνει ώμο με ώμο, και ο εξωτερικός τοίχος δεν έχει άκρη (ώμο). Εκεί βολεύει μόνο το an: Das Regal ist an der Wand."
+   },
+   {
+    "id": "h41-nagel",
+    "tag": "Στο σπίτι",
+    "type": "choice",
+    "front": "το καρφί στον τοίχο",
+    "options": [
+     "in der Wand",
+     "an der Wand",
+     "auf der Wand"
+    ],
+    "answer": "in der Wand",
+    "explain": "Το καρφί είναι όντως χωμένο μέσα στον τοίχο: in der Wand. Η κορνίζα όμως: an der Wand."
+   },
+   {
+    "id": "h41-pfanne",
+    "tag": "Στην κουζίνα",
+    "type": "choice",
+    "front": "στο τηγάνι",
+    "options": [
+     "in der Pfanne",
+     "auf der Pfanne"
+    ],
+    "answer": "in der Pfanne",
+    "explain": "Στο τηγάνι: in, αλλιώς θα έπεφταν τα λάδια έξω."
+   },
+   {
+    "id": "h41-badewanne",
+    "tag": "Στο μπάνιο",
+    "type": "choice",
+    "front": "στην μπανιέρα",
+    "options": [
+     "in der Badewanne",
+     "auf der Badewanne",
+     "an der Badewanne"
+    ],
+    "answer": "in der Badewanne",
+    "explain": "Μπανιέρα, ντουζιέρα, νιπτήρας: γούρνα, τα νερά μαζεύονται κάτω. Άρα in."
+   },
+   {
+    "id": "h41-decke-artikel",
+    "tag": "Στο σπίτι",
+    "type": "type",
+    "prompt": "Γράψε το άρθρο.",
+    "front": "___ Decke (το ταβάνι)",
+    "answers": [
+     "die"
+    ],
+    "explain": "Για να θυμάσαι ότι το ταβάνι είναι θηλυκό, πες το «η ταβάνα»."
+   },
+   {
+    "id": "h41-ecke",
+    "tag": "Στο σπίτι",
+    "type": "flip",
+    "front": "in der Ecke / an der Ecke",
+    "back": "in der Ecke: η εσωτερική γωνία, μέσα στο σπίτι. an der Ecke: η εξωτερική γωνία, έξω στον δρόμο."
+   },
+   {
+    "id": "h41-fliege-lehne",
+    "tag": "Η μύγα και το τσιμπούρι",
+    "type": "choice",
+    "front": "Η μύγα κάθεται στην πλάτη της καρέκλας.",
+    "options": [
+     "an",
+     "auf",
+     "in"
+    ],
+    "answer": "an",
+    "explain": "Η πλάτη για εμάς είναι σαν τοίχος, άρα an."
+   },
+   {
+    "id": "h41-fliege-rand",
+    "tag": "Η μύγα και το τσιμπούρι",
+    "type": "choice",
+    "front": "Η μύγα κάθεται στο πάνω πάνω χείλος της πλάτης της καρέκλας.",
+    "options": [
+     "auf",
+     "an",
+     "in"
+    ],
+    "answer": "auf",
+    "explain": "Για το μέγεθός της αυτό είναι επιφάνεια, άρα auf. Όλα είναι σχετικά."
+   },
+   {
+    "id": "h41-neben",
+    "tag": "neben",
+    "type": "flip",
+    "front": "Τι σημαίνει ακριβώς neben;",
+    "back": "Δίπλα σε, ώμο με ώμο, και να κοιτάμε προς την ίδια κατεύθυνση: στο θρανίο με τον διπλανό μας, στο σινεμά στη διπλανή θέση. Ώμους έχουν και τα έπιπλα (τα πλάγιά τους), και τα κτίρια."
+   },
+   {
+    "id": "h41-bei",
+    "tag": "neben",
+    "type": "choice",
+    "front": "Στο τηλέφωνο: «Δίπλα μου είναι ο Πέτρος» (εδώ μαζί μου, με την ευρεία έννοια).",
+    "options": [
+     "Peter ist bei mir.",
+     "Peter ist neben mir."
+    ],
+    "answer": "Peter ist bei mir.",
+    "explain": "Με την ευρεία έννοια ο Γερμανός δεν λέει neben, λέει bei (κοντά σε). Το bei δεν ανήκει στις εννιά δίπτωτες: παίρνει πάντα δοτική."
+   },
+   {
+    "id": "h41-an-beziehung",
+    "tag": "an: η σχέση με τον τόπο",
+    "type": "flip",
+    "front": "Die Oma sitzt am Kamin / am Fenster. Τι δείχνει εδώ το an;",
+    "back": "Μια σχέση ανάμεσα στο υποκείμενο και στον τόπο: το τζάκι είναι αναμμένο, το παράθυρο ανοιχτό με ήλιο και θέα. Η γιαγιά είναι εκεί για να απολαύσει τη ζεστασιά ή τον ήλιο."
+   },
+   {
+    "id": "h41-vor-fenster",
+    "tag": "an: η σχέση με τον τόπο",
+    "type": "choice",
+    "front": "Κατάθεση στην αστυνομία: «Ο Πέτρος ήταν μπροστά από το παράθυρο.»",
+    "options": [
+     "Peter war vor dem Fenster.",
+     "Peter war am Fenster."
+    ],
+    "answer": "Peter war vor dem Fenster.",
+    "explain": "Η αστυνομία πρέπει να ξέρει ακριβώς πού. Για να γίνεις πιο περιγραφικός, παίρνεις μία από τις άλλες έξι: vor."
+   },
+   {
+    "id": "h41-jacke",
+    "tag": "an: η σχέση με τον τόπο",
+    "type": "choice",
+    "front": "Η ζακέτα σκεπάζει ολόκληρη την καρέκλα. Το πιο περιγραφικό:",
+    "options": [
+     "über dem Stuhl",
+     "am Stuhl",
+     "auf dem Stuhl"
+    ],
+    "answer": "über dem Stuhl",
+    "explain": "Το am Stuhl είναι σωστό. Αν όμως τη σκεπάζει ολόκληρη, πιο περιγραφικό είναι το über: σημαίνει «πάνω από», αλλά και «σκεπάζει»."
+   },
+   {
+    "id": "h41-garten",
+    "tag": "Έξω",
+    "type": "flip",
+    "front": "Πότε ένας χώρος είναι Garten για τον Γερμανό;",
+    "back": "Ο Γερμανός κοιτάει κάτω: αν δεν έχει χώμα, δεν είναι κήπος. Μια αυλή με γλάστρες δεν είναι Garten. Garten, Park και Wald είναι φυσικοί κλειστοί χώροι: im Garten, im Park, im Wald."
+   },
+   {
+    "id": "h41-tal",
+    "tag": "Έξω",
+    "type": "choice",
+    "front": "στην κοιλάδα",
+    "options": [
+     "im Tal",
+     "auf dem Tal",
+     "am Tal"
+    ],
+    "answer": "im Tal",
+    "explain": "Πεδιάδα ανάμεσα σε δύο βουνά: κλειστή, άρα in."
+   },
+   {
+    "id": "h41-haltestelle",
+    "tag": "Έξω",
+    "type": "choice",
+    "front": "στη στάση του λεωφορείου (σημείο μέσα στην πόλη)",
+    "options": [
+     "an der Haltestelle",
+     "auf der Haltestelle",
+     "in der Haltestelle"
+    ],
+    "answer": "an der Haltestelle",
+    "explain": "an = σημείο στον χάρτη: an der Ampel, an der Haltestelle, an der Kreuzung."
+   },
+   {
+    "id": "h41-boot-ich",
+    "tag": "Στο νερό",
+    "type": "choice",
+    "front": "εγώ στη βάρκα",
+    "options": [
+     "im Boot",
+     "auf dem Boot"
+    ],
+    "answer": "im Boot",
+    "explain": "Εγώ στη βάρκα: σαν πολυθρόνα, άρα in. Στη σχεδία όμως: auf dem Floß."
+   },
+   {
+    "id": "h41-opa",
+    "tag": "Στο νερό και στον ουρανό",
+    "type": "choice",
+    "front": "Ο παππούς (που πέθανε) είναι ___ Himmel.",
+    "options": [
+     "im",
+     "am"
+    ],
+    "answer": "im",
+    "explain": "Im Himmel είναι μόνο ο Θεός και οι νεκροί. Τα σύννεφα και τα πουλιά: am Himmel."
+   },
+   {
+    "id": "h41-berg",
+    "tag": "Βουνό, χωριό, πόλη",
+    "type": "choice",
+    "front": "στην οροσειρά, στα βουνά",
+    "options": [
+     "in den Bergen",
+     "auf den Bergen"
+    ],
+    "answer": "in den Bergen",
+    "explain": "Στα βουνά είσαι μέσα: in den Bergen. Στο βουνό, στην κορυφή: auf dem Berg."
+   },
+   {
+    "id": "h41-wohnen-strasse",
+    "tag": "Βουνό, χωριό, πόλη",
+    "type": "choice",
+    "front": "μένω στην οδό …",
+    "options": [
+     "in der …straße",
+     "auf der …straße",
+     "an der …straße"
+    ],
+    "answer": "in der …straße",
+    "explain": "Μένω στην οδό …: in der …straße είναι η μόνη απάντηση. Auf der Straße είναι το αμάξι ή τα παιδιά που παίζουν."
+   }
+  ]
+ },
+ {
+  "id": "4.2",
+  "title": "Τα πέντε ρήματα της στάσης",
+  "week": "Woche 4",
+  "cards": [
+   {
+    "id": "h42-fuenf",
+    "tag": "Τα πέντε ρήματα",
+    "type": "flip",
+    "front": "Τα πέντε ρήματα της στάσης, με τη σειρά. Τι σημαίνει το καθένα;",
+    "back": "stehen: είμαι όρθιος · sitzen: είμαι καθιστός · liegen: είμαι ξαπλωμένος · hängen: είμαι κρεμασμένος · stecken: είμαι χωμένος"
+   },
+   {
+    "id": "h42-sein",
+    "tag": "Τα πέντε ρήματα",
+    "type": "flip",
+    "front": "Γιατί στα Γερμανικά το «είμαι» δεν φτάνει;",
+    "back": "Μπορείς να πεις ότι κάτι είναι πάνω στην καρέκλα. Ο Γερμανός όμως, που είναι περιγραφικός, λέει πώς είναι: όρθιο, καθιστό, ξαπλωμένο, κρεμασμένο ή χωμένο."
+   },
+   {
+    "id": "h42-stecken",
+    "tag": "Τα πέντε ρήματα",
+    "type": "flip",
+    "front": "Πότε χρησιμοποιούμε stecken;",
+    "back": "Όταν κάτι δεν έχει πολύ χώρο εκεί που είναι. Είναι λίγο κλειστοφοβικό: τα μολύβια στη μολυβοθήκη, τα κλειδιά στην τσέπη."
+   },
+   {
+    "id": "h42-sicher",
+    "tag": "Πότε είναι σίγουρα στάση;",
+    "type": "choice",
+    "front": "Με ποια ρήματα βάζεις το χέρι σου στη φωτιά ότι μιλάμε για στάση;",
+    "options": [
+     "stehen, sitzen, liegen",
+     "hängen, stecken",
+     "και τα πέντε"
+    ],
+    "answer": "stehen, sitzen, liegen",
+    "explain": "Το hängen και το stecken είναι μπερδεψιάρικα: θα τα δούμε και για κίνηση (κρεμάω κάτι, χώνω κάτι). Όταν τα βλέπεις, σκέψου πρώτα."
+   },
+   {
+    "id": "h42-a-lampe",
+    "tag": "Τα πέντε ρήματα",
+    "type": "type",
+    "prompt": "Διάλεξε stehen, sitzen, liegen, hängen ή stecken και κλίνε το.",
+    "front": "Die Lampe ___ über dem Tisch.",
+    "answers": [
+     "hängt"
+    ],
+    "explain": "Η λάμπα πάνω από το τραπέζι είναι κρεμασμένη: hängen."
+   },
+   {
+    "id": "h42-a-schuhe",
+    "tag": "Τα πέντε ρήματα",
+    "type": "type",
+    "prompt": "Διάλεξε stehen, sitzen, liegen, hängen ή stecken και κλίνε το.",
+    "front": "Die Schuhe ___ unter dem Bett.",
+    "answers": [
+     "stehen"
+    ],
+    "explain": "Τα παπούτσια stehen, ακόμα και οι μπαλαρίνες που είναι ίσιες."
+   },
+   {
+    "id": "h42-a-schluessel",
+    "tag": "Τα πέντε ρήματα",
+    "type": "type",
+    "prompt": "Διάλεξε stehen, sitzen, liegen, hängen ή stecken και κλίνε το.",
+    "front": "Der Schlüssel ___ in meiner Tasche.",
+    "answers": [
+     "steckt"
+    ],
+    "explain": "Το κλειδί στην τσέπη δεν έχει πολύ χώρο: stecken, το κλειστοφοβικό."
+   },
+   {
+    "id": "h42-a-bett",
+    "tag": "Τα πέντε ρήματα",
+    "type": "type",
+    "prompt": "Διάλεξε stehen, sitzen, liegen, hängen ή stecken και κλίνε το.",
+    "front": "Ich ___ im Bett und lese.",
+    "answers": [
+     "liege"
+    ],
+    "explain": "Στο κρεβάτι είμαι ξαπλωμένος: liegen."
+   },
+   {
+    "id": "h42-a-sofa",
+    "tag": "Τα πέντε ρήματα",
+    "type": "type",
+    "prompt": "Διάλεξε stehen, sitzen, liegen, hängen ή stecken και κλίνε το.",
+    "front": "Wir ___ auf dem Sofa und sehen fern.",
+    "answers": [
+     "sitzen"
+    ],
+    "explain": "Καθόμαστε στον καναπέ: sitzen."
+   },
+   {
+    "id": "h42-a-bild",
+    "tag": "Τα πέντε ρήματα",
+    "type": "type",
+    "prompt": "Διάλεξε stehen, sitzen, liegen, hängen ή stecken και κλίνε το.",
+    "front": "Das Bild ___ an der Wand.",
+    "answers": [
+     "hängt"
+    ],
+    "explain": "Η κορνίζα στον τοίχο είναι κρεμασμένη: hängen."
+   },
+   {
+    "id": "h42-a-stifte",
+    "tag": "Τα πέντε ρήματα",
+    "type": "type",
+    "prompt": "Διάλεξε stehen, sitzen, liegen, hängen ή stecken και κλίνε το.",
+    "front": "Die Stifte ___ im Stifthalter.",
+    "answers": [
+     "stecken"
+    ],
+    "explain": "Τα μολύβια στη μολυβοθήκη: χωμένα, χωρίς πολύ χώρο."
+   },
+   {
+    "id": "h42-a-essen",
+    "tag": "Τα πέντε ρήματα",
+    "type": "type",
+    "prompt": "Διάλεξε stehen, sitzen, liegen, hängen ή stecken και κλίνε το.",
+    "front": "Das Essen ___ schon auf dem Tisch. Kommt!",
+    "answers": [
+     "steht"
+    ],
+    "explain": "Το φαγητό είναι σερβιρισμένο: steht. Φαντάσου το πιάτο να έχει τακούνια, όπως τα παπούτσια."
+   },
+   {
+    "id": "h42-b-auf",
+    "tag": "Πρόθεση + δοτική",
+    "type": "type",
+    "prompt": "Γράψε την πρόθεση και το άρθρο στη δοτική.",
+    "front": "Das Buch liegt ___ Tisch. (πάνω σε)",
+    "answers": [
+     "auf dem"
+    ],
+    "explain": "Στη στάση: δίπτωτη πρόθεση + δοτική. der Tisch → auf dem Tisch."
+   },
+   {
+    "id": "h42-b-unter",
+    "tag": "Πρόθεση + δοτική",
+    "type": "type",
+    "prompt": "Γράψε την πρόθεση και το άρθρο στη δοτική.",
+    "front": "Die Katze sitzt ___ Stuhl. (κάτω από)",
+    "answers": [
+     "unter dem"
+    ],
+    "explain": "der Stuhl → unter dem Stuhl."
+   },
+   {
+    "id": "h42-b-zwischen",
+    "tag": "Πρόθεση + δοτική",
+    "type": "choice",
+    "front": "Der Schrank steht ___. (ανάμεσα σε)",
+    "options": [
+     "zwischen dem Fenster und der Tür",
+     "zwischen das Fenster und die Tür",
+     "zwischen den Fenster und die Tür"
+    ],
+    "answer": "zwischen dem Fenster und der Tür",
+    "explain": "Στάση, άρα δοτική και στα δύο: das Fenster → dem Fenster, die Tür → der Tür."
+   },
+   {
+    "id": "h42-b-vor",
+    "tag": "Πρόθεση + δοτική",
+    "type": "type",
+    "prompt": "Γράψε την πρόθεση και το άρθρο στη δοτική.",
+    "front": "Das Auto steht ___ Haus. (μπροστά από)",
+    "answers": [
+     "vor dem"
+    ],
+    "explain": "das Haus → vor dem Haus. Αν ξέρεις τη δοτική (dem, der, dem, den), δεν γίνεται να κάνεις λάθος."
+   },
+   {
+    "id": "h42-b-hinter",
+    "tag": "Πρόθεση + δοτική",
+    "type": "type",
+    "prompt": "Γράψε την πρόθεση και το άρθρο στη δοτική.",
+    "front": "Der Garten liegt ___ Haus. (πίσω από)",
+    "answers": [
+     "hinter dem"
+    ],
+    "explain": "das Haus → hinter dem Haus."
+   },
+   {
+    "id": "h42-g-gefaengnis",
+    "tag": "Στην καθημερινότητα",
+    "type": "type",
+    "prompt": "Πες το στα Γερμανικά. Ο Πέτρος είναι στη φυλακή.",
+    "front": "Peter ___ im Gefängnis.",
+    "answers": [
+     "sitzt"
+    ],
+    "explain": "Ο Γερμανός λέει ότι κάθεται στη φυλακή. Μας ακούγεται λίγο τρελό, όμως η εικόνα γίνεται πιο ζωντανή."
+   },
+   {
+    "id": "h42-g-krankenhaus",
+    "tag": "Στην καθημερινότητα",
+    "type": "type",
+    "prompt": "Πες το στα Γερμανικά. Νοσηλεύομαι.",
+    "front": "Ich ___ im Krankenhaus.",
+    "answers": [
+     "liege"
+    ],
+    "explain": "Είναι ξαπλωμένος, αυτός είναι τώρα ο άρρωστος. Με ένα ρήμα λύνεται η αβεβαιότητα."
+   },
+   {
+    "id": "h42-g-essen",
+    "tag": "Στην καθημερινότητα",
+    "type": "type",
+    "prompt": "Πες το στα Γερμανικά. Το φαγητό είναι χυμένο στο τραπέζι.",
+    "front": "Das Essen ___ auf dem Tisch.",
+    "answers": [
+     "liegt"
+    ],
+    "explain": "Αλλάζοντας μόνο το ρήμα: steht = σερβιρισμένο, liegt = χυμένο."
+   },
+   {
+    "id": "h42-g-boot",
+    "tag": "Οι εκφράσεις",
+    "type": "type",
+    "prompt": "Πες το στα Γερμανικά. Είμαστε όλοι στην ίδια βάρκα.",
+    "front": "Wir ___ alle im selben Boot.",
+    "answers": [
+     "sitzen"
+    ],
+    "explain": "Όλοι στην ίδια βάρκα: είμαστε όλοι στην ίδια δύσκολη κατάσταση."
+   },
+   {
+    "id": "h42-g-schlauch",
+    "tag": "Οι εκφράσεις",
+    "type": "type",
+    "prompt": "Πες το στα Γερμανικά. Δεν καταλαβαίνω τίποτα.",
+    "front": "Ich ___ auf dem Schlauch.",
+    "answers": [
+     "stehe"
+    ],
+    "explain": "Πατάω το λάστιχο του ποτίσματος και το νερό (η σκέψη) δεν περνάει."
+   },
+   {
+    "id": "h42-essen-diff",
+    "tag": "Τα περίεργα του stehen",
+    "type": "flip",
+    "front": "Das Essen steht auf dem Tisch / Das Essen liegt auf dem Tisch",
+    "back": "steht: το φαγητό είναι σερβιρισμένο (το πιάτο με τακούνια, σαν παπούτσι). liegt: το φαγητό είναι χυμένο πάνω στο τραπέζι."
+   },
+   {
+    "id": "h42-kh-diff",
+    "tag": "Στην καθημερινότητα",
+    "type": "flip",
+    "front": "Ο Πέτρος, γιατρός, στο τηλέφωνο: «Ich bin im Krankenhaus» ή «Ich liege im Krankenhaus»;",
+    "back": "Ich bin im Krankenhaus: είμαι στο νοσοκομείο, στη δουλειά, δεν ανησυχώ. Ich liege im Krankenhaus: νοσηλεύομαι, αυτός είναι τώρα ο άρρωστος."
+   },
+   {
+    "id": "h42-ballerinas",
+    "tag": "Τα περίεργα του stehen",
+    "type": "choice",
+    "front": "Τα παπούτσια (ακόμα και οι ίσιες μπαλαρίνες) κάτω από το κρεβάτι:",
+    "options": [
+     "stehen",
+     "liegen"
+    ],
+    "answer": "stehen",
+    "explain": "Τα παπούτσια δεν χρειάζεται να έχουν τακούνι: ακόμα και οι μπαλαρίνες stehen."
+   },
+   {
+    "id": "h42-x-druck",
+    "tag": "Οι εκφράσεις",
+    "type": "choice",
+    "prompt": "Τι σημαίνει;",
+    "front": "unter Druck stehen",
+    "options": [
+     "είμαι υπό πίεση",
+     "είμαι ανυπόμονος",
+     "έχω πολλά χρέη"
+    ],
+    "answer": "είμαι υπό πίεση",
+    "explain": "unter Druck stehen = είμαι υπό πίεση."
+   },
+   {
+    "id": "h42-x-abgrund",
+    "tag": "Οι εκφράσεις",
+    "type": "choice",
+    "prompt": "Τι σημαίνει;",
+    "front": "am Abgrund stehen",
+    "options": [
+     "είμαι λίγο πριν από την καταστροφή",
+     "δεν καταλαβαίνω τίποτα",
+     "είμαι εξουθενωμένος"
+    ],
+    "answer": "είμαι λίγο πριν από την καταστροφή",
+    "explain": "Στέκομαι στον γκρεμό."
+   },
+   {
+    "id": "h42-x-kohlen",
+    "tag": "Οι εκφράσεις",
+    "type": "choice",
+    "prompt": "Τι σημαίνει;",
+    "front": "auf heißen Kohlen sitzen",
+    "options": [
+     "είμαι ανυπόμονος",
+     "είμαι υπό πίεση",
+     "έχω στερέψει από ιδέες"
+    ],
+    "answer": "είμαι ανυπόμονος",
+    "explain": "Κάθομαι σε αναμμένα κάρβουνα."
+   },
+   {
+    "id": "h42-x-trocken",
+    "tag": "Οι εκφράσεις",
+    "type": "choice",
+    "prompt": "Τι σημαίνει;",
+    "front": "auf dem Trockenen sitzen",
+    "options": [
+     "έχω στερέψει (π.χ. από έμπνευση, από ιδέες)",
+     "είμαι στην ίδια δύσκολη κατάσταση",
+     "είμαι ανυπόμονος"
+    ],
+    "answer": "έχω στερέψει (π.χ. από έμπνευση, από ιδέες)",
+    "explain": "Κάθομαι στο στεγνό."
+   },
+   {
+    "id": "h42-x-truemmer",
+    "tag": "Οι εκφράσεις",
+    "type": "type",
+    "prompt": "Συμπλήρωσε το ρήμα (κλιμένο).",
+    "front": "Alles ___ in Trümmern. (όλα έχουν διαλυθεί)",
+    "answers": [
+     "liegt"
+    ],
+    "explain": "Όλα είναι ερείπια: όλα έχουν διαλυθεί, γκρεμιστεί."
+   },
+   {
+    "id": "h42-x-nerven",
+    "tag": "Οι εκφράσεις",
+    "type": "choice",
+    "prompt": "Τι σημαίνει;",
+    "front": "Die Nerven liegen blank.",
+    "options": [
+     "είμαι ευερέθιστος, τσαντίζομαι με το παραμικρό",
+     "η απόφαση έχει παγώσει",
+     "είμαι σε δύσκολη θέση"
+    ],
+    "answer": "είμαι ευερέθιστος, τσαντίζομαι με το παραμικρό",
+    "explain": "Τα νεύρα σαν καλώδια χωρίς μόνωση, γυμνά."
+   },
+   {
+    "id": "h42-blank",
+    "tag": "Οι εκφράσεις",
+    "type": "flip",
+    "front": "Τι σημαίνει blank στο «Die Nerven liegen blank»;",
+    "back": "Γυμνό, για ένα καλώδιο. Για άνθρωπο που είναι γυμνός έχουμε άλλο επίθετο, και για γυμνά χέρια πάλι άλλο."
+   },
+   {
+    "id": "h42-x-eis",
+    "tag": "Οι εκφράσεις",
+    "type": "type",
+    "prompt": "Συμπλήρωσε το ρήμα (κλιμένο).",
+    "front": "Die Entscheidung ___ auf Eis. (η απόφαση έχει παγώσει)",
+    "answers": [
+     "liegt"
+    ],
+    "explain": "Η απόφαση είναι στον πάγο."
+   },
+   {
+    "id": "h42-x-haengen-lassen",
+    "tag": "Οι εκφράσεις",
+    "type": "choice",
+    "prompt": "Τι σημαίνει;",
+    "front": "Du lässt mich hängen.",
+    "options": [
+     "με αφήνεις στα κρύα του λουτρού",
+     "με αφήνεις ήσυχο",
+     "με κρατάς υπό πίεση"
+    ],
+    "answer": "με αφήνεις στα κρύα του λουτρού",
+    "explain": "Με αφήνεις να κρέμομαι."
+   },
+   {
+    "id": "h42-x-luft",
+    "tag": "Οι εκφράσεις",
+    "type": "choice",
+    "prompt": "Τι σημαίνει;",
+    "front": "in der Luft hängen",
+    "options": [
+     "δεν ξέρω τι να κάνω, δεν έχω προσανατολισμό",
+     "είμαι εξαρτημένος από το αλκοόλ",
+     "είμαι λίγο πριν από την καταστροφή"
+    ],
+    "answer": "δεν ξέρω τι να κάνω, δεν έχω προσανατολισμό",
+    "explain": "Κρέμομαι στον αέρα."
+   },
+   {
+    "id": "h42-x-flasche",
+    "tag": "Οι εκφράσεις",
+    "type": "choice",
+    "prompt": "Τι σημαίνει;",
+    "front": "an der Flasche hängen",
+    "options": [
+     "είμαι εξαρτημένος από το αλκοόλ",
+     "έχω πολλά χρέη",
+     "είμαι εξουθενωμένος"
+    ],
+    "answer": "είμαι εξαρτημένος από το αλκοόλ",
+    "explain": "Κρέμομαι από το μπουκάλι: alkoholabhängig."
+   },
+   {
+    "id": "h42-x-schulden",
+    "tag": "Οι εκφράσεις",
+    "type": "choice",
+    "prompt": "Ποιο ρήμα;",
+    "front": "bis zum Hals in Schulden ___",
+    "options": [
+     "stecken",
+     "hängen",
+     "liegen"
+    ],
+    "answer": "stecken",
+    "explain": "Χωμένος στα χρέη ως τον λαιμό: έχω πολλά χρέη."
+   },
+   {
+    "id": "h42-x-klemme",
+    "tag": "Οι εκφράσεις",
+    "type": "choice",
+    "prompt": "Τι σημαίνει;",
+    "front": "in der Klemme stecken",
+    "options": [
+     "είμαι σε δύσκολη θέση",
+     "είμαι τέρμα απασχολημένος",
+     "δεν καταλαβαίνω τίποτα"
+    ],
+    "answer": "είμαι σε δύσκολη θέση",
+    "explain": "die Klemme: το «κλέμα» των ηλεκτρολόγων, κάτι που πιάνει και πιέζει."
+   },
+   {
+    "id": "h42-x-mitten",
+    "tag": "Οι εκφράσεις",
+    "type": "choice",
+    "prompt": "Τι σημαίνει;",
+    "front": "mitten in den Vorbereitungen stecken",
+    "options": [
+     "είμαι τέρμα απασχολημένος",
+     "είμαι σε δύσκολη θέση",
+     "έχω στερέψει από ιδέες"
+    ],
+    "answer": "είμαι τέρμα απασχολημένος",
+    "explain": "Χωμένος στη μέση, σαν μολύβι στη μολυβοθήκη."
+   },
+   {
+    "id": "h42-mitten-regel",
+    "tag": "Οι εκφράσεις",
+    "type": "flip",
+    "front": "Τι πρέπει να προσέξεις στο mitten;",
+    "back": "Το mitten (στη μέση) δεν πάει ποτέ μόνο του. Θέλει μετά άλλη πρόθεση: mitten in + δοτική."
+   },
+   {
+    "id": "h42-z-stehen",
+    "tag": "Αρχικοί χρόνοι",
+    "type": "type",
+    "prompt": "Γράψε Präteritum και Μετοχή.",
+    "front": "stehen",
+    "answers": [
+     "stand, gestanden",
+     "stand gestanden",
+     "stand / gestanden"
+    ],
+    "explain": "Ανώμαλο: stehen, stand, gestanden."
+   },
+   {
+    "id": "h42-z-sitzen",
+    "tag": "Αρχικοί χρόνοι",
+    "type": "type",
+    "prompt": "Γράψε Präteritum και Μετοχή.",
+    "front": "sitzen",
+    "answers": [
+     "saß, gesessen",
+     "saß gesessen",
+     "saß / gesessen"
+    ],
+    "explain": "Ανώμαλο: sitzen, saß, gesessen."
+   },
+   {
+    "id": "h42-z-liegen",
+    "tag": "Αρχικοί χρόνοι",
+    "type": "type",
+    "prompt": "Γράψε Präteritum και Μετοχή.",
+    "front": "liegen",
+    "answers": [
+     "lag, gelegen",
+     "lag gelegen",
+     "lag / gelegen"
+    ],
+    "explain": "Ανώμαλο: liegen, lag, gelegen."
+   },
+   {
+    "id": "h42-z-haengen",
+    "tag": "Αρχικοί χρόνοι",
+    "type": "type",
+    "prompt": "Γράψε Präteritum και Μετοχή.",
+    "front": "hängen",
+    "answers": [
+     "hing, gehangen",
+     "hing gehangen",
+     "hing / gehangen"
+    ],
+    "explain": "Ανώμαλο: hängen, hing, gehangen."
+   },
+   {
+    "id": "h42-z-stecken",
+    "tag": "Αρχικοί χρόνοι",
+    "type": "type",
+    "prompt": "Γράψε Präteritum και Μετοχή.",
+    "front": "stecken",
+    "answers": [
+     "steckte, gesteckt",
+     "steckte gesteckt",
+     "steckte / gesteckt"
+    ],
+    "explain": "Το «περίεργο»: για κάποιο περίεργο λόγο το stecken είναι ομαλό."
+   },
+   {
+    "id": "h42-regelmaessig",
+    "tag": "Αρχικοί χρόνοι",
+    "type": "choice",
+    "front": "Ποιο από τα πέντε ρήματα είναι το «περίεργο», δηλαδή ομαλό;",
+    "options": [
+     "stecken",
+     "hängen",
+     "liegen",
+     "sitzen"
+    ],
+    "answer": "stecken",
+    "explain": "Όλα είναι ανώμαλα, εκτός από το stecken: stecken, steckte, gesteckt."
+   }
+  ]
+ },
+ {
+  "id": "4.3",
+  "title": "Πηγαίνω ή βάζω: τα διαβολάκια",
+  "week": "Woche 4",
+  "cards": [
+   {
+    "id": "h43-kinisi",
+    "tag": "Τι είναι κίνηση",
+    "type": "flip",
+    "front": "Τρέχω γύρους στο σαλόνι. Είναι κίνηση για τον Γερμανό;",
+    "back": "Όχι. Όλο το σαλόνι είναι το σημείο Α, κι εγώ παραμένω στο σημείο Α. Κίνηση είναι η μετατόπιση από το σημείο Α (την καρέκλα μου) στο σημείο Β (την πολυθρόνα μου)."
+   },
+   {
+    "id": "h43-dyo-simeia",
+    "tag": "Τι είναι κίνηση",
+    "type": "flip",
+    "front": "Τι πρέπει να ισχύει για τα δύο σημεία της κίνησης;",
+    "back": "Πρέπει να τα λέει η πρόταση. Δεν αρκεί να τα φανταζόμαστε εμείς."
+   },
+   {
+    "id": "h43-im-zimmer",
+    "tag": "Το ρήμα που δεν ξέρεις",
+    "type": "choice",
+    "prompt": "Το ρήμα λείπει. Τι καταλαβαίνουμε;",
+    "front": "Das Kind ___ <mark>im<\/mark> Zimmer.",
+    "options": [
+     "Ξέρουμε μόνο πού βρίσκεται το παιδί.",
+     "Το παιδί πηγαίνει μέσα στο δωμάτιο.",
+     "Το παιδί κοιμάται στο δωμάτιο."
+    ],
+    "answer": "Ξέρουμε μόνο πού βρίσκεται το παιδί.",
+    "explain": "Δίπτωτη πρόθεση και δοτική: στάση. Μπορεί να τρέχει, να κοιμάται, να τρώει, να καβαλάει το αλογάκι του. Δεν ξέρουμε."
+   },
+   {
+    "id": "h43-ins-zimmer",
+    "tag": "Το ρήμα που δεν ξέρεις",
+    "type": "choice",
+    "prompt": "Το ρήμα λείπει. Τι καταλαβαίνουμε;",
+    "front": "Das Kind ___ <mark>ins<\/mark> Zimmer.",
+    "options": [
+     "Το παιδί πηγαίνει μέσα στο δωμάτιο.",
+     "Ξέρουμε μόνο πού βρίσκεται το παιδί.",
+     "Δεν καταλαβαίνουμε τίποτα χωρίς το ρήμα."
+    ],
+    "answer": "Το παιδί πηγαίνει μέσα στο δωμάτιο.",
+    "explain": "ins = in das, αιτιατική. Δεν ξέρουμε πώς (μπορεί «έρποντας»), αλλά δεν χάθηκε ο κόσμος: καταλάβαμε πάρα πολλά."
+   },
+   {
+    "id": "h43-neun",
+    "tag": "Τα διαβολάκια",
+    "type": "flip",
+    "front": "Πες τις εννιά δίπτωτες προθέσεις, απ' έξω και με τη σειρά.",
+    "back": "in, an, auf, neben, über, unter, vor, hinter, zwischen (με το τραπέζι και το συρτάρι)."
+   },
+   {
+    "id": "h43-diavolakia",
+    "tag": "Τα διαβολάκια",
+    "type": "flip",
+    "front": "Τι είναι τα «διαβολάκια»;",
+    "back": "Οι εννιά δίπτωτες προθέσεις όταν έχουν αιτιατική: διαολίζονται και μεταμορφώνονται σε ρήμα. Γι' αυτό τα γράφουμε με κόκκινο, το χρώμα του διαβόλου."
+   },
+   {
+    "id": "h43-rule-pigaino",
+    "tag": "Τα διαβολάκια",
+    "type": "choice",
+    "prompt": "Με ποιο ρήμα μεταφράζεις το διαβολάκι;",
+    "front": "Das Kind ___ ins Zimmer.",
+    "options": [
+     "πηγαίνω",
+     "βάζω"
+    ],
+    "answer": "πηγαίνω",
+    "explain": "Χωρίς αιτιατικής αντικείμενο: πηγαίνω + ό,τι λέει η πρόθεση. Πηγαίνει μέσα στο δωμάτιο."
+   },
+   {
+    "id": "h43-rule-vazo",
+    "tag": "Τα διαβολάκια",
+    "type": "choice",
+    "prompt": "Με ποιο ρήμα μεταφράζεις το διαβολάκι;",
+    "front": "Das Kind ___ <mark>den Ball<\/mark> ins Zimmer.",
+    "options": [
+     "βάζω",
+     "πηγαίνω"
+    ],
+    "answer": "βάζω",
+    "explain": "Με αιτιατικής αντικείμενο (ροζ): βάζω + ό,τι λέει η πρόθεση. Βάζει την μπάλα μέσα στο δωμάτιο. Το πώς (κλωτσώντας, με ρίψη) το λέει το ρήμα που λείπει."
+   },
+   {
+    "id": "h43-arsen",
+    "tag": "Τα διαβολάκια",
+    "type": "choice",
+    "front": "Στην αιτιατική, ποιο γένος αλλάζει (σε σύγκριση με την ονομαστική);",
+    "options": [
+     "μόνο το αρσενικό",
+     "αρσενικό και ουδέτερο",
+     "όλα τα γένη"
+    ],
+    "answer": "μόνο το αρσενικό",
+    "explain": "in den (αρσ.), in die (θηλ.), in das (ουδ.), in die (πληθ.). Μόνο το αρσενικό αλλάζει."
+   },
+   {
+    "id": "h43-ins",
+    "tag": "Τα διαβολάκια",
+    "type": "type",
+    "prompt": "Ανάλυσε τη σύμπτυξη.",
+    "front": "ins",
+    "answers": [
+     "in das"
+    ],
+    "explain": "ins = in das, όπως im = in dem στη στάση."
+   },
+   {
+    "id": "h43-ans",
+    "tag": "Τα διαβολάκια",
+    "type": "type",
+    "prompt": "Ανάλυσε τη σύμπτυξη.",
+    "front": "ans",
+    "answers": [
+     "an das"
+    ],
+    "explain": "ans = an das, όπως am = an dem στη στάση."
+   },
+   {
+    "id": "h43-hai",
+    "tag": "Ο καρχαρίας",
+    "type": "choice",
+    "prompt": "Τι σημαίνει;",
+    "front": "Die Fischlein schwimmen <mark>ins<\/mark> Maul des Haifischs.",
+    "options": [
+     "Τα ψαράκια μπαίνουν (κολυμπώντας) στο στόμα του καρχαρία.",
+     "Τα ψαράκια κολυμπάνε στο στόμα του καρχαρία.",
+     "Τα ψαράκια κολυμπάνε προς το στόμα του καρχαρία."
+    ],
+    "answer": "Τα ψαράκια μπαίνουν (κολυμπώντας) στο στόμα του καρχαρία.",
+    "explain": "Το ins είναι διαβολάκι: πηγαίνω μέσα σε, δηλαδή μπαίνω. Τελείως διαφορετική εικόνα, και καθόλου ευχάριστη για τα ψαράκια."
+   },
+   {
+    "id": "h43-hai-pros",
+    "tag": "Ο καρχαρίας",
+    "type": "flip",
+    "front": "Γιατί ούτε το «κολυμπάνε προς το στόμα» είναι σωστή μετάφραση για το ins Maul;",
+    "back": "Είναι κίνηση, αλλά τα ψαράκια μπορεί να είναι 10, 100 ή 1.000 μέτρα μακριά. Το ins λέει ότι μπαίνουν μέσα."
+   },
+   {
+    "id": "h43-mati-aristero",
+    "tag": "Ως την τελεία",
+    "type": "flip",
+    "front": "Τι κάνει το αριστερό μάτι όταν διαβάζεις μια γερμανική πρόταση;",
+    "back": "Κολλάει στη θέση 2: εκεί είναι πάντα το ρήμα."
+   },
+   {
+    "id": "h43-mati-vrike",
+    "tag": "Ως την τελεία",
+    "type": "flip",
+    "front": "Το δεξί μάτι βρήκε διαβολάκι. Τι κάνεις με το ρήμα της θέσης 2;",
+    "back": "Το αγνοείς και μεταφράζεις το διαβολάκι με ελληνικό ρήμα: πηγαίνω ή βάζω. Τότε η μετάφραση βγαίνει σωστή."
+   },
+   {
+    "id": "h43-ex-junge",
+    "tag": "Παραδείγματα",
+    "type": "choice",
+    "prompt": "Μετάφρασε.",
+    "front": "Der Junge springt auf den Tisch.",
+    "options": [
+     "Το αγόρι πηγαίνει πάνω στο τραπέζι (πηδώντας).",
+     "Το αγόρι πηδάει πάνω στο τραπέζι (και μένει εκεί).",
+     "Το αγόρι βάζει κάτι πάνω στο τραπέζι."
+    ],
+    "answer": "Το αγόρι πηγαίνει πάνω στο τραπέζι (πηδώντας).",
+    "explain": "auf den Tisch, χωρίς αιτιατικής αντικείμενο: πηγαίνω πάνω σε. Το springt λέει μόνο τον τρόπο."
+   },
+   {
+    "id": "h43-ex-bett",
+    "tag": "Παραδείγματα",
+    "type": "choice",
+    "prompt": "Μετάφρασε.",
+    "front": "Ich werfe den Ball auf das Bett.",
+    "options": [
+     "Βάζω την μπάλα πάνω στο κρεβάτι (με ρίψη).",
+     "Ρίχνω την μπάλα στο κρεβάτι όπου κοιμάμαι.",
+     "Πηγαίνω στο κρεβάτι με την μπάλα."
+    ],
+    "answer": "Βάζω την μπάλα πάνω στο κρεβάτι (με ρίψη).",
+    "explain": "Αιτιατικής αντικείμενο (den Ball): βάζω. Εδώ το κρεβάτι είναι επιφάνεια, δεν κοιμάμαι."
+   },
+   {
+    "id": "h43-laufen",
+    "tag": "laufen και gehen",
+    "type": "choice",
+    "prompt": "Τι είναι πρώτα απ' όλα;",
+    "front": "laufen",
+    "options": [
+     "ο κανονικός τρόπος να κινείται ένα τετράποδο",
+     "πάντα «τρέχω»",
+     "πάντα «πηγαίνω»"
+    ],
+    "answer": "ο κανονικός τρόπος να κινείται ένα τετράποδο",
+    "explain": "Το laufen είναι το ρήμα των τετράποδων, όπως κινείται μια γάτα. Δεν σημαίνει απαραίτητα «τρέχω»."
+   },
+   {
+    "id": "h43-gehen",
+    "tag": "laufen και gehen",
+    "type": "flip",
+    "front": "Τι σημαίνει πρώτα το gehen;",
+    "back": "Βαδίζω: είναι το ρήμα του ανθρώπου, που είναι δίποδο. Κακώς μας το μαθαίνουν τα βιβλία ως «πηγαίνω». Μπορεί να μεταφραστεί και έτσι, αλλά όχι πάντα."
+   },
+   {
+    "id": "h43-sk1",
+    "tag": "Στάση ή κίνηση;",
+    "type": "choice",
+    "front": "Das Kind spielt <mark>im<\/mark> Zimmer.",
+    "options": [
+     "στάση",
+     "κίνηση"
+    ],
+    "answer": "στάση",
+    "explain": "im = in dem, δοτική: ξέρουμε μόνο πού είναι το παιδί."
+   },
+   {
+    "id": "h43-sk2",
+    "tag": "Στάση ή κίνηση;",
+    "type": "choice",
+    "front": "Das Kind läuft <mark>ins<\/mark> Zimmer.",
+    "options": [
+     "στάση",
+     "κίνηση"
+    ],
+    "answer": "κίνηση",
+    "explain": "ins = in das, αιτιατική: διαβολάκι, πηγαίνει μέσα στο δωμάτιο."
+   },
+   {
+    "id": "h43-sk3",
+    "tag": "Στάση ή κίνηση;",
+    "type": "choice",
+    "front": "Die Katze schläft <mark>auf dem<\/mark> Sofa.",
+    "options": [
+     "στάση",
+     "κίνηση"
+    ],
+    "answer": "στάση",
+    "explain": "auf dem, δοτική: στάση."
+   },
+   {
+    "id": "h43-sk4",
+    "tag": "Στάση ή κίνηση;",
+    "type": "choice",
+    "front": "Die Katze springt <mark>auf das<\/mark> Sofa.",
+    "options": [
+     "στάση",
+     "κίνηση"
+    ],
+    "answer": "κίνηση",
+    "explain": "auf das, αιτιατική: πηγαίνει πάνω στον καναπέ (πηδώντας)."
+   },
+   {
+    "id": "h43-sk5",
+    "tag": "Στάση ή κίνηση;",
+    "type": "choice",
+    "front": "Ich bin <mark>im<\/mark> Garten.",
+    "options": [
+     "στάση",
+     "κίνηση"
+    ],
+    "answer": "στάση",
+    "explain": "im = in dem, δοτική: στάση."
+   },
+   {
+    "id": "h43-sk6",
+    "tag": "Στάση ή κίνηση;",
+    "type": "choice",
+    "front": "Ich gehe <mark>in den<\/mark> Garten.",
+    "options": [
+     "στάση",
+     "κίνηση"
+    ],
+    "answer": "κίνηση",
+    "explain": "in den, αιτιατική (αρσενικό): κίνηση."
+   },
+   {
+    "id": "h43-art1",
+    "tag": "Το άρθρο στην αιτιατική",
+    "type": "type",
+    "prompt": "Κίνηση: γράψε το άρθρο στην αιτιατική (ή τη σύμπτυξη).",
+    "front": "Die Katze springt unter ___ Sofa.",
+    "answers": [
+     "das"
+    ],
+    "explain": "das Sofa, ουδέτερο: στην αιτιατική μένει das."
+   },
+   {
+    "id": "h43-art2",
+    "tag": "Το άρθρο στην αιτιατική",
+    "type": "type",
+    "prompt": "Κίνηση: γράψε το άρθρο στην αιτιατική (ή τη σύμπτυξη).",
+    "front": "Der Hund rennt in ___ Garten.",
+    "answers": [
+     "den"
+    ],
+    "explain": "der Garten, αρσενικό: το μόνο γένος που αλλάζει, den."
+   },
+   {
+    "id": "h43-art3",
+    "tag": "Το άρθρο στην αιτιατική",
+    "type": "type",
+    "prompt": "Κίνηση: γράψε το άρθρο στην αιτιατική (ή τη σύμπτυξη).",
+    "front": "Wir gehen ___ Museum. (in + das)",
+    "answers": [
+     "ins"
+    ],
+    "explain": "in + das = ins."
+   },
+   {
+    "id": "h43-art4",
+    "tag": "Το άρθρο στην αιτιατική",
+    "type": "type",
+    "prompt": "Κίνηση: γράψε το άρθρο στην αιτιατική (ή τη σύμπτυξη).",
+    "front": "Das Kind legt sich neben ___ Vater.",
+    "answers": [
+     "den"
+    ],
+    "explain": "der Vater, αρσενικό: den."
+   },
+   {
+    "id": "h43-art5",
+    "tag": "Το άρθρο στην αιτιατική",
+    "type": "type",
+    "prompt": "Κίνηση: γράψε το άρθρο στην αιτιατική (ή τη σύμπτυξη).",
+    "front": "Ich hänge das Poster an ___ Wand.",
+    "answers": [
+     "die"
+    ],
+    "explain": "die Wand, θηλυκό: μένει die."
+   },
+   {
+    "id": "h43-art6",
+    "tag": "Το άρθρο στην αιτιατική",
+    "type": "type",
+    "prompt": "Κίνηση: γράψε το άρθρο στην αιτιατική (ή τη σύμπτυξη).",
+    "front": "Der Vogel fliegt über ___ Haus.",
+    "answers": [
+     "das"
+    ],
+    "explain": "das Haus, ουδέτερο: μένει das."
+   },
+   {
+    "id": "h43-art7",
+    "tag": "Το άρθρο στην αιτιατική",
+    "type": "type",
+    "prompt": "Κίνηση: γράψε το άρθρο στην αιτιατική (ή τη σύμπτυξη).",
+    "front": "Wir gehen in ___ Supermarkt.",
+    "answers": [
+     "den"
+    ],
+    "explain": "der Supermarkt, αρσενικό: den."
+   },
+   {
+    "id": "h43-art8",
+    "tag": "Το άρθρο στην αιτιατική",
+    "type": "type",
+    "prompt": "Κίνηση: γράψε το άρθρο στην αιτιατική (ή τη σύμπτυξη).",
+    "front": "Der Ball rollt unter ___ Auto.",
+    "answers": [
+     "das"
+    ],
+    "explain": "das Auto, ουδέτερο: μένει das."
+   },
+   {
+    "id": "h43-pv1",
+    "tag": "Πηγαίνω ή βάζω;",
+    "type": "choice",
+    "prompt": "Μετάφρασε με το σωστό ρήμα.",
+    "front": "Das Kind kriecht ins Zimmer.",
+    "options": [
+     "Το παιδί μπαίνει στο δωμάτιο (έρποντας).",
+     "Το παιδί έρπει στο δωμάτιο.",
+     "Το παιδί βάζει κάτι στο δωμάτιο."
+    ],
+    "answer": "Το παιδί μπαίνει στο δωμάτιο (έρποντας).",
+    "explain": "Χωρίς αιτιατικής αντικείμενο: πηγαίνω μέσα σε, δηλαδή μπαίνω. Το kriecht λέει μόνο τον τρόπο."
+   },
+   {
+    "id": "h43-pv2",
+    "tag": "Πηγαίνω ή βάζω;",
+    "type": "choice",
+    "prompt": "Μετάφρασε με το σωστό ρήμα.",
+    "front": "Ich stelle die Flasche in den Kühlschrank.",
+    "options": [
+     "Βάζω το μπουκάλι στο ψυγείο (όρθιο).",
+     "Πηγαίνω στο ψυγείο με το μπουκάλι.",
+     "Το μπουκάλι στέκεται στο ψυγείο."
+    ],
+    "answer": "Βάζω το μπουκάλι στο ψυγείο (όρθιο).",
+    "explain": "Αιτιατικής αντικείμενο (die Flasche): βάζω μέσα σε."
+   },
+   {
+    "id": "h43-pv3",
+    "tag": "Πηγαίνω ή βάζω;",
+    "type": "choice",
+    "prompt": "Μετάφρασε με το σωστό ρήμα.",
+    "front": "Der Vogel fliegt über das Haus.",
+    "options": [
+     "Το πουλί πηγαίνει πάνω από το σπίτι (πετώντας).",
+     "Το πουλί πετάει πάνω στο σπίτι και μένει εκεί.",
+     "Το πουλί βάζει κάτι πάνω στο σπίτι."
+    ],
+    "answer": "Το πουλί πηγαίνει πάνω από το σπίτι (πετώντας).",
+    "explain": "Χωρίς αιτιατικής αντικείμενο: πηγαίνω πάνω από."
+   },
+   {
+    "id": "h43-pv4",
+    "tag": "Πηγαίνω ή βάζω;",
+    "type": "choice",
+    "prompt": "Μετάφρασε με το σωστό ρήμα.",
+    "front": "Er wirft den Ball unter das Auto.",
+    "options": [
+     "Βάζει την μπάλα κάτω από το αυτοκίνητο (με ρίψη).",
+     "Πηγαίνει κάτω από το αυτοκίνητο με την μπάλα.",
+     "Ρίχνει την μπάλα που είναι κάτω από το αυτοκίνητο."
+    ],
+    "answer": "Βάζει την μπάλα κάτω από το αυτοκίνητο (με ρίψη).",
+    "explain": "Αιτιατικής αντικείμενο (den Ball): βάζω κάτω από. Ο τρόπος: με ρίψη (werfen)."
+   },
+   {
+    "id": "h43-why-hai",
+    "tag": "Εξήγησε",
+    "type": "flip",
+    "front": "Γιατί το «Die Fischlein schwimmen ins Maul des Haifischs» δεν σημαίνει «κολυμπάνε στο στόμα»;",
+    "back": "Γιατί το ins (in + αιτιατική) είναι διαβολάκι: πηγαίνω μέσα σε, δηλαδή τα ψαράκια μπαίνουν στο στόμα. Το «κολυμπάνε στο στόμα» θα ήταν im Maul (δοτική, στάση)."
+   },
+   {
+    "id": "h43-why-im-ins",
+    "tag": "Εξήγησε",
+    "type": "flip",
+    "front": "Ποια η διαφορά ανάμεσα στο «im Zimmer» και στο «ins Zimmer»;",
+    "back": "im Zimmer = στάση, ξέρουμε μόνο πού είναι. ins Zimmer = κίνηση, πηγαίνει μέσα στο δωμάτιο."
+   },
+   {
+    "id": "h43-why-mati",
+    "tag": "Εξήγησε",
+    "type": "flip",
+    "front": "Τι κάνει το δεξί μάτι, όταν διαβάζεις μια γερμανική πρόταση;",
+    "back": "Ψάχνει ως την τελεία για διαβολάκι. Αν το βρει, αγνοούμε το ρήμα της θέσης 2 και μεταφράζουμε με πηγαίνω ή βάζω."
+   }
+  ]
+ },
+ {
+  "id": "4.4",
+  "title": "Βάζω όρθιο, καθίζω, ξαπλώνω: τα πέντε ρήματα της κίνησης",
+  "week": "Woche 4",
+  "cards": [
+   {
+    "id": "h44-pair-stehen",
+    "tag": "Τα πέντε ζευγάρια",
+    "type": "type",
+    "prompt": "Στάση → κίνηση: γράψε το ρήμα της κίνησης.",
+    "front": "stehen",
+    "answers": [
+     "stellen"
+    ],
+    "explain": "stehen: είμαι όρθιος. stellen: βάζω όρθιο (βάζω την καρέκλα εκεί)."
+   },
+   {
+    "id": "h44-pair-sitzen",
+    "tag": "Τα πέντε ζευγάρια",
+    "type": "type",
+    "prompt": "Στάση → κίνηση: γράψε το ρήμα της κίνησης.",
+    "front": "sitzen",
+    "answers": [
+     "setzen"
+    ],
+    "explain": "sitzen: είμαι καθιστός. setzen: καθίζω (καθίζω τη γιαγιά στην πολυθρόνα)."
+   },
+   {
+    "id": "h44-pair-liegen",
+    "tag": "Τα πέντε ζευγάρια",
+    "type": "type",
+    "prompt": "Στάση → κίνηση: γράψε το ρήμα της κίνησης.",
+    "front": "liegen",
+    "answers": [
+     "legen"
+    ],
+    "explain": "liegen: είμαι ξαπλωμένος. legen: ξαπλώνω (ξαπλώνω το μωρό στο κρεβάτι)."
+   },
+   {
+    "id": "h44-pair-hängen",
+    "tag": "Τα πέντε ζευγάρια",
+    "type": "type",
+    "prompt": "Στάση → κίνηση: γράψε το ρήμα της κίνησης.",
+    "front": "hängen",
+    "answers": [
+     "hängen"
+    ],
+    "explain": "Ίδιο ρήμα! hängen: είμαι κρεμασμένος και κρεμάω (κρεμάω τη λάμπα πάνω από το τραπέζι)."
+   },
+   {
+    "id": "h44-pair-stecken",
+    "tag": "Τα πέντε ζευγάρια",
+    "type": "type",
+    "prompt": "Στάση → κίνηση: γράψε το ρήμα της κίνησης.",
+    "front": "stecken",
+    "answers": [
+     "stecken"
+    ],
+    "explain": "Ίδιο ρήμα! stecken: είμαι χωμένος και χώνω (χώνω το μολύβι στη μολυβοθήκη)."
+   },
+   {
+    "id": "h44-sicher",
+    "tag": "Τα πέντε ζευγάρια",
+    "type": "choice",
+    "front": "Ποια ρήματα, με το που τα δεις, ξέρεις σίγουρα ότι είναι κίνηση;",
+    "options": [
+     "stellen, setzen, legen",
+     "hängen, stecken",
+     "και τα πέντε"
+    ],
+    "answer": "stellen, setzen, legen",
+    "explain": "Δεν υπάρχει περίπτωση να είναι κάτι άλλο. Το hängen και το stecken δυστυχώς είναι κοινά."
+   },
+   {
+    "id": "h44-lampe1",
+    "tag": "Τα πέντε ζευγάρια",
+    "type": "choice",
+    "front": "Die Lampe hängt <mark>über dem<\/mark> Tisch.",
+    "options": [
+     "στάση",
+     "κίνηση"
+    ],
+    "answer": "στάση",
+    "explain": "Η λάμπα είναι κρεμασμένη πάνω από το τραπέζι. Κανείς δεν κρεμάει κάτι, και έχουμε δοτική."
+   },
+   {
+    "id": "h44-lampe2",
+    "tag": "Τα πέντε ζευγάρια",
+    "type": "choice",
+    "front": "Ich hänge <mark>die Lampe<\/mark> über den Tisch.",
+    "options": [
+     "στάση",
+     "κίνηση"
+    ],
+    "answer": "κίνηση",
+    "explain": "Κρεμάω τη λάμπα πάνω από το τραπέζι: υπάρχει υποκείμενο που κρεμάει κάτι κάπου, και αιτιατική."
+   },
+   {
+    "id": "h44-linie",
+    "tag": "stellen, setzen, legen",
+    "type": "choice",
+    "prompt": "Μετάφρασε.",
+    "front": "Bitte stellen Sie sich hinter die Linie.",
+    "options": [
+     "Παρακαλώ, σταθείτε πίσω από τη γραμμή.",
+     "Παρακαλώ, στέκεστε πίσω από τη γραμμή.",
+     "Παρακαλώ, βάλτε κάτι πίσω από τη γραμμή."
+    ],
+    "answer": "Παρακαλώ, σταθείτε πίσω από τη γραμμή.",
+    "explain": "stellen: βάζω όρθιο. Με το sich βάζω τον εαυτό μου όρθιο πίσω από τη γραμμή."
+   },
+   {
+    "id": "h44-setzdich",
+    "tag": "stellen, setzen, legen",
+    "type": "type",
+    "prompt": "Συμπλήρωσε την αντωνυμία.",
+    "front": "Setz ___ neben mich!",
+    "answers": [
+     "dich"
+    ],
+    "explain": "Κάθισε τον εαυτό σου εδώ, ώμο με ώμο: Κάτσε δίπλα μου!"
+   },
+   {
+    "id": "h44-schoss",
+    "tag": "stellen, setzen, legen",
+    "type": "type",
+    "prompt": "Συμπλήρωσε.",
+    "front": "Der Vater setzt das Kind auf ___ Schoß.",
+    "answers": [
+     "seinen"
+    ],
+    "explain": "der Schoß, αρσενικό, αιτιατική: auf seinen Schoß. Καθίζει το παιδί στα πόδια του (στην ποδιά του)."
+   },
+   {
+    "id": "h44-fernseher",
+    "tag": "stellen, setzen, legen",
+    "type": "choice",
+    "front": "Wir setzen uns vor den ___.",
+    "options": [
+     "Fernseher",
+     "Fernsehen"
+    ],
+    "answer": "Fernseher",
+    "explain": "der Fernseher: η συσκευή (τελειώνει σε -er και είναι αρσενικού γένους). das Fernsehen: η τηλεόραση ως έννοια."
+   },
+   {
+    "id": "h44-baby",
+    "tag": "stellen, setzen, legen",
+    "type": "choice",
+    "front": "Sie ___ das Baby ins Bett.",
+    "options": [
+     "legt",
+     "stellt",
+     "setzt"
+    ],
+    "answer": "legt",
+    "explain": "Ένα μωρό δεν μπορεί να σταθεί ούτε να καθίσει. Αναγκαστικά, legen."
+   },
+   {
+    "id": "h44-haken",
+    "tag": "hängen, stecken",
+    "type": "choice",
+    "front": "Er hängt die Jacke ___ den Haken.",
+    "options": [
+     "an",
+     "in",
+     "auf"
+    ],
+    "answer": "an",
+    "explain": "Το γατζάκι δεν είναι ντουλάπα, δεν είναι κλειστός χώρος για να πεις in. Είναι σημείο, άρα an."
+   },
+   {
+    "id": "h44-tasche",
+    "tag": "hängen, stecken",
+    "type": "flip",
+    "front": "Steck das Handy in die Tasche! Τσάντα ή τσέπη;",
+    "back": "Die Tasche μπορεί να σημαίνει και τα δύο. Ούτως ή άλλως, ένας άντρας χωρίς τσάντα θα το βάλει στην τσέπη."
+   },
+   {
+    "id": "h44-schloss",
+    "tag": "hängen, stecken",
+    "type": "flip",
+    "front": "Γιατί das Schloss είναι και η κλειδαριά και το παλάτι;",
+    "back": "Και τα δύο βγαίνουν από το ρήμα schließen (κλείνω): το παλάτι είχε πολλές κλειδαριές, δεν μπορούσες να μπεις με τίποτα."
+   },
+   {
+    "id": "h44-sk1",
+    "tag": "Στάση ή κίνηση;",
+    "type": "choice",
+    "prompt": "Διάλεξε το σωστό ρήμα.",
+    "front": "Das Glas ___ auf dem Tisch.",
+    "options": [
+     "steht",
+     "stellt"
+    ],
+    "answer": "steht",
+    "explain": "auf dem Tisch, δοτική, και κανείς δεν βάζει τίποτα: στάση, steht."
+   },
+   {
+    "id": "h44-sk2",
+    "tag": "Στάση ή κίνηση;",
+    "type": "choice",
+    "prompt": "Διάλεξε το σωστό ρήμα.",
+    "front": "Ich ___ das Glas auf den Tisch.",
+    "options": [
+     "stehe",
+     "stelle"
+    ],
+    "answer": "stelle",
+    "explain": "Βάζω το ποτήρι (αιτιατική) πάνω στο τραπέζι, όρθιο: stelle."
+   },
+   {
+    "id": "h44-sk3",
+    "tag": "Στάση ή κίνηση;",
+    "type": "choice",
+    "prompt": "Διάλεξε το σωστό ρήμα.",
+    "front": "Die Oma ___ im Sessel.",
+    "options": [
+     "sitzt",
+     "setzt"
+    ],
+    "answer": "sitzt",
+    "explain": "im Sessel, δοτική: η γιαγιά είναι καθιστή, sitzt."
+   },
+   {
+    "id": "h44-sk4",
+    "tag": "Στάση ή κίνηση;",
+    "type": "choice",
+    "prompt": "Διάλεξε το σωστό ρήμα.",
+    "front": "Ich ___ die Oma in den Sessel.",
+    "options": [
+     "sitze",
+     "setze"
+    ],
+    "answer": "setze",
+    "explain": "Καθίζω τη γιαγιά στην πολυθρόνα: setze."
+   },
+   {
+    "id": "h44-sk5",
+    "tag": "Στάση ή κίνηση;",
+    "type": "choice",
+    "prompt": "Διάλεξε το σωστό ρήμα.",
+    "front": "Das Baby ___ im Bett.",
+    "options": [
+     "liegt",
+     "legt"
+    ],
+    "answer": "liegt",
+    "explain": "im Bett, δοτική: το μωρό είναι ξαπλωμένο, liegt."
+   },
+   {
+    "id": "h44-sk6",
+    "tag": "Στάση ή κίνηση;",
+    "type": "choice",
+    "prompt": "Διάλεξε το σωστό ρήμα.",
+    "front": "Die Mutter ___ das Baby ins Bett.",
+    "options": [
+     "liegt",
+     "legt"
+    ],
+    "answer": "legt",
+    "explain": "Ξαπλώνει το μωρό στο κρεβάτι: legt."
+   },
+   {
+    "id": "h44-art1",
+    "tag": "Το άρθρο στην αιτιατική",
+    "type": "type",
+    "prompt": "Γράψε το άρθρο (αιτιατική) ή τη σύμπτυξη.",
+    "front": "Ich hänge die Jacke an ___ Haken.",
+    "answers": [
+     "den"
+    ],
+    "explain": "der Haken, αρσενικό: den."
+   },
+   {
+    "id": "h44-art2",
+    "tag": "Το άρθρο στην αιτιατική",
+    "type": "type",
+    "prompt": "Γράψε το άρθρο (αιτιατική) ή τη σύμπτυξη.",
+    "front": "Er stellt den Koffer hinter ___ Bett.",
+    "answers": [
+     "das"
+    ],
+    "explain": "das Bett, ουδέτερο: μένει das."
+   },
+   {
+    "id": "h44-art3",
+    "tag": "Το άρθρο στην αιτιατική",
+    "type": "type",
+    "prompt": "Γράψε το άρθρο (αιτιατική) ή τη σύμπτυξη.",
+    "front": "Wir setzen uns vor ___ Fernseher.",
+    "answers": [
+     "den"
+    ],
+    "explain": "der Fernseher, η συσκευή, αρσενικό: den."
+   },
+   {
+    "id": "h44-art4",
+    "tag": "Το άρθρο στην αιτιατική",
+    "type": "type",
+    "prompt": "Γράψε το άρθρο (αιτιατική) ή τη σύμπτυξη.",
+    "front": "Leg den Schlüssel neben ___ Tasche!",
+    "answers": [
+     "die"
+    ],
+    "explain": "die Tasche, θηλυκό: μένει die."
+   },
+   {
+    "id": "h44-art5",
+    "tag": "Το άρθρο στην αιτιατική",
+    "type": "type",
+    "prompt": "Γράψε το άρθρο (αιτιατική) ή τη σύμπτυξη.",
+    "front": "Er steckt den Brief in ___ Briefkasten.",
+    "answers": [
+     "den"
+    ],
+    "explain": "der Briefkasten, αρσενικό: den."
+   },
+   {
+    "id": "h44-art6",
+    "tag": "Το άρθρο στην αιτιατική",
+    "type": "type",
+    "prompt": "Γράψε το άρθρο (αιτιατική) ή τη σύμπτυξη.",
+    "front": "Sie steckt den Schlüssel ___ Schloss. (in + das)",
+    "answers": [
+     "ins"
+    ],
+    "explain": "in + das = ins."
+   },
+   {
+    "id": "h44-prt-stellen",
+    "tag": "Präteritum και μετοχή",
+    "type": "type",
+    "prompt": "Γράψε το Präteritum (er/sie/es).",
+    "front": "stellen",
+    "answers": [
+     "stellte"
+    ],
+    "explain": "θέμα + te: stell + te."
+   },
+   {
+    "id": "h44-pp-stellen",
+    "tag": "Präteritum και μετοχή",
+    "type": "type",
+    "prompt": "Γράψε τη μετοχή.",
+    "front": "stellen",
+    "answers": [
+     "gestellt"
+    ],
+    "explain": "ge + θέμα + t: ge + stell + t."
+   },
+   {
+    "id": "h44-prt-legen",
+    "tag": "Präteritum και μετοχή",
+    "type": "type",
+    "prompt": "Γράψε το Präteritum (er/sie/es).",
+    "front": "legen",
+    "answers": [
+     "legte"
+    ],
+    "explain": "θέμα + te: leg + te."
+   },
+   {
+    "id": "h44-pp-legen",
+    "tag": "Präteritum και μετοχή",
+    "type": "type",
+    "prompt": "Γράψε τη μετοχή.",
+    "front": "legen",
+    "answers": [
+     "gelegt"
+    ],
+    "explain": "ge + θέμα + t: ge + leg + t."
+   },
+   {
+    "id": "h44-prt-setzen",
+    "tag": "Präteritum και μετοχή",
+    "type": "type",
+    "prompt": "Γράψε το Präteritum (er/sie/es).",
+    "front": "setzen",
+    "answers": [
+     "setzte"
+    ],
+    "explain": "θέμα + te: setz + te."
+   },
+   {
+    "id": "h44-pp-setzen",
+    "tag": "Präteritum και μετοχή",
+    "type": "type",
+    "prompt": "Γράψε τη μετοχή.",
+    "front": "setzen",
+    "answers": [
+     "gesetzt"
+    ],
+    "explain": "ge + θέμα + t: ge + setz + t."
+   },
+   {
+    "id": "h44-prt-antworten",
+    "tag": "Präteritum και μετοχή",
+    "type": "type",
+    "prompt": "Γράψε το Präteritum (er/sie/es).",
+    "front": "antworten",
+    "answers": [
+     "antwortete"
+    ],
+    "explain": "Το θέμα τελειώνει σε t: θυμήσου την κόλλα UHU, βάζεις ένα e ανάμεσα."
+   },
+   {
+    "id": "h44-pp-antworten",
+    "tag": "Präteritum και μετοχή",
+    "type": "type",
+    "prompt": "Γράψε τη μετοχή.",
+    "front": "antworten",
+    "answers": [
+     "geantwortet"
+    ],
+    "explain": "Το θέμα τελειώνει σε t: κόλλα UHU, ένα e ανάμεσα."
+   },
+   {
+    "id": "h44-haengte",
+    "tag": "Präteritum και μετοχή",
+    "type": "choice",
+    "front": "Ich ___ die Lampe über den Tisch. (Präteritum)",
+    "options": [
+     "hängte",
+     "hing"
+    ],
+    "answer": "hängte",
+    "explain": "Τα ρήματα της κίνησης (βάζω) είναι όλα ομαλά: hängen, hängte, gehängt."
+   },
+   {
+    "id": "h44-pp-oeffnen",
+    "tag": "Präteritum και μετοχή",
+    "type": "type",
+    "prompt": "Γράψε τη μετοχή.",
+    "front": "öffnen",
+    "answers": [
+     "geöffnet"
+    ],
+    "explain": "Θέμα σε ffn: κόλλα UHU, ένα e ανάμεσα. öffnete, geöffnet."
+   },
+   {
+    "id": "h44-omala",
+    "tag": "Präteritum και μετοχή",
+    "type": "flip",
+    "front": "Ρήματα της στάσης και ρήματα της κίνησης: ποια είναι ομαλά;",
+    "back": "Τα ρήματα της στάσης (είμαι) ήταν ανώμαλα, εκτός από το stecken. Τα ρήματα της κίνησης (βάζω) είναι όλα ομαλά."
+   },
+   {
+    "id": "h44-uhu",
+    "tag": "Präteritum και μετοχή",
+    "type": "flip",
+    "front": "Ομαλό ρήμα με θέμα σε d, t, chn, ffn, ckn: τι κάνεις στο Präteritum και στη μετοχή;",
+    "back": "Θυμήσου την κόλλα UHU: βάζεις ένα e ανάμεσα. antworten: antwortete, geantwortet · öffnen: öffnete, geöffnet."
+   },
+   {
+    "id": "h44-why-haengen",
+    "tag": "Εξήγησε",
+    "type": "flip",
+    "front": "Γιατί με το hängen και το stecken πρέπει να ψάξεις παραπάνω στην πρόταση;",
+    "back": "Γιατί είναι τα ίδια ρήματα για στάση και κίνηση. Κοιτάς αν κάποιος κρεμάει ή χώνει κάτι κάπου (και αν η πρόθεση έχει αιτιατική)."
+   },
+   {
+    "id": "h44-why-koffer",
+    "tag": "Εξήγησε",
+    "type": "choice",
+    "prompt": "Πώς μπαίνει η βαλίτσα;",
+    "front": "Er <mark>legt<\/mark> den Koffer hinter das Bett.",
+    "options": [
+     "Η βαλίτσα μπαίνει ξαπλωτή.",
+     "Η βαλίτσα μπαίνει όρθια.",
+     "Η βαλίτσα είναι ήδη εκεί."
+    ],
+    "answer": "Η βαλίτσα μπαίνει ξαπλωτή.",
+    "explain": "Με το stellen η βαλίτσα μπαίνει όρθια, με το legen ξαπλωτή."
+   },
+   {
+    "id": "h44-why-haken",
+    "tag": "Εξήγησε",
+    "type": "flip",
+    "front": "Γιατί λέμε an den Haken και όχι in den Haken;",
+    "back": "Γιατί το γατζάκι δεν είναι κλειστός χώρος, είναι σημείο."
+   }
+  ]
+ },
+ {
+  "id": "4.5",
+  "title": "Ιδιωματικές εκφράσεις με τα δυναμικά ρήματα",
+  "week": "Woche 4",
+  "cards": [
+   {
+    "id": "h45-a1",
+    "tag": "Lückentext",
+    "type": "type",
+    "prompt": "Συμπλήρωσε το ρήμα (Präteritum).",
+    "front": "Sie ___ eine provozierende Frage in den Raum.",
+    "answers": [
+     "stellte"
+    ],
+    "explain": "etwas in den Raum stellen: ρίχνω κάτι στο τραπέζι (ένα ερώτημα, μια ιδέα)."
+   },
+   {
+    "id": "h45-a2",
+    "tag": "Lückentext",
+    "type": "type",
+    "prompt": "Συμπλήρωσε το ρήμα (Präteritum).",
+    "front": "Sie ___ ihre Fähigkeiten unter Beweis.",
+    "answers": [
+     "stellte"
+    ],
+    "explain": "etwas unter Beweis stellen: αποδεικνύω. der Beweis = η απόδειξη (beweisen)."
+   },
+   {
+    "id": "h45-a3",
+    "tag": "Lückentext",
+    "type": "type",
+    "prompt": "Συμπλήρωσε το ρήμα (Präteritum).",
+    "front": "Der Chef ___ ihn vor die Wahl: kündigen oder umziehen.",
+    "answers": [
+     "stellte"
+    ],
+    "explain": "jemanden vor die Wahl stellen: αναγκάζω κάποιον να διαλέξει."
+   },
+   {
+    "id": "h45-a4",
+    "tag": "Lückentext",
+    "type": "type",
+    "prompt": "Συμπλήρωσε το ρήμα (Präteritum).",
+    "front": "Sie ___ eine Welle von Veränderungen in Gang. (sie = Plural)",
+    "answers": [
+     "setzten"
+    ],
+    "explain": "etwas in Gang setzen: ξεκινώ μια διαδικασία. Plural, άρα setzten."
+   },
+   {
+    "id": "h45-a5",
+    "tag": "Lückentext",
+    "type": "type",
+    "prompt": "Συμπλήρωσε το ρήμα (Präteritum).",
+    "front": "Sie ___ ihn unter Druck, endlich zu antworten.",
+    "answers": [
+     "setzte"
+    ],
+    "explain": "jemanden unter Druck setzen: πιέζω κάποιον. der Druck = η πίεση (drücken)."
+   },
+   {
+    "id": "h45-a6",
+    "tag": "Lückentext",
+    "type": "type",
+    "prompt": "Συμπλήρωσε το ρήμα (Präteritum).",
+    "front": "Er ___ seine Karriere aufs Spiel.",
+    "answers": [
+     "setzte"
+    ],
+    "explain": "etwas aufs Spiel setzen: ρισκάρω, ποντάρω κάτι στο τραπέζι."
+   },
+   {
+    "id": "h45-a7",
+    "tag": "Lückentext",
+    "type": "type",
+    "prompt": "Συμπλήρωσε το ρήμα (Präteritum).",
+    "front": "Die Firma ___ das Projekt auf Eis.",
+    "answers": [
+     "legte"
+    ],
+    "explain": "etwas auf Eis legen: παγώνω κάτι προσωρινά. Και στα Ελληνικά: «στον πάγο»."
+   },
+   {
+    "id": "h45-a8",
+    "tag": "Lückentext",
+    "type": "type",
+    "prompt": "Συμπλήρωσε το ρήμα (Präteritum).",
+    "front": "Das Feuer ___ das ganze Gebäude in Schutt und Asche.",
+    "answers": [
+     "legte"
+    ],
+    "explain": "etwas in Schutt und Asche legen: καταστρέφω ολοσχερώς. der Schutt = τα μπάζα, die Asche = η στάχτη."
+   },
+   {
+    "id": "h45-a9",
+    "tag": "Lückentext",
+    "type": "type",
+    "prompt": "Συμπλήρωσε την πρόθεση (σύμπτυξη).",
+    "front": "Wenn du die Stelle willst, musst du dich ___ Zeug legen. (in + das)",
+    "answers": [
+     "ins"
+    ],
+    "explain": "sich ins Zeug legen: βάζω τα δυνατά μου, κοπιάζω. das Zeug, παλιά τα χάμουρα του αλόγου που τραβάει."
+   },
+   {
+    "id": "h45-a10",
+    "tag": "Lückentext",
+    "type": "choice",
+    "prompt": "Ποια πρόθεση;",
+    "front": "Das musst du doch nicht gleich ___ die große Glocke hängen.",
+    "options": [
+     "an",
+     "in",
+     "auf"
+    ],
+    "answer": "an",
+    "explain": "etwas an die große Glocke hängen: διατυμπανίζω. Κρεμάω το νέο στη μεγάλη καμπάνα για να το ακούσει όλο το χωριό."
+   },
+   {
+    "id": "h45-a11",
+    "tag": "Lückentext",
+    "type": "type",
+    "prompt": "Συμπλήρωσε το ρήμα.",
+    "front": "Die Medien haben ihn an den Pranger ___. (Partizip)",
+    "answers": [
+     "gestellt"
+    ],
+    "explain": "jemanden an den Pranger stellen: διαπομπεύω. Ομαλό: ge + stell + t."
+   },
+   {
+    "id": "h45-a12",
+    "tag": "Lückentext",
+    "type": "type",
+    "prompt": "Συμπλήρωσε το ρήμα.",
+    "front": "Mit ihrer Erfahrung ___ sie die Konkurrenz in die Tasche. (Präsens)",
+    "answers": [
+     "steckt"
+    ],
+    "explain": "jemanden in die Tasche stecken: βάζω κάτω, είμαι καλύτερος από κάποιον (τον έχω στο τσεπάκι μου)."
+   },
+   {
+    "id": "h45-a13",
+    "tag": "Lückentext",
+    "type": "choice",
+    "prompt": "Ποια πρόθεση;",
+    "front": "Das hast du wohl ___ den falschen Hals bekommen.",
+    "options": [
+     "in",
+     "an",
+     "auf"
+    ],
+    "answer": "in",
+    "explain": "etwas in den falschen Hals bekommen: παρεξηγώ, το παίρνω στραβά. Σαν τη μπουκιά που πήγε στραβά."
+   },
+   {
+    "id": "h45-prep1",
+    "tag": "Ποια πρόθεση;",
+    "type": "choice",
+    "prompt": "Ποια πρόθεση λείπει;",
+    "front": "Sie stellte ihre Fähigkeiten ___ Beweis.",
+    "options": [
+     "unter",
+     "in",
+     "vor"
+    ],
+    "answer": "unter",
+    "explain": "etwas unter Beweis stellen: αποδεικνύω. Χωρίς άρθρο, μάθε το ως πακέτο."
+   },
+   {
+    "id": "h45-prep2",
+    "tag": "Ποια πρόθεση;",
+    "type": "choice",
+    "prompt": "Ποια πρόθεση λείπει;",
+    "front": "Der Chef stellte ihn ___ die Wahl.",
+    "options": [
+     "vor",
+     "in",
+     "unter"
+    ],
+    "answer": "vor",
+    "explain": "jemanden vor die Wahl stellen: βάζω κάποιον μπροστά σε μια επιλογή."
+   },
+   {
+    "id": "h45-prep3",
+    "tag": "Ποια πρόθεση;",
+    "type": "choice",
+    "prompt": "Ποια πρόθεση λείπει;",
+    "front": "Sie setzte ihn ___ Druck.",
+    "options": [
+     "unter",
+     "in",
+     "auf"
+    ],
+    "answer": "unter",
+    "explain": "jemanden unter Druck setzen: πιέζω κάποιον. Χωρίς άρθρο, μάθε το ως πακέτο."
+   },
+   {
+    "id": "h45-voc1",
+    "tag": "Λεξιλόγιο",
+    "type": "choice",
+    "prompt": "Ποια έκφραση;",
+    "front": "διατυμπανίζω",
+    "options": [
+     "etwas an die große Glocke hängen",
+     "jemanden an den Pranger stellen",
+     "etwas in den Raum stellen"
+    ],
+    "answer": "etwas an die große Glocke hängen",
+    "explain": "die Glocke = η καμπάνα: το νέο κρεμιέται στη μεγάλη καμπάνα για να το ακούσει όλο το χωριό."
+   },
+   {
+    "id": "h45-voc2",
+    "tag": "Λεξιλόγιο",
+    "type": "choice",
+    "prompt": "Ποια έκφραση;",
+    "front": "διαπομπεύω",
+    "options": [
+     "jemanden an den Pranger stellen",
+     "etwas an die große Glocke hängen",
+     "jemanden in die Tasche stecken"
+    ],
+    "answer": "jemanden an den Pranger stellen",
+    "explain": "der Pranger = το ξύλινο όργανο διαπόμπευσης του Μεσαίωνα. Πρόσεξε: εδώ το ρήμα είναι συνήθως stellen."
+   },
+   {
+    "id": "h45-voc3",
+    "tag": "Λεξιλόγιο",
+    "type": "choice",
+    "prompt": "Ποια έκφραση;",
+    "front": "ρίχνω κάτι στο τραπέζι (ένα ερώτημα, μια ιδέα)",
+    "options": [
+     "etwas in den Raum stellen",
+     "etwas aufs Spiel setzen",
+     "etwas in Gang setzen"
+    ],
+    "answer": "etwas in den Raum stellen",
+    "explain": "der Raum = το δωμάτιο, ο χώρος: βάζω την ερώτηση μέσα στο δωμάτιο."
+   },
+   {
+    "id": "h45-voc4",
+    "tag": "Λεξιλόγιο",
+    "type": "choice",
+    "prompt": "Ποια έκφραση;",
+    "front": "βάζω κάτω, είμαι καλύτερος από κάποιον",
+    "options": [
+     "jemanden in die Tasche stecken",
+     "jemanden unter Druck setzen",
+     "jemanden vor die Wahl stellen"
+    ],
+    "answer": "jemanden in die Tasche stecken",
+    "explain": "die Tasche = η τσάντα, η τσέπη: τον έχω στο τσεπάκι μου."
+   },
+   {
+    "id": "h45-voc5",
+    "tag": "Λεξιλόγιο",
+    "type": "choice",
+    "prompt": "Ποια έκφραση;",
+    "front": "παρεξηγώ, το παίρνω στραβά",
+    "options": [
+     "etwas in den falschen Hals bekommen",
+     "etwas an die große Glocke hängen",
+     "etwas in den Raum stellen"
+    ],
+    "answer": "etwas in den falschen Hals bekommen",
+    "explain": "der Hals = ο λαιμός: σαν τη μπουκιά που πήγε στραβά."
+   },
+   {
+    "id": "h45-voc6",
+    "tag": "Λεξιλόγιο",
+    "type": "choice",
+    "prompt": "Ποια έκφραση;",
+    "front": "βάζω τα δυνατά μου, κοπιάζω",
+    "options": [
+     "sich ins Zeug legen",
+     "etwas auf Eis legen",
+     "etwas in Schutt und Asche legen"
+    ],
+    "answer": "sich ins Zeug legen",
+    "explain": "das Zeug = τα πράγματα· παλιά, τα χάμουρα του αλόγου που τραβάει."
+   },
+   {
+    "id": "h45-voc7",
+    "tag": "Λεξιλόγιο",
+    "type": "choice",
+    "prompt": "Ποια έκφραση;",
+    "front": "καταστρέφω ολοσχερώς",
+    "options": [
+     "etwas in Schutt und Asche legen",
+     "etwas auf Eis legen",
+     "sich ins Zeug legen"
+    ],
+    "answer": "etwas in Schutt und Asche legen",
+    "explain": "der Schutt = τα μπάζα, die Asche = η στάχτη."
+   },
+   {
+    "id": "h45-voc-gang",
+    "tag": "Λεξιλόγιο",
+    "type": "choice",
+    "prompt": "Τι σημαίνει;",
+    "front": "etwas in Gang setzen",
+    "options": [
+     "ξεκινώ μια διαδικασία",
+     "βάζω κάτι στον διάδρομο",
+     "παγώνω κάτι προσωρινά"
+    ],
+    "answer": "ξεκινώ μια διαδικασία",
+    "explain": "der Gang = το βάδισμα, και η ταχύτητα στο αυτοκίνητο (gehen)."
+   },
+   {
+    "id": "h45-b1",
+    "tag": "Wie sagt man das?",
+    "type": "flip",
+    "front": "Μην το διατυμπανίζεις! (du)",
+    "back": "Häng das nicht (gleich) an die große Glocke!"
+   },
+   {
+    "id": "h45-b2",
+    "tag": "Wie sagt man das?",
+    "type": "flip",
+    "front": "Η εταιρεία πάγωσε το σχέδιο. (Präteritum)",
+    "back": "Die Firma legte das Projekt auf Eis."
+   },
+   {
+    "id": "h45-b3",
+    "tag": "Wie sagt man das?",
+    "type": "flip",
+    "front": "Βάλε τα δυνατά σου! (du)",
+    "back": "Leg dich ins Zeug!"
+   },
+   {
+    "id": "h45-b4",
+    "tag": "Wie sagt man das?",
+    "type": "flip",
+    "front": "Μη με πιέζεις! (du)",
+    "back": "Setz mich nicht unter Druck!"
+   },
+   {
+    "id": "h45-b5",
+    "tag": "Wie sagt man das?",
+    "type": "flip",
+    "front": "Μάλλον το παρεξήγησες.",
+    "back": "Das hast du wohl in den falschen Hals bekommen."
+   },
+   {
+    "id": "h45-b6",
+    "tag": "Wie sagt man das?",
+    "type": "flip",
+    "front": "Ρισκάρει την καριέρα του. (Präsens)",
+    "back": "Er setzt seine Karriere aufs Spiel."
+   },
+   {
+    "id": "h45-g1",
+    "tag": "Το διαβολάκι στις εκφράσεις",
+    "type": "flip",
+    "front": "in den Raum, vor die Wahl, aufs Spiel, an den Pranger, in die Tasche: τι pattern έχουν όλες;",
+    "back": "Δίπτωτη πρόθεση + αιτιατική: είναι διαβολάκια. Η εικόνα της κίνησης είναι ακόμα εκεί, μόνο που τώρα είναι μεταφορική."
+   },
+   {
+    "id": "h45-g1-ohne",
+    "tag": "Το διαβολάκι στις εκφράσεις",
+    "type": "flip",
+    "front": "unter Beweis, in Gang, unter Druck, auf Eis, in Schutt und Asche: πώς τις μαθαίνεις;",
+    "back": "Δεν έχουν άρθρο, άρα η πτώση δεν φαίνεται. Μάθε τις ως πακέτο, με το ρήμα τους."
+   },
+   {
+    "id": "h45-g2-1",
+    "tag": "Στάση και κίνηση στις εκφράσεις",
+    "type": "choice",
+    "prompt": "Διάλεξε το σωστό ρήμα.",
+    "front": "Seine Karriere ___ auf dem Spiel.",
+    "options": [
+     "steht",
+     "setzt"
+    ],
+    "answer": "steht",
+    "explain": "Στάση, auf dem (δοτική): η καριέρα του κινδυνεύει."
+   },
+   {
+    "id": "h45-g2-2",
+    "tag": "Στάση και κίνηση στις εκφράσεις",
+    "type": "choice",
+    "prompt": "Διάλεξε το σωστό ρήμα.",
+    "front": "Er ___ seine Karriere aufs Spiel.",
+    "options": [
+     "steht",
+     "setzt"
+    ],
+    "answer": "setzt",
+    "explain": "Κίνηση, aufs (αιτιατική): ρισκάρει την καριέρα του."
+   },
+   {
+    "id": "h45-g2-3",
+    "tag": "Στάση και κίνηση στις εκφράσεις",
+    "type": "choice",
+    "prompt": "Διάλεξε το σωστό ρήμα.",
+    "front": "Ich ___ vor der Wahl: bleiben oder gehen?",
+    "options": [
+     "stehe",
+     "stelle"
+    ],
+    "answer": "stehe",
+    "explain": "Στάση, vor der (δοτική): πρέπει να διαλέξω."
+   },
+   {
+    "id": "h45-g2-4",
+    "tag": "Στάση και κίνηση στις εκφράσεις",
+    "type": "choice",
+    "prompt": "Διάλεξε το σωστό ρήμα.",
+    "front": "Der Chef ___ mich vor die Wahl.",
+    "options": [
+     "steht",
+     "stellt"
+    ],
+    "answer": "stellt",
+    "explain": "Κίνηση, vor die (αιτιατική): ο διευθυντής με αναγκάζει να διαλέξω."
+   },
+   {
+    "id": "h45-g2-5",
+    "tag": "Στάση και κίνηση στις εκφράσεις",
+    "type": "choice",
+    "prompt": "Διάλεξε το σωστό ρήμα.",
+    "front": "Wir ___ unter Druck.",
+    "options": [
+     "stehen",
+     "setzen"
+    ],
+    "answer": "stehen",
+    "explain": "(!) Wir stehen unter Druck: είμαστε υπό πίεση, με stehen."
+   },
+   {
+    "id": "h45-g2-6",
+    "tag": "Στάση και κίνηση στις εκφράσεις",
+    "type": "choice",
+    "prompt": "Διάλεξε το σωστό ρήμα.",
+    "front": "Niemand ___ dich unter Druck.",
+    "options": [
+     "steht",
+     "setzt"
+    ],
+    "answer": "setzt",
+    "explain": "Κάποιος πιέζει κάποιον (dich): setzen."
+   },
+   {
+    "id": "h45-g2-pranger",
+    "tag": "Στάση και κίνηση στις εκφράσεις",
+    "type": "choice",
+    "prompt": "Διάλεξε το σωστό ρήμα.",
+    "front": "Er ___ am Pranger.",
+    "options": [
+     "steht",
+     "stellt"
+    ],
+    "answer": "steht",
+    "explain": "Στάση, am (δοτική): είναι διαπομπευμένος. Die Medien stellen ihn an den Pranger = τα ΜΜΕ τον διαπομπεύουν."
+   },
+   {
+    "id": "h45-g3-pron1",
+    "tag": "Ich lege mich ins Zeug",
+    "type": "type",
+    "prompt": "Συμπλήρωσε την αντωνυμία (αιτιατική).",
+    "front": "du legst ___ ins Zeug",
+    "answers": [
+     "dich"
+    ],
+    "explain": "Δεν βάζω κάτι άλλο, βάζω τον εαυτό μου. Γι' αυτό η αντωνυμία είναι σε αιτιατική."
+   },
+   {
+    "id": "h45-g3-pron2",
+    "tag": "Ich lege mich ins Zeug",
+    "type": "type",
+    "prompt": "Συμπλήρωσε την αντωνυμία (αιτιατική).",
+    "front": "wir legen ___ ins Zeug",
+    "answers": [
+     "uns"
+    ],
+    "explain": "Δεν βάζω κάτι άλλο, βάζω τον εαυτό μου. Γι' αυτό η αντωνυμία είναι σε αιτιατική."
+   },
+   {
+    "id": "h45-g3-pron3",
+    "tag": "Ich lege mich ins Zeug",
+    "type": "type",
+    "prompt": "Συμπλήρωσε την αντωνυμία (αιτιατική).",
+    "front": "ihr legt ___ ins Zeug",
+    "answers": [
+     "euch"
+    ],
+    "explain": "Δεν βάζω κάτι άλλο, βάζω τον εαυτό μου. Γι' αυτό η αντωνυμία είναι σε αιτιατική."
+   },
+   {
+    "id": "h45-g3-t1",
+    "tag": "Ich lege mich ins Zeug",
+    "type": "type",
+    "prompt": "Γράψε το Präteritum.",
+    "front": "Ich ___ mich ins Zeug.",
+    "answers": [
+     "legte"
+    ],
+    "explain": "Όλα ομαλά: θέμα + te. Ich legte mich ins Zeug."
+   },
+   {
+    "id": "h45-g3-t2",
+    "tag": "Ich lege mich ins Zeug",
+    "type": "type",
+    "prompt": "Συμπλήρωσε τη μετοχή (Perfekt).",
+    "front": "Ich habe mich ins Zeug ___.",
+    "answers": [
+     "gelegt"
+    ],
+    "explain": "ge + θέμα + t, Perfekt με haben: Ich habe mich ins Zeug gelegt."
+   },
+   {
+    "id": "h45-g3-t3",
+    "tag": "Ich lege mich ins Zeug",
+    "type": "type",
+    "prompt": "Συμπλήρωσε τη μετοχή (Perfekt).",
+    "front": "Sie hat ihre Fähigkeiten unter Beweis ___.",
+    "answers": [
+     "gestellt"
+    ],
+    "explain": "Sie hat ihre Fähigkeiten unter Beweis gestellt."
+   },
+   {
+    "id": "h45-g3-t4",
+    "tag": "Ich lege mich ins Zeug",
+    "type": "type",
+    "prompt": "Γράψε το Präteritum.",
+    "front": "Er ___ alles an die große Glocke.",
+    "answers": [
+     "hängte"
+    ],
+    "explain": "Το hängen της κίνησης είναι ομαλό: hängte. Er hängte alles an die große Glocke."
+   },
+   {
+    "id": "h45-g3-t5",
+    "tag": "Ich lege mich ins Zeug",
+    "type": "type",
+    "prompt": "Συμπλήρωσε τη μετοχή (Perfekt).",
+    "front": "Er hat alles an die große Glocke ___.",
+    "answers": [
+     "gehängt"
+    ],
+    "explain": "Ομαλό: ge + häng + t. Er hat alles an die große Glocke gehängt."
+   }
+  ]
+ },
+ {
+  "id": "4.6",
+  "title": "Μέσα, έξω, πάνω, κάτω: τα επιρρήματα στάσης και κίνησης",
+  "week": "Woche 4",
+  "cards": [
+   {
+    "id": "h46-prep-drinnen",
+    "tag": "Πρόθεση ή επίρρημα;",
+    "type": "choice",
+    "front": "Peter ist ___.",
+    "options": [
+     "drinnen",
+     "in"
+    ],
+    "answer": "drinnen",
+    "explain": "Το σκέτο «μέσα» είναι επίρρημα: στέκεται μόνο του, μπορείς να βάλεις τελεία. Το in είναι πρόθεση και θέλει ουσιαστικό (in der Küche)."
+   },
+   {
+    "id": "h46-prep-vs-adv",
+    "tag": "Πρόθεση ή επίρρημα;",
+    "type": "flip",
+    "front": "Ποια η διαφορά ανάμεσα στο «μέσα σε» και στο σκέτο «μέσα»;",
+    "back": "Το «μέσα σε» είναι πρόθεση (in): δεν στέκεται μόνο του, θέλει ουσιαστικό (in der Küche). Το σκέτο «μέσα» είναι επίρρημα (drinnen, hinein): στέκεται μόνο του."
+   },
+   {
+    "id": "h46-tri-mesa",
+    "tag": "Οι τριαδούλες",
+    "type": "flip",
+    "prompt": "Πες την τριαδούλα: στάση, πηγαίνει, έρχεται.",
+    "front": "μέσα",
+    "back": "drinnen · hinein · herein"
+   },
+   {
+    "id": "h46-tri-exo",
+    "tag": "Οι τριαδούλες",
+    "type": "flip",
+    "prompt": "Πες την τριαδούλα: στάση, πηγαίνει, έρχεται.",
+    "front": "έξω",
+    "back": "draußen · hinaus · heraus"
+   },
+   {
+    "id": "h46-tri-pano",
+    "tag": "Οι τριαδούλες",
+    "type": "flip",
+    "prompt": "Πες την τριαδούλα: στάση, πηγαίνει, έρχεται.",
+    "front": "πάνω",
+    "back": "oben · hinauf · herauf"
+   },
+   {
+    "id": "h46-tri-kato",
+    "tag": "Οι τριαδούλες",
+    "type": "flip",
+    "prompt": "Πες την τριαδούλα: στάση, πηγαίνει, έρχεται.",
+    "front": "κάτω",
+    "back": "unten · hinunter · herunter"
+   },
+   {
+    "id": "h46-tri-apenanti",
+    "tag": "Οι τριαδούλες",
+    "type": "flip",
+    "prompt": "Πες την τριαδούλα: στάση, πηγαίνει, έρχεται.",
+    "front": "απέναντι",
+    "back": "drüben · hinüber · herüber"
+   },
+   {
+    "id": "h46-draussen",
+    "tag": "Οι τριαδούλες",
+    "type": "type",
+    "prompt": "Γράψε το επίρρημα.",
+    "front": "έξω · στάση (είναι)",
+    "answers": [
+     "draußen"
+    ],
+    "explain": "draußen: τελειώνει σε -n, όπως όλη η στήλη της στάσης, και κρύβει μέσα του το aus."
+   },
+   {
+    "id": "h46-hinunter",
+    "tag": "Οι τριαδούλες",
+    "type": "type",
+    "prompt": "Γράψε το επίρρημα.",
+    "front": "κάτω · πηγαίνει",
+    "answers": [
+     "hinunter"
+    ],
+    "explain": "hin + unter: το hin λέει ότι η κίνηση απομακρύνεται από μένα, «άντε, πήγαινε»."
+   },
+   {
+    "id": "h46-drueben",
+    "tag": "Οι τριαδούλες",
+    "type": "type",
+    "prompt": "Γράψε το επίρρημα.",
+    "front": "απέναντι · στάση (είναι)",
+    "answers": [
+     "drüben"
+    ],
+    "explain": "drüben: τελειώνει σε -n και κρύβει μέσα του το über."
+   },
+   {
+    "id": "h46-dorthin",
+    "tag": "Οι τριαδούλες",
+    "type": "type",
+    "prompt": "Γράψε το επίρρημα.",
+    "front": "εκεί · πηγαίνει",
+    "answers": [
+     "dorthin"
+    ],
+    "explain": "Στάση: dort. Κίνηση προς τα εκεί: dorthin. Και σκέτο: Geh hin!"
+   },
+   {
+    "id": "h46-hierher",
+    "tag": "Οι τριαδούλες",
+    "type": "type",
+    "prompt": "Γράψε το επίρρημα.",
+    "front": "εδώ · έρχεται",
+    "answers": [
+     "hierher"
+    ],
+    "explain": "Στάση: hier. Κίνηση προς εμένα: hierher. Και σκέτο: Komm her!"
+   },
+   {
+    "id": "h46-stasi-n",
+    "tag": "Οι τριαδούλες",
+    "type": "flip",
+    "front": "Τι παρατηρούμε στη στήλη της στάσης (drinnen, draußen, oben, unten, drüben);",
+    "back": "Τελειώνουν σε -n. Και κάποια κρύβουν μέσα τους μια πρόθεση: drinnen (in), draußen (aus), drüben (über)."
+   },
+   {
+    "id": "h46-orizontia",
+    "tag": "Οι τριαδούλες",
+    "type": "flip",
+    "front": "Πώς μαθαίνεις τον μεγάλο πίνακα;",
+    "back": "Οριζόντια, σε τριαδούλες: drinnen, hinein, herein. Όχι στήλη στήλη προς τα κάτω. Και τις λες δυνατά, μία φορά την ημέρα, μέχρι να βγαίνουν μόνες τους."
+   },
+   {
+    "id": "h46-hin-her",
+    "tag": "hin ή her;",
+    "type": "flip",
+    "front": "hin και her: τι λένε;",
+    "back": "hin: η κίνηση απομακρύνεται από μένα (η χειρονομία «άντε, πήγαινε»). her: έρχεται προς εμένα (η χειρονομία «έλα»). Μαζί: hin und her, πέρα δώθε."
+   },
+   {
+    "id": "h46-hh-1",
+    "tag": "hin ή her;",
+    "type": "choice",
+    "prompt": "Πρόσεξε πού είμαι εγώ.",
+    "front": "(Είμαι μέσα.) Komm ___!",
+    "options": [
+     "herein",
+     "hinein"
+    ],
+    "answer": "herein",
+    "explain": "Είμαι μέσα και σου λέω «έλα»: η κίνηση έρχεται προς εμένα, άρα her."
+   },
+   {
+    "id": "h46-hh-2",
+    "tag": "hin ή her;",
+    "type": "choice",
+    "prompt": "Πρόσεξε πού είμαι εγώ.",
+    "front": "(Είμαστε και οι δύο μέσα.) Geh ___ und spiel im Garten!",
+    "options": [
+     "hinaus",
+     "heraus"
+    ],
+    "answer": "hinaus",
+    "explain": "«Άντε, πήγαινε» έξω: απομακρύνεσαι από μένα, άρα hin."
+   },
+   {
+    "id": "h46-hh-3",
+    "tag": "hin ή her;",
+    "type": "choice",
+    "prompt": "Πρόσεξε πού είμαι εγώ.",
+    "front": "(Είμαι πάνω.) Komm ___!",
+    "options": [
+     "herauf",
+     "hinauf"
+    ],
+    "answer": "herauf",
+    "explain": "Έλα πάνω, εκεί που είμαι εγώ: her."
+   },
+   {
+    "id": "h46-hh-4",
+    "tag": "hin ή her;",
+    "type": "choice",
+    "prompt": "Πρόσεξε πού είμαι εγώ.",
+    "front": "(Είμαστε και οι δύο κάτω.) Geh ___ und hol meine Brille!",
+    "options": [
+     "hinauf",
+     "herauf"
+    ],
+    "answer": "hinauf",
+    "explain": "Εγώ μένω κάτω και εσύ φεύγεις από μένα προς τα πάνω: hin."
+   },
+   {
+    "id": "h46-hh-5",
+    "tag": "hin ή her;",
+    "type": "choice",
+    "prompt": "Πρόσεξε πού είμαι εγώ.",
+    "front": "(Είμαι απέναντι.) Komm ___!",
+    "options": [
+     "herüber",
+     "hinüber"
+    ],
+    "answer": "herüber",
+    "explain": "Έλα απέναντι, προς εμένα: her."
+   },
+   {
+    "id": "h46-hh-6",
+    "tag": "hin ή her;",
+    "type": "choice",
+    "front": "Der Arzt ruft: „___!“",
+    "options": [
+     "Herein",
+     "Hinein"
+    ],
+    "answer": "Herein",
+    "explain": "Ο γιατρός είναι μέσα και σου λέει «έλα μέσα»: σκέτο Herein!"
+   },
+   {
+    "id": "h46-uhu",
+    "tag": "hin ή her;",
+    "type": "flip",
+    "front": "Γιατί hinein και όχι «hinin»;",
+    "back": "hin + e + in: το hin δεν τους έκατσε ακουστικά και έβαλαν ένα e, σαν την κόλλα UHU."
+   },
+   {
+    "id": "h46-komm-her",
+    "tag": "hin ή her;",
+    "type": "type",
+    "prompt": "Γράψε στα Γερμανικά.",
+    "front": "Έλα εδώ!",
+    "answers": [
+     "Komm her",
+     "Komm hierher"
+    ],
+    "explain": "Komm her! (= Komm hierher!) Το hier είναι μόνο για τη στάση: Peter ist hier."
+   },
+   {
+    "id": "h46-komm-hier",
+    "tag": "hin ή her;",
+    "type": "choice",
+    "front": "«Έλα εδώ!» στα Γερμανικά:",
+    "options": [
+     "Komm her!",
+     "Komm hier!"
+    ],
+    "answer": "Komm her!",
+    "explain": "Από τα Αγγλικά (come here) νομίζουμε ότι υπάρχει μία λέξη για το «εδώ». Στα Γερμανικά: hier για τη στάση, her για την κίνηση προς εμένα. Και πρόσεξε, το «Komm hier!» δεν σημαίνει αυτό που μάλλον νόμιζες!"
+   },
+   {
+    "id": "h46-geh-hin",
+    "tag": "hin ή her;",
+    "type": "choice",
+    "front": "Geh hin!",
+    "options": [
+     "Πήγαινε εκεί!",
+     "Έλα εδώ!"
+    ],
+    "answer": "Πήγαινε εκεί!",
+    "explain": "Geh hin! = Geh dorthin! Το dort δεν χρειάζεται."
+   },
+   {
+    "id": "h46-ueber-apenanti",
+    "tag": "über ή durch;",
+    "type": "flip",
+    "front": "Γιατί το über για το «απέναντι» (drüben, hinüber, herüber);",
+    "back": "Το über + αιτιατική σημαίνει και διασχίζω μια ανοιχτή επιφάνεια (σαν το αγγλικό to cross). Πάω απέναντι = διασχίζω την ανοιχτή επιφάνεια, γι' αυτό οι Γερμανοί έκλεψαν το über."
+   },
+   {
+    "id": "h46-ud-1",
+    "tag": "über ή durch;",
+    "type": "choice",
+    "front": "Die Kinder gehen ___ die Straße.",
+    "options": [
+     "über",
+     "durch"
+    ],
+    "answer": "über",
+    "explain": "Ο δρόμος είναι ανοιχτή επιφάνεια: über, σαν το αγγλικό to cross."
+   },
+   {
+    "id": "h46-ud-2",
+    "tag": "über ή durch;",
+    "type": "choice",
+    "front": "Wir fahren ___ den Tunnel.",
+    "options": [
+     "durch",
+     "über"
+    ],
+    "answer": "durch",
+    "explain": "Το τούνελ είναι κλειστός χώρος: durch, σαν το αγγλικό through."
+   },
+   {
+    "id": "h46-ud-3",
+    "tag": "über ή durch;",
+    "type": "choice",
+    "front": "Sie geht ___ den Park.",
+    "options": [
+     "durch",
+     "über"
+    ],
+    "answer": "durch",
+    "explain": "Το πάρκο είναι κλειστός χώρος: durch."
+   },
+   {
+    "id": "h46-ud-4",
+    "tag": "über ή durch;",
+    "type": "choice",
+    "front": "Er läuft ___ den Platz.",
+    "options": [
+     "über",
+     "durch"
+    ],
+    "answer": "über",
+    "explain": "Η πλατεία είναι ανοιχτή επιφάνεια: über."
+   },
+   {
+    "id": "h46-ud-5",
+    "tag": "über ή durch;",
+    "type": "choice",
+    "front": "Der Fuchs läuft ___ den Wald.",
+    "options": [
+     "durch",
+     "über"
+    ],
+    "answer": "durch",
+    "explain": "Το δάσος είναι κλειστός χώρος: durch."
+   },
+   {
+    "id": "h46-te-1",
+    "tag": "Τόπος ή επεξήγηση;",
+    "type": "choice",
+    "prompt": "Απαντάει στο «πού;» ή στο «ποιο;»;",
+    "front": "Peter ist <mark>oben<\/mark> im Zimmer.",
+    "options": [
+     "πού; (τόπος)",
+     "ποιο; (επεξήγηση)"
+    ],
+    "answer": "πού; (τόπος)",
+    "explain": "Το oben εδώ είναι μια έξτρα συντεταγμένη και απαντάει στο «πού;». Και σκέτο «Peter ist im Zimmer» θα σε καταλάβαινα μια χαρά."
+   },
+   {
+    "id": "h46-te-2",
+    "tag": "Τόπος ή επεξήγηση;",
+    "type": "choice",
+    "prompt": "Απαντάει στο «πού;» ή στο «ποιο;»;",
+    "front": "Ich höre Schritte im Flur <mark>oben<\/mark>.",
+    "options": [
+     "ποιο; (επεξήγηση)",
+     "πού; (τόπος)"
+    ],
+    "answer": "ποιο; (επεξήγηση)",
+    "explain": "Το oben μετά το ουσιαστικό λέει ποιο: ο διάδρομος που είναι πάνω. Το λέμε και με άλλη μελωδία."
+   },
+   {
+    "id": "h46-te-3",
+    "tag": "Τόπος ή επεξήγηση;",
+    "type": "choice",
+    "prompt": "Απαντάει στο «πού;» ή στο «ποιο;»;",
+    "front": "Die Kinder spielen <mark>draußen<\/mark> im Garten.",
+    "options": [
+     "πού; (τόπος)",
+     "ποιο; (επεξήγηση)"
+    ],
+    "answer": "πού; (τόπος)",
+    "explain": "Δύο συντεταγμένες, και οι δύο απαντάνε στο «πού;»: έξω, στον κήπο."
+   },
+   {
+    "id": "h46-epexigisi",
+    "tag": "Τόπος ή επεξήγηση;",
+    "type": "flip",
+    "front": "Peter ist oben im Zimmer / Peter ist im Zimmer oben: ποια η διαφορά;",
+    "back": "Πρώτο: τόπος, απαντάει στο «πού;» (μια έξτρα συντεταγμένη). Δεύτερο: επεξήγηση, απαντάει στο «ποιο;» (το δωμάτιο που είναι πάνω). Η επεξήγηση μπαίνει μετά το ουσιαστικό και λέγεται με άλλη μελωδία."
+   },
+   {
+    "id": "h46-sk-1",
+    "tag": "Στάση ή κίνηση;",
+    "type": "choice",
+    "prompt": "Στάση ή κίνηση; Διάλεξε.",
+    "front": "Die Kinder spielen ___ im Garten.",
+    "options": [
+     "draußen",
+     "hinaus"
+    ],
+    "answer": "draußen",
+    "explain": "spielen είναι στάση: τα παιδιά είναι έξω και παίζουν. Δύο συντεταγμένες: έξω, στον κήπο."
+   },
+   {
+    "id": "h46-sk-2",
+    "tag": "Στάση ή κίνηση;",
+    "type": "choice",
+    "prompt": "Στάση ή κίνηση; Διάλεξε.",
+    "front": "Der Hund will ___ in den Garten.",
+    "options": [
+     "hinaus",
+     "draußen"
+    ],
+    "answer": "hinaus",
+    "explain": "Ο σκύλος θέλει να βγει έξω: κίνηση, και απομακρύνεται, άρα hinaus."
+   },
+   {
+    "id": "h46-sk-3",
+    "tag": "Στάση ή κίνηση;",
+    "type": "choice",
+    "prompt": "Στάση ή κίνηση; Διάλεξε.",
+    "front": "Peter ist ___ im Zimmer.",
+    "options": [
+     "oben",
+     "hinauf"
+    ],
+    "answer": "oben",
+    "explain": "ist = στάση: oben, με το -n της στάσης."
+   },
+   {
+    "id": "h46-sk-4",
+    "tag": "Στάση ή κίνηση;",
+    "type": "choice",
+    "prompt": "Στάση ή κίνηση; Διάλεξε.",
+    "front": "Sie ging langsam die Treppe ___.",
+    "options": [
+     "hinauf",
+     "oben"
+    ],
+    "answer": "hinauf",
+    "explain": "Ανέβηκε αργά τη σκάλα: κίνηση. Ως χωριζόμενο πρόθεμα πάει στο τέλος. (Καθημερινό: hoch.)"
+   },
+   {
+    "id": "h46-sk-5",
+    "tag": "Στάση ή κίνηση;",
+    "type": "choice",
+    "prompt": "Στάση ή κίνηση; Διάλεξε.",
+    "front": "Sie wohnt ___ im gelben Haus.",
+    "options": [
+     "drüben",
+     "hinüber"
+    ],
+    "answer": "drüben",
+    "explain": "wohnen είναι στάση: μένει απέναντι, στο κίτρινο σπίτι."
+   },
+   {
+    "id": "h46-sk-6",
+    "tag": "Στάση ή κίνηση;",
+    "type": "choice",
+    "prompt": "Στάση ή κίνηση; Διάλεξε.",
+    "front": "Der Hund schläft ___ auf dem Teppich.",
+    "options": [
+     "unten",
+     "hinunter"
+    ],
+    "answer": "unten",
+    "explain": "schlafen είναι στάση: κάτω, στο χαλί."
+   },
+   {
+    "id": "h46-praefix",
+    "tag": "Στάση ή κίνηση;",
+    "type": "flip",
+    "front": "Er ging leise in das Zimmer hinein. Γιατί το hinein πάει στο τέλος;",
+    "back": "Το hinein, hinaus κ.λπ. είναι επιρρήματα, αλλά και προθέματα χωριζόμενων ρημάτων. Ως χωριζόμενα προθέματα πάνε στο τέλος. (Και χωρίς hinein η πρόταση είναι σωστή, με αυτό είναι πιο ανεβασμένη, προς B2.)"
+   },
+   {
+    "id": "h46-winken",
+    "tag": "Στάση ή κίνηση;",
+    "type": "flip",
+    "front": "Ich winke ihr hinüber. Το winken δεν είναι ρήμα κίνησης. Γιατί hinüber;",
+    "back": "Δεν πάω απέναντι με τα πόδια μου. Η κίνηση είναι του χεριού μου, που πάει προς τα εκεί (στη γιαγιά που μένει απέναντι)."
+   },
+   {
+    "id": "h46-herueber",
+    "tag": "Στάση ή κίνηση;",
+    "type": "flip",
+    "front": "Komm doch mal kurz herüber! Πρέπει ο άλλος να είναι απέναντι;",
+    "back": "Όχι. Το herüber το λένε οι Γερμανοί και όταν ο άλλος είναι απλώς στο διπλανό δωμάτιο."
+   },
+   {
+    "id": "h46-rein",
+    "tag": "Καθημερινά",
+    "type": "choice",
+    "prompt": "Το rein είναι το καθημερινό…",
+    "front": "Komm schnell <mark>rein<\/mark>, es ist kalt.",
+    "options": [
+     "herein",
+     "hinein"
+    ],
+    "answer": "herein",
+    "explain": "rein = το καθημερινό herein: έλα μέσα, προς εμένα."
+   },
+   {
+    "id": "h46-hoch",
+    "tag": "Καθημερινά",
+    "type": "choice",
+    "prompt": "Το hoch εδώ είναι το καθημερινό…",
+    "front": "Sie ging die Treppe <mark>hoch<\/mark>.",
+    "options": [
+     "hinauf",
+     "oben"
+    ],
+    "answer": "hinauf",
+    "explain": "hoch είναι το καθημερινό για το hinauf. Άλλα καθημερινά: drin, rein, raus, rauf, runter, rüber."
+   },
+   {
+    "id": "h46-haus",
+    "tag": "Καθημερινά",
+    "type": "choice",
+    "front": "«Πάω σπίτι» (εκεί που μένω):",
+    "options": [
+     "nach Hause",
+     "in das Haus"
+    ],
+    "answer": "nach Hause",
+    "explain": "Το Haus είναι κυρίως το κτίριο. Για το «σπίτι» ως «εκεί που μένω»: zu Hause (στο σπίτι), nach Hause (προς το σπίτι)."
+   }
+  ]
+ },
+ {
+  "id": "4.7",
+  "title": "Ανεβαίνω, κατεβαίνω, μπαίνω, βγαίνω",
+  "week": "Woche 4",
+  "cards": [
+   {
+    "id": "h47-hinaufgehen",
+    "tag": "Ο Έλληνας κάνει σύμπτυξη",
+    "type": "type",
+    "prompt": "Γράψε το ρήμα (απομακρύνομαι).",
+    "front": "ανεβαίνω (πηγαίνω πάνω)",
+    "answers": [
+     "hinaufgehen"
+    ],
+    "explain": "Ανεβαίνω = πηγαίνω πάνω. Ο Έλληνας κόλλησε δύο λέξεις σε μία, εσύ τις σπας: hinauf + gehen."
+   },
+   {
+    "id": "h47-hinuntergehen",
+    "tag": "Ο Έλληνας κάνει σύμπτυξη",
+    "type": "type",
+    "prompt": "Γράψε το ρήμα (απομακρύνομαι).",
+    "front": "κατεβαίνω (πηγαίνω κάτω)",
+    "answers": [
+     "hinuntergehen"
+    ],
+    "explain": "Κατεβαίνω = πηγαίνω κάτω: διαλέγεις το σωστό «κάτω» από τον πίνακα, hinunter."
+   },
+   {
+    "id": "h47-hineingehen",
+    "tag": "Ο Έλληνας κάνει σύμπτυξη",
+    "type": "type",
+    "prompt": "Γράψε το ρήμα (απομακρύνομαι).",
+    "front": "μπαίνω (πηγαίνω μέσα)",
+    "answers": [
+     "hineingehen"
+    ],
+    "explain": "Μπαίνω = πηγαίνω μέσα: hinein + gehen."
+   },
+   {
+    "id": "h47-hinausgehen",
+    "tag": "Ο Έλληνας κάνει σύμπτυξη",
+    "type": "type",
+    "prompt": "Γράψε το ρήμα (απομακρύνομαι).",
+    "front": "βγαίνω (πηγαίνω έξω)",
+    "answers": [
+     "hinausgehen"
+    ],
+    "explain": "Βγαίνω = πηγαίνω έξω: hinaus + gehen."
+   },
+   {
+    "id": "h47-hereinkommen",
+    "tag": "Ο Έλληνας κάνει σύμπτυξη",
+    "type": "choice",
+    "front": "μπαίνω (κάποιος πλησιάζει προς εμένα)",
+    "options": [
+     "hereinkommen",
+     "hineingehen"
+    ],
+    "answer": "hereinkommen",
+    "explain": "Όταν κάποιος πλησιάζει προς εμένα: her + kommen. Όταν απομακρύνεται: hin + gehen."
+   },
+   {
+    "id": "h47-herunterkommen",
+    "tag": "Ο Έλληνας κάνει σύμπτυξη",
+    "type": "choice",
+    "front": "κατεβαίνω (πλησιάζω προς αυτόν που μιλάει, που είναι κάτω)",
+    "options": [
+     "herunterkommen",
+     "hinuntergehen"
+    ],
+    "answer": "herunterkommen",
+    "explain": "Αυτός που μιλάει είναι κάτω και εγώ έρχομαι προς αυτόν: herunterkommen."
+   },
+   {
+    "id": "h47-symptyxi",
+    "tag": "Ο Έλληνας κάνει σύμπτυξη",
+    "type": "flip",
+    "front": "Γιατί το «ανεβαίνω» δεν είναι μία λέξη στα Γερμανικά;",
+    "back": "Γιατί τα Ελληνικά έχουν κολλήσει δύο λέξεις (πηγαίνω + πάνω). Στα Γερμανικά λες ρήμα + επίρρημα/πρόθεμα (hinaufgehen)."
+   },
+   {
+    "id": "h47-geht-kommt",
+    "tag": "Πού είμαι εγώ;",
+    "type": "flip",
+    "front": "Ποια η διαφορά ανάμεσα στο «Peter geht hinauf» και στο «Peter kommt herauf»;",
+    "back": "Στο hinauf ο Πέτρος απομακρύνεται από μένα, στο herauf έρχεται προς εμένα (εγώ είμαι πάνω)."
+   },
+   {
+    "id": "h47-st-1",
+    "tag": "Πού είμαι εγώ;",
+    "type": "type",
+    "prompt": "Γράψε στα Γερμανικά.",
+    "front": "Ανεβαίνω. (φεύγω από εδώ)",
+    "answers": [
+     "Ich gehe hinauf"
+    ],
+    "explain": "Φεύγω από εδώ και πάω πάνω: απομακρύνομαι, άρα hin."
+   },
+   {
+    "id": "h47-st-2",
+    "tag": "Πού είμαι εγώ;",
+    "type": "type",
+    "prompt": "Γράψε στα Γερμανικά.",
+    "front": "Έλα πάνω! (εγώ είμαι πάνω)",
+    "answers": [
+     "Komm herauf"
+    ],
+    "explain": "Εγώ είμαι πάνω, η κίνηση έρχεται προς εμένα: her.",
+    "alsoOk": [
+     "Komm rauf"
+    ],
+    "alsoNote": "Σωστό στην καθομιλουμένη. Εδώ μάθε πρώτα το <b>Komm herauf!<\/b>"
+   },
+   {
+    "id": "h47-st-3",
+    "tag": "Πού είμαι εγώ;",
+    "type": "type",
+    "prompt": "Γράψε στα Γερμανικά.",
+    "front": "Ο Πέτρος βγαίνει. (εγώ είμαι μέσα)",
+    "answers": [
+     "Peter geht hinaus"
+    ],
+    "explain": "Εγώ είμαι μέσα και ο Πέτρος απομακρύνεται από μένα: hinaus."
+   },
+   {
+    "id": "h47-st-4",
+    "tag": "Πού είμαι εγώ;",
+    "type": "type",
+    "prompt": "Γράψε στα Γερμανικά.",
+    "front": "Έλα έξω! (εγώ είμαι έξω)",
+    "answers": [
+     "Komm heraus"
+    ],
+    "explain": "Εγώ είμαι έξω, έλα προς εμένα: heraus.",
+    "alsoOk": [
+     "Komm raus"
+    ],
+    "alsoNote": "Σωστό στην καθομιλουμένη. Εδώ μάθε πρώτα το <b>Komm heraus!<\/b>"
+   },
+   {
+    "id": "h47-st-5",
+    "tag": "Πού είμαι εγώ;",
+    "type": "type",
+    "prompt": "Κατεβαίνω τη σκάλα. Συμπλήρωσε.",
+    "front": "Ich gehe die Treppe ___.",
+    "answers": [
+     "hinunter"
+    ],
+    "explain": "Κατεβαίνω τη σκάλα: hinuntergehen. Ως χωριζόμενο πρόθεμα, το hinunter πάει στο τέλος.",
+    "alsoOk": [
+     "runter"
+    ],
+    "alsoNote": "Σωστό στην καθομιλουμένη. Εδώ μάθε πρώτα το <b>hinunter<\/b>."
+   },
+   {
+    "id": "h47-peter-kommt",
+    "tag": "Πού είμαι εγώ;",
+    "type": "choice",
+    "front": "Ο Πέτρος ανεβαίνει. (εμείς είμαστε πάνω και τον βλέπουμε να έρχεται)",
+    "options": [
+     "Peter kommt herauf.",
+     "Peter geht hinauf."
+    ],
+    "answer": "Peter kommt herauf.",
+    "explain": "Εμείς είμαστε πάνω και ο Πέτρος έρχεται προς εμάς: kommt herauf."
+   },
+   {
+    "id": "h47-herein",
+    "tag": "Πού είμαι εγώ;",
+    "type": "flip",
+    "front": "Herein! Τι σου λέει στην ουσία ο γιατρός;",
+    "back": "Kommen Sie herein! (Περάστε!) Είναι μέσα και σε καλεί προς εμένα: her."
+   },
+   {
+    "id": "h47-anevazo",
+    "tag": "Ποιος κινείται;",
+    "type": "flip",
+    "front": "ανεβαίνω ή ανεβάζω: ποια η διαφορά;",
+    "back": "Στο ανεβαίνω κινείται το υποκείμενο (εγώ, ο Πέτρος). Στο ανεβάζω κινούμε κάτι άλλο. Και πάλι το σπάμε: ανεβάζω = πηγαίνω κάτι πάνω."
+   },
+   {
+    "id": "h47-tropos",
+    "tag": "Ποιος κινείται;",
+    "type": "flip",
+    "front": "Στο «Wir tragen den Ofen hinauf», τι λέει το ρήμα και τι το επίρρημα;",
+    "back": "Το ρήμα λέει τον τρόπο (tragen, κουβαλάω), το επίρρημα λέει προς τα πού (hinauf). Όποιο ρήμα κι αν διαλέξεις, θα έχει μέσα του το «πάνω»."
+   },
+   {
+    "id": "h47-tr-1",
+    "tag": "Ο τρόπος",
+    "type": "choice",
+    "prompt": "Ποιο ρήμα λέει τον τρόπο;",
+    "front": "Wir ___ den Ofen die Treppe hinauf.",
+    "options": [
+     "tragen",
+     "schieben"
+    ],
+    "answer": "tragen",
+    "explain": "Στη σκάλα το schieben (σπρώχνω) δεν βγάζει νόημα, δεν είναι ίσιο. Τρεις άνθρωποι κουβαλάνε τη σόμπα σκαλί σκαλί: tragen."
+   },
+   {
+    "id": "h47-tr-2",
+    "tag": "Ο τρόπος",
+    "type": "choice",
+    "prompt": "Ποιο ρήμα λέει τον τρόπο;",
+    "front": "Ich ___ das Buch in die Tasche hinein.",
+    "options": [
+     "stecke",
+     "trage"
+    ],
+    "answer": "stecke",
+    "explain": "Βάζω το βιβλίο μέσα στην τσάντα: stecken."
+   },
+   {
+    "id": "h47-tr-3",
+    "tag": "Ο τρόπος",
+    "type": "choice",
+    "prompt": "Ποιο ρήμα λέει τον τρόπο;",
+    "front": "Er ___ die Flasche in den Kühlschrank hinein.",
+    "options": [
+     "stellt",
+     "legt"
+    ],
+    "answer": "stellt",
+    "explain": "Το μπουκάλι μπαίνει όρθιο: stellen, θυμάσαι;"
+   },
+   {
+    "id": "h47-tr-4",
+    "tag": "Ο τρόπος",
+    "type": "choice",
+    "prompt": "Ποιο ρήμα λέει τον τρόπο;",
+    "front": "Sie ___ das Handy aus der Tasche heraus.",
+    "options": [
+     "nimmt",
+     "stellt"
+    ],
+    "answer": "nimmt",
+    "explain": "Βγάζει το κινητό από την τσάντα: nehmen ... heraus."
+   },
+   {
+    "id": "h47-koffer",
+    "tag": "Ο τρόπος",
+    "type": "type",
+    "prompt": "Κατεβάζω τη βαλίτσα. Συμπλήρωσε.",
+    "front": "Ich trage den Koffer ___.",
+    "answers": [
+     "hinunter"
+    ],
+    "explain": "Κατεβάζω τη βαλίτσα = την κουβαλάω κάτω: tragen + hinunter.",
+    "alsoOk": [
+     "runter"
+    ],
+    "alsoNote": "Σωστό στην καθομιλουμένη. Εδώ μάθε πρώτα το <b>hinunter<\/b>."
+   },
+   {
+    "id": "h47-stuhl",
+    "tag": "Ο τρόπος",
+    "type": "choice",
+    "prompt": "Βάζει την καρέκλα μέσα.",
+    "front": "Er ___ den Stuhl hinein.",
+    "options": [
+     "stellt",
+     "legt"
+    ],
+    "answer": "stellt",
+    "explain": "Βάζει την καρέκλα μέσα, όρθια: stellen."
+   },
+   {
+    "id": "h47-muell",
+    "tag": "Ο τρόπος",
+    "type": "type",
+    "prompt": "Βγάλε τα σκουπίδια! Συμπλήρωσε.",
+    "front": "Bring den Müll ___!",
+    "answers": [
+     "hinaus"
+    ],
+    "explain": "Βγάλε τα σκουπίδια: bringen + hinaus. Τα σκουπίδια φεύγουν από μένα, άρα hin.",
+    "alsoOk": [
+     "raus"
+    ],
+    "alsoNote": "Σωστό στην καθομιλουμένη. Εδώ μάθε πρώτα το <b>hinaus<\/b>."
+   }
+  ]
+ }
+];
+// @EXTRA_CARDS_END
+EXTRA.forEach(x => {
+  HANDOUTS.push({ id: x.id, title: x.title, week: x.week });
+  x.cards.forEach(c => { c.h = x.id; CARDS.push(c); });
+});
+
 // ---------- Αναφορά προς την Κλεάνθη (μόνο στην έκδοση του site, build_site.py βάζει το URL) ----------
 const REPORT_URL = "https://script.google.com/macros/s/AKfycbwB2ACNfSkQyAiaWNeLVVU60_c-CVGE0oUWH7WA3LQfDIC_OugK2G3gmwn0lFlzIMmIDQ/exec";
 const PRIVACY_URL = "https://kleanthiliodaki.com/datenschutz.html#lernkarten";
