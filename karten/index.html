@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<title>No-Brainer Karten</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&family=Commissioner:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: one narrow column, a single index card in the middle, a five-slot card box (Leitner) as the progress picture */
+:root {
+  --bg: #eef1f6;
+  --card: #ffffff;
+  --ink: #1d2a44;
+  --muted: #5b6782;
+  --line: #d5dbe7;
+  --accent: #2f5bd3;
+  --accent-ink: #ffffff;
+  --marker: #ffe27a;
+  --good: #1f8a5b;
+  --good-bg: #e2f4ea;
+  --bad: #b5374a;
+  --bad-bg: #fbe6e9;
+  --display: "Comfortaa", "Trebuchet MS", system-ui, sans-serif;
+  --body: "Commissioner", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121826; --card: #1b2335; --ink: #e6ebf5; --muted: #9aa6bf; --line: #2e3a52;
+    --accent: #7c9cff; --accent-ink: #0f1525; --marker: #6b5a12;
+    --good: #5fd39a; --good-bg: #173326; --bad: #ff8a9b; --bad-bg: #3a1c23;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121826; --card: #1b2335; --ink: #e6ebf5; --muted: #9aa6bf; --line: #2e3a52;
+  --accent: #7c9cff; --accent-ink: #0f1525; --marker: #6b5a12;
+  --good: #5fd39a; --good-bg: #173326; --bad: #ff8a9b; --bad-bg: #3a1c23;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 40px;
+}
+.wrap { max-width: 560px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+header { display: flex; flex-direction: column; gap: 4px; }
+.eyebrow { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+h1 { font-family: var(--display); font-size: 26px; margin: 0; text-wrap: balance; }
+h2 { font-family: var(--display); font-size: 20px; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+.muted { color: var(--muted); }
+
+.box { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.slot { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 10px 6px; text-align: center; display: flex; flex-direction: column; gap: 2px; }
+.slot b { font-size: 22px; font-variant-numeric: tabular-nums; }
+.slot span { font-size: 11px; color: var(--muted); line-height: 1.3; }
+.slot.new { border-style: dashed; }
+
+.today { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 14px; }
+.nums { display: flex; gap: 24px; flex-wrap: wrap; }
+.nums div { display: flex; flex-direction: column; }
+.nums b { font-size: 28px; font-variant-numeric: tabular-nums; font-family: var(--display); }
+.nums span { font-size: 13px; color: var(--muted); }
+
+button { font: inherit; cursor: pointer; border-radius: 10px; border: 1px solid var(--line); background: var(--card); color: var(--ink); padding: 12px 16px; min-height: 46px; }
+button:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+button.primary:disabled { opacity: .45; cursor: default; }
+button.link { border: none; background: none; color: var(--muted); padding: 6px 0; min-height: 0; text-decoration: underline; font-size: 14px; }
+
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px 20px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 6px 22px rgba(20, 30, 60, .07); position: relative; }
+.card::before { content: ""; position: absolute; left: 0; right: 0; top: 52px; border-top: 1px solid var(--line); }
+.card-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 28px; font-size: 13px; color: var(--muted); }
+.tag { background: var(--bg); border-radius: 999px; padding: 3px 10px; font-weight: 600; }
+.prompt { font-size: 15px; color: var(--muted); }
+.front { font-family: var(--display); font-size: 34px; font-weight: 700; line-height: 1.25; word-break: break-word; }
+.front mark { background: linear-gradient(transparent 55%, var(--marker) 55%); color: inherit; padding: 0 2px; }
+.front.small { font-size: 22px; font-family: var(--body); font-weight: 600; }
+.opts { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; }
+.opts button { font-size: 17px; font-weight: 600; }
+.opts button.right { background: var(--good-bg); border-color: var(--good); color: var(--good); }
+.opts button.wrong { background: var(--bad-bg); border-color: var(--bad); color: var(--bad); }
+input[type=text] { width: 100%; font: inherit; font-size: 18px; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
+.keys { display: flex; gap: 8px; flex-wrap: wrap; }
+.keys button { min-width: 46px; padding: 8px 12px; font-size: 17px; }
+.row { display: flex; gap: 10px; flex-wrap: wrap; }
+.row > button { flex: 1 1 140px; }
+.feedback { border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+.feedback.ok { background: var(--good-bg); }
+.feedback.no { background: var(--bad-bg); }
+.feedback .verdict { font-weight: 700; }
+.feedback.ok .verdict { color: var(--good); }
+.feedback.no .verdict { color: var(--bad); }
+.answer { font-weight: 700; font-size: 18px; }
+.back { font-size: 17px; }
+.progress { height: 6px; background: var(--line); border-radius: 999px; overflow: hidden; }
+.progress i { display: block; height: 100%; background: var(--accent); width: 0; transition: width .3s; }
+.handouts { display: flex; flex-direction: column; gap: 8px; }
+.handout { display: flex; gap: 12px; align-items: flex-start; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; cursor: pointer; }
+.handout input { width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--accent); flex: none; }
+.handout span { display: flex; flex-direction: column; min-width: 0; }
+.handout small { color: var(--muted); font-size: 13px; }
+footer { font-size: 13px; color: var(--muted); display: flex; flex-direction: column; gap: 6px; }
+.confirm { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; font-size: 14px; }
+@media (prefers-reduced-motion: reduce) { .progress i { transition: none; } }
+@media (max-width: 420px) { .front { font-size: 28px; } .slot b { font-size: 18px; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">No-Brainer · Κάρτες επανάληψης</span>
+    <h1>Οι κάρτες σου</h1>
+  </header>
+
+  <section id="home" class="wrap" style="max-width:none">
+    <form class="today" id="nameBox" hidden>
+      <h2>Πώς σε λένε;</h2>
+      <p>Γράψε το όνομά σου, για να βλέπω ποιοι κάνουν κάρτες και να σε βοηθώ όπου δυσκολεύεσαι. Κλεάνθη</p>
+      <input type="text" id="nameInput" maxlength="60" autocomplete="given-name" placeholder="π.χ. Μαρία Π." aria-label="Το όνομά σου">
+      <div class="row"><button type="submit" class="primary">Αποθήκευση</button><button type="button" id="nameSkip">Χωρίς όνομα</button></div>
+      <p class="muted" style="font-size:13px">Μετά από κάθε συνεδρία στέλνεται στην Κλεάνθη μόνο: το όνομα, η μέρα, πόσες κάρτες έκανες και ποιες σου ξέφυγαν. Η πρόοδός σου μένει σε αυτή τη συσκευή. Χωρίς όνομα δεν στέλνεται τίποτα. <a id="privacyLink" href="#" target="_blank" rel="noopener">Datenschutz</a></p>
+    </form>
+    <div class="today">
+      <div class="nums">
+        <div><b id="nDue">0</b><span>για επανάληψη σήμερα</span></div>
+        <div><b id="nNew">0</b><span>νέες κάρτες σήμερα</span></div>
+      </div>
+      <p id="homeMsg" class="muted"></p>
+      <button id="start" class="primary">Ξεκίνα</button>
+    </div>
+
+    <div class="wrap" style="max-width:none; gap:8px">
+      <h2>Ποια Handouts δουλεύεις;</h2>
+      <p class="muted" style="font-size:14px">Τσέκαρε όσα έχεις ήδη φτάσει στο No-Brainer. Καινούργιες κάρτες μπαίνουν μόνο από αυτά.</p>
+      <div id="handouts" class="handouts"></div>
+    </div>
+
+    <div class="wrap" style="max-width:none; gap:8px">
+      <h2>Το κουτί σου</h2>
+      <div class="box" id="box"></div>
+      <p class="muted" style="font-size:14px">Κάθε κάρτα που απαντάς σωστά πάει ένα κουτί δεξιά και ξαναβγαίνει αργότερα: σε 1, 3, 7, 16 και μετά σε 35 μέρες. Αν τη ξεχάσεις, γυρνά στο πρώτο κουτί. Έτσι επαναλαμβάνεις κάθε κάρτα τη στιγμή που πας να την ξεχάσεις.</p>
+    </div>
+  </section>
+
+  <section id="study" hidden>
+    <div class="wrap" style="max-width:none; gap:12px">
+      <div class="progress"><i id="bar"></i></div>
+      <div class="card" id="card"></div>
+      <button class="link" id="quit">Σταμάτα για τώρα</button>
+    </div>
+  </section>
+
+  <section id="done" hidden>
+    <div class="today">
+      <h2>Τελείωσες για σήμερα!</h2>
+      <p id="doneMsg"></p>
+      <p>Ξαναέλα αύριο. Λίγα λεπτά κάθε μέρα κάνουν πολύ περισσότερα από μία ώρα μια φορά την εβδομάδα.</p>
+      <p>Bis bald, Κλεάνθη</p>
+      <button id="back">Πίσω στο κουτί</button>
+    </div>
+  </section>
+
+  <footer>
+    <span id="saveNote">Η πρόοδός σου αποθηκεύεται σε αυτή τη συσκευή.</span>
+    <div class="confirm" id="nameRow" hidden><span id="nameShown"></span><button class="link" id="nameChange">αλλαγή</button></div>
+    <div class="confirm" id="resetRow"><button class="link" id="reset">Μηδένισε την πρόοδο</button></div>
+  </footer>
+</div>
+
+<script>
+// ---------- Κάρτες (από το Handout 1.1, τελική εκδοχή Google Doc) ----------
+const RX = ["ροχάλα", "χέρι"], LEN = ["μακρό", "βραχύ"], IE = ["μακρό ι", "χωρίζεται"];
+const CARDS = [
+  // Χαρά ή χέρι
+  { id: "ch-acht", tag: "Χαρά ή χέρι;", type: "choice", front: "a<mark>ch</mark>t", options: RX, answer: "ροχάλα", explain: "Πριν από το ch έχει a, έναν Βλάχο: ρίξε ροχάλα. Και το «χτ» είναι όπως στη «χτένα»." },
+  { id: "ch-ich", tag: "Χαρά ή χέρι;", type: "choice", front: "i<mark>ch</mark>", options: RX, answer: "χέρι", explain: "Πριν από το ch έχει i, έναν Κολωνακιώτη: χ του χεριού." },
+  { id: "ch-buch", tag: "Χαρά ή χέρι;", type: "choice", front: "Bu<mark>ch</mark>", options: RX, answer: "ροχάλα", explain: "Πριν από το ch έχει u, έναν Βλάχο: ροχάλα." },
+  { id: "ch-buecher", tag: "Χαρά ή χέρι;", type: "choice", front: "Bü<mark>ch</mark>er", options: RX, answer: "χέρι", explain: "Πριν από το ch έχει ü, έναν Wanna-be: χ του χεριού. Πρόσεξε: Buch με ροχάλα, Bücher με χέρι." },
+  { id: "ch-machen", tag: "Χαρά ή χέρι;", type: "choice", front: "ma<mark>ch</mark>en", options: RX, answer: "ροχάλα", explain: "Πριν από το ch έχει a, έναν Βλάχο: ροχάλα." },
+  { id: "ch-mich", tag: "Χαρά ή χέρι;", type: "choice", front: "mi<mark>ch</mark>", options: RX, answer: "χέρι", explain: "Πριν από το ch έχει i, έναν Κολωνακιώτη: χ του χεριού." },
+  { id: "ch-doch", tag: "Χαρά ή χέρι;", type: "choice", front: "do<mark>ch</mark>", options: RX, answer: "ροχάλα", explain: "Πριν από το ch έχει o, έναν Βλάχο: ροχάλα." },
+  { id: "ch-sechzehn", tag: "Χαρά ή χέρι;", type: "choice", front: "se<mark>ch</mark>zehn", options: RX, answer: "χέρι", explain: "Πριν από το ch έχει e, έναν Κολωνακιώτη: χ του χεριού. «ζέχ-τσεν»." },
+  { id: "ch-kuchen", tag: "Χαρά ή χέρι;", type: "choice", front: "Ku<mark>ch</mark>en", options: RX, answer: "ροχάλα", explain: "Πριν από το ch έχει u, έναν Βλάχο: ροχάλα." },
+  { id: "ch-gespraech", tag: "Χαρά ή χέρι;", type: "choice", front: "Gesprä<mark>ch</mark>", options: RX, answer: "χέρι", explain: "Πριν από το ch έχει ä, έναν Wanna-be: χ του χεριού." },
+  { id: "ch-durch", tag: "Χαρά ή χέρι;", type: "choice", front: "dur<mark>ch</mark>", options: RX, answer: "χέρι", explain: "Πριν από το ch έχει σύμφωνο (r): χ του χεριού. Ροχάλα ρίχνεις μόνο όταν δεις Βλάχο." },
+
+  // Μακρό ή βραχύ
+  { id: "len-vater", tag: "Μακρό ή βραχύ;", type: "choice", front: "V<mark>a</mark>ter", options: LEN, answer: "μακρό", explain: "Μετά το τονιζόμενο a ακολουθεί 1 σύμφωνο (t): μακρό. «Φάαατα»." },
+  { id: "len-vetter", tag: "Μακρό ή βραχύ;", type: "choice", front: "V<mark>e</mark>tter", options: LEN, answer: "βραχύ", explain: "Ακολουθούν 2 σύμφωνα (tt): βραχύ. «Φέτα», γρήγορα." },
+  { id: "len-zehn", tag: "Μακρό ή βραχύ;", type: "choice", front: "z<mark>e</mark>hn", options: LEN, answer: "μακρό", explain: "Το μαγικό h δεν μετράει ως σύμφωνο και μακραίνει το e. Μακρό, τεντωμένο e." },
+  { id: "len-elf", tag: "Μακρό ή βραχύ;", type: "choice", front: "<mark>e</mark>lf", options: LEN, answer: "βραχύ", explain: "Ακολουθούν 2 σύμφωνα (lf): βραχύ." },
+  { id: "len-stehlen", tag: "Μακρό ή βραχύ;", type: "choice", front: "st<mark>e</mark>hlen", options: LEN, answer: "μακρό", explain: "Μαγικό h: μακρό e. stehlen = κλέβω." },
+  { id: "len-stellen", tag: "Μακρό ή βραχύ;", type: "choice", front: "st<mark>e</mark>llen", options: LEN, answer: "βραχύ", explain: "Ακολουθούν 2 σύμφωνα (ll): βραχύ e. stellen = βάζω κάτι όρθιο." },
+  { id: "len-fuenf", tag: "Μακρό ή βραχύ;", type: "choice", front: "f<mark>ü</mark>nf", options: LEN, answer: "βραχύ", explain: "Ακολουθούν 2 σύμφωνα (nf): βραχύ ü." },
+  { id: "len-zwoelf", tag: "Μακρό ή βραχύ;", type: "choice", front: "zw<mark>ö</mark>lf", options: LEN, answer: "βραχύ", explain: "Ακολουθούν 2 σύμφωνα (lf): βραχύ ö." },
+  { id: "len-neun", tag: "Μακρό ή βραχύ;", type: "choice", front: "n<mark>eu</mark>n", options: LEN, answer: "μακρό", explain: "eu είναι δίφθογγος, και οι δίφθογγοι είναι πάντα μακροί." },
+  { id: "len-sucht", tag: "Μακρό ή βραχύ;", type: "choice", front: "die S<mark>u</mark>cht", options: LEN, answer: "βραχύ", explain: "Ακολουθούν τρία σύμφωνα (cht): βραχύ. die Sucht = η εξάρτηση." },
+  { id: "len-suchen", tag: "Μακρό ή βραχύ;", type: "choice", front: "s<mark>u</mark>chen", options: LEN, answer: "μακρό", explain: "Εξαίρεση με το ch: εδώ το φωνήεν είναι μακρό. Το ίδιο και σε nach, Sprache, hoch, Buch, Kuchen, Gespräch." },
+
+  // Το ie
+  { id: "ie-vier", tag: "Το ie", type: "choice", front: "v<mark>ie</mark>r", options: IE, answer: "μακρό ι", explain: "Τονίζεται, άρα ένα μακρό ι: φίί-α. Ολόκληρη η λέξη είναι μία συλλαβή!" },
+  { id: "ie-sieben", tag: "Το ie", type: "choice", front: "s<mark>ie</mark>ben", options: IE, answer: "μακρό ι", explain: "Τονίζεται, άρα ένα μακρό ι: ζίίμπ-ν." },
+  { id: "ie-ferien", tag: "Το ie", type: "choice", front: "Fer<mark>ie</mark>n", options: IE, answer: "χωρίζεται", explain: "Ο τόνος είναι στο Fe, το ie δεν τονίζεται, άρα χωρίζεται: Fe-ri-en, φέ-γι-εν." },
+  { id: "ie-familie", tag: "Το ie", type: "choice", front: "Famil<mark>ie</mark>", options: IE, answer: "χωρίζεται", explain: "Ο τόνος είναι στο mi, το ie δεν τονίζεται, άρα χωρίζεται: Fa-mi-li-e, φα-μίλι-ε." },
+
+  // Ήχοι
+  { id: "snd-z", tag: "Ο ήχος", type: "choice", prompt: "Πώς ακούγεται το z;", front: "<mark>z</mark>wei", options: ["τσ", "ζ", "σ"], answer: "τσ", explain: "z = τσ, σαν οξυγονοκόλληση: τσιτερό, δυνατό «τσσ»." },
+  { id: "snd-w", tag: "Ο ήχος", type: "choice", prompt: "Πώς ακούγεται το w;", front: "z<mark>w</mark>ei", options: ["β", "ου", "φ"], answer: "β", explain: "w = β. Γι' αυτό BMW = «Μπε-Εμ-Βε»." },
+  { id: "snd-v", tag: "Ο ήχος", type: "choice", prompt: "Πώς ακούγεται το v;", front: "<mark>V</mark>ater", options: ["φ", "β"], answer: "φ", explain: "Σε γερμανικές λέξεις το v = φ (δείξε τα δόντια σαν σκίουρος). Σε λατινογενείς λέξεις, όταν ακολουθεί φωνήεν, γίνεται β: die Revolution." },
+  { id: "snd-s", tag: "Ο ήχος", type: "choice", prompt: "Πώς ακούγεται το s;", front: "<mark>s</mark>ieben", options: ["ζ", "σ"], answer: "ζ", explain: "s πριν από φωνήεν = ζ." },
+  { id: "snd-chs", tag: "Ο ήχος", type: "choice", prompt: "Πώς ακούγεται το chs;", front: "se<mark>chs</mark>", options: ["ξ", "χς", "σ"], answer: "ξ", explain: "chs = ξ. «ζεξ»." },
+
+  // Αριθμοί ολογράφως
+  { id: "num-12", tag: "Ολογράφως", type: "type", prompt: "Γράψε τον αριθμό.", front: "12", answers: ["zwölf"], explain: "zwölf: ö βραχύ, γιατί ακολουθούν 2 σύμφωνα (lf)." },
+  { id: "num-16", tag: "Ολογράφως", type: "type", prompt: "Γράψε τον αριθμό.", front: "16", answers: ["sechzehn"], explain: "Το s και το z δεν συμπαθιούνται: το z διώχνει το s. Έμεινε το ch του χεριού: «ζέχ-τσεν»." },
+  { id: "num-17", tag: "Ολογράφως", type: "type", prompt: "Γράψε τον αριθμό.", front: "17", answers: ["siebzehn"], explain: "Ο Γερμανός κάνει οικονομία και κόβει το -en. Το b μένει στο τέλος του πρώτου κομματιού και ακούγεται π: «ζίπ-τσεν»." },
+  { id: "num-30", tag: "Ολογράφως", type: "type", prompt: "Γράψε τον αριθμό.", front: "30", answers: ["dreißig"], explain: "Μόνο το drei τελειώνει σε φωνήεν, γι' αυτό παίρνει -ßig. Όλες οι άλλες δεκάδες παίρνουν -zig." },
+  { id: "num-60", tag: "Ολογράφως", type: "type", prompt: "Γράψε τον αριθμό.", front: "60", answers: ["sechzig"], explain: "Ό,τι και στο 16: το s φεύγει." },
+  { id: "num-70", tag: "Ολογράφως", type: "type", prompt: "Γράψε τον αριθμό.", front: "70", answers: ["siebzig"], explain: "Ό,τι και στο 17: το -en φεύγει." },
+  { id: "num-21", tag: "Ολογράφως", type: "type", prompt: "Γράψε τον αριθμό.", front: "21", answers: ["einundzwanzig"], explain: "Ανάποδα από τα Ελληνικά: πρώτα η μονάδα, μετά und, μετά η δεκάδα, όλα μαζί. Και ein, όχι eins." },
+  { id: "num-66", tag: "Ολογράφως", type: "type", prompt: "Γράψε τον αριθμό.", front: "66", answers: ["sechsundsechzig"], explain: "Το sechs κρατά το s, το sechzig το χάνει." },
+  { id: "num-88", tag: "Ολογράφως", type: "type", prompt: "Γράψε τον αριθμό.", front: "88", answers: ["achtundachtzig"], explain: "acht und achtzig, σε μία λέξη." },
+  { id: "num-99", tag: "Ολογράφως", type: "type", prompt: "Γράψε τον αριθμό.", front: "99", answers: ["neunundneunzig"], explain: "neun und neunzig, σε μία λέξη." },
+  { id: "num-666", tag: "Ολογράφως", type: "type", prompt: "Γράψε τον αριθμό.", front: "666", answers: ["sechshundertsechsundsechzig"], explain: "Δύσκολο: το sechs κρατά το ξ (sechs-hundert, sechs-und), αλλά το sechzig το χάνει." },
+
+  // Πώς το διαβάζεις
+  { id: "read-1982", tag: "Πώς το διαβάζεις;", type: "type", prompt: "Χρονολογία. Γράψε πώς τη διαβάζεις.", front: "1982", answers: ["neunzehnhundertzweiundachtzig"], explain: "Έως το 1999 σπας τον αριθμό στη μέση και βάζεις hundert ανάμεσα: neunzehn-hundert-zweiundachtzig." },
+  { id: "read-2004", tag: "Πώς το διαβάζεις;", type: "type", prompt: "Χρονολογία. Γράψε πώς τη διαβάζεις.", front: "2004", answers: ["zweitausendvier"], explain: "Από το 2000 και μετά τη διαβάζεις κανονικά, σαν ποσό." },
+  { id: "read-3945", tag: "Πώς το διαβάζεις;", type: "type", prompt: "Τιμή. Γράψε πώς τη διαβάζεις.", front: "39,45 €", answers: ["neununddreißig euro fünfundvierzig"], explain: "neununddreißig Euro fünfundvierzig. Το «Cent» δεν χρειάζεται, εννοείται." },
+  { id: "read-125", tag: "Πώς το διαβάζεις;", type: "type", prompt: "Ποσοστό. Γράψε πώς το διαβάζεις.", front: "12,5 %", answers: ["zwölf komma fünf prozent"], explain: "zwölf Komma fünf Prozent. Και das Komma με δύο m: με ένα m είναι το κώμα." },
+  { id: "read-1500", tag: "Πώς το διαβάζεις;", type: "type", prompt: "Τιμή, με τον προφορικό τρόπο.", front: "1.500 €", answers: ["fünfzehnhundert euro"], alsoOk: ["eintausendfünfhundert euro"], alsoNote: "Στον προφορικό λόγο όμως οι Γερμανοί λένε πολύ συχνά <b>fünfzehnhundert Euro</b>.", explain: "Έτσι το λένε πολύ συχνά στον προφορικό λόγο, π.χ. για ένα μεταχειρισμένο αυτοκίνητο." },
+  { id: "read-mrd", tag: "Πώς το διαβάζεις;", type: "type", prompt: "Γράψε πώς το διαβάζεις.", front: "3.000.000.000", answers: ["drei milliarden"], explain: "drei Milliarden. Προσοχή: το γερμανικό Billion είναι τρισεκατομμύριο. Το αγγλικό billion στα Γερμανικά είναι Milliarde." },
+
+  // Γιατί;
+  { id: "why-sechzehn", tag: "Γιατί;", type: "flip", front: "Γιατί γράφουμε sechzehn και όχι sechszehn;", back: "Το s και το z δεν συμπαθιούνται. Όταν συναντιούνται, το z τσατίζεται και διώχνει το s." },
+  { id: "why-siebzehn", tag: "Γιατί;", type: "flip", front: "Γιατί στο siebzehn ακούγεται π;", back: "Το b βρίσκεται στο τέλος του πρώτου κομματιού (sieb-), άρα απαλύνεται σε π: «ζίπ-τσεν»." },
+  { id: "why-dreissig", tag: "Γιατί;", type: "flip", front: "Γιατί dreißig και όχι dreizig;", back: "Το drei τελειώνει σε φωνήεν, ενώ όλες οι άλλες δεκάδες σε σύμφωνο (zwan-, vier-, fünf-…)." },
+  { id: "why-eins", tag: "Γιατί;", type: "flip", front: "Γιατί λέμε eins όταν μετράμε, αλλά einundzwanzig;", back: "Το eins στέκεται μόνο του. Μέσα σε μεγαλύτερο αριθμό χάνει το s: einundzwanzig, einunddreißig." },
+  { id: "why-h", tag: "Γιατί;", type: "flip", front: "Τι κάνει το μαγικό h μετά από φωνήεν;", back: "Δεν προφέρεται και δεν μετράει ως σύμφωνο. Κάνει μόνο ένα πράγμα: μακραίνει το φωνήεν πριν από αυτό (stehlen, zehn)." },
+  { id: "why-ch", tag: "Γιατί;", type: "flip", front: "Στο ch, ποιο φωνήεν αποφασίζει τον ήχο;", back: "Το φωνήεν που έρχεται ΠΡΙΝ από το ch. Στα Ελληνικά αποφασίζει αυτό που έρχεται μετά. Ακριβώς ανάποδα, γι' αυτό μας είναι δύσκολο στην αρχή." }
+];
+CARDS.forEach(c => c.h = "1.1");
+
+// ---------- Handout 2.1 · Τα άτονα προθέματα (τελική εκδοχή Google Doc) ----------
+const NONE = "κανένα";
+const W2 = [
+  // Ποιηματάκι και κανόνες
+  { id: "p-poem", tag: "Το ποιηματάκι", type: "flip", front: "Πες τα εννιά άτονα προθέματα με τη σειρά, σαν τραγουδάκι.", back: "be- · ge- · er- · ver- · zer- · ent- · emp- · miss- · wider-" },
+  { id: "p-rules", tag: "Το ποιηματάκι", type: "flip", front: "Ποιοι είναι οι δύο κανόνες που ισχύουν για όλα τα άτονα προθέματα;", back: "1. Δεν τονίζονται ποτέ: ο τόνος πέφτει στο ρήμα (verkaufen, bezahlen, entdecken). 2. Δεν παίρνουν ge- στη Μετοχή Παρακειμένου: ich habe befragt, όχι «begefragt»." },
+  { id: "p-wider", tag: "Το ποιηματάκι", type: "flip", front: "wider ή wieder;", back: "wider- (μόνο με i) = ενάντια: widersprechen, widerstehen. wieder (με ie) = ξανά, πάλι, και είναι άλλη λέξη." },
+
+  // Έχει άτονο πρόθεμα;
+  { id: "pa-verkaufen", tag: "Έχει άτονο πρόθεμα;", type: "choice", front: "verkaufen", options: ["ver-", "be-", NONE], answer: "ver-", explain: "ver- = δίνω: kaufen = αγοράζω, verkaufen = πουλάω." },
+  { id: "pa-besuchen", tag: "Έχει άτονο πρόθεμα;", type: "choice", front: "besuchen", options: ["be-", "ge-", NONE], answer: "be-", explain: "be- στην αρχή: besuchen." },
+  { id: "pa-fahren", tag: "Έχει άτονο πρόθεμα;", type: "choice", front: "fahren", options: ["ver-", "er-", NONE], answer: NONE, explain: "Κανένα: fahren είναι το απλό ρήμα. Με πρόθεμα γίνεται erfahren ή sich verfahren." },
+  { id: "pa-erzaehlen", tag: "Έχει άτονο πρόθεμα;", type: "choice", front: "erzählen", options: ["er-", "ent-", NONE], answer: "er-", explain: "er- στην αρχή: erzählen. Γι' αυτό η μετοχή είναι erzählt, χωρίς ge-." },
+  { id: "pa-gebirge", tag: "Έχει άτονο πρόθεμα;", type: "choice", front: "das Gebirge", options: ["ge-", "be-", NONE], answer: "ge-", explain: "ge- = πολλά μαζί: das Gebirge, η οροσειρά, πολλά βουνά (der Berg) μαζί." },
+  { id: "pa-zerstoeren", tag: "Έχει άτονο πρόθεμα;", type: "choice", front: "zerstören", options: ["zer-", "ver-", NONE], answer: "zer-", explain: "zer- = καταστρέφω." },
+  { id: "pa-ende", tag: "Έχει άτονο πρόθεμα;", type: "choice", front: "das Ende", options: ["ent-", "emp-", NONE], answer: NONE, explain: "Κανένα: χωρίζεται En-de. Δεν είναι το ent-." },
+  { id: "pa-empfehlen", tag: "Έχει άτονο πρόθεμα;", type: "choice", front: "empfehlen", options: ["emp-", "ent-", NONE], answer: "emp-", explain: "emp-, το πρόθεμα χωρίς δική του σημασία: empfehlen = συστήνω." },
+  { id: "pa-missverstehen", tag: "Έχει άτονο πρόθεμα;", type: "choice", front: "missverstehen", options: ["miss-", "ver-", NONE], answer: "miss-", explain: "miss- = κάτι πάει στραβά: missverstehen = καταλαβαίνω λάθος. (Το ver- που ακολουθεί ανήκει ήδη στο verstehen.)" },
+  { id: "pa-widersprechen", tag: "Έχει άτονο πρόθεμα;", type: "choice", front: "widersprechen", options: ["wider-", "ver-", NONE], answer: "wider-", explain: "wider- = ενάντια: widersprechen + Dativ = φέρνω αντίρρηση." },
+
+  // Μετοχή Παρακειμένου
+  { id: "pp-fragen", tag: "Μετοχή Παρακειμένου", type: "type", prompt: "Γράψε τη Μετοχή Παρακειμένου.", front: "fragen", answers: ["gefragt"], explain: "Ο οδηγός μας: ge + frag + t. Ich habe gefragt." },
+  { id: "pp-befragen", tag: "Μετοχή Παρακειμένου", type: "type", prompt: "Γράψε τη Μετοχή Παρακειμένου.", front: "befragen", answers: ["befragt"], explain: "Έχει ήδη άτονο πρόθεμα (be-), άρα δεν μπαίνει ge-: befragt, όχι «begefragt»." },
+  { id: "pp-kaufen", tag: "Μετοχή Παρακειμένου", type: "type", prompt: "Γράψε τη Μετοχή Παρακειμένου.", front: "kaufen", answers: ["gekauft"], explain: "Χωρίς πρόθεμα, άρα ge- … -t: gekauft." },
+  { id: "pp-verkaufen", tag: "Μετοχή Παρακειμένου", type: "type", prompt: "Γράψε τη Μετοχή Παρακειμένου.", front: "verkaufen", answers: ["verkauft"], explain: "ver- είναι άτονο πρόθεμα, άρα χωρίς ge-: verkauft." },
+  { id: "pp-mieten", tag: "Μετοχή Παρακειμένου", type: "type", prompt: "Γράψε τη Μετοχή Παρακειμένου.", front: "mieten", answers: ["gemietet"], explain: "Χωρίς πρόθεμα: gemietet." },
+  { id: "pp-vermieten", tag: "Μετοχή Παρακειμένου", type: "type", prompt: "Γράψε τη Μετοχή Παρακειμένου.", front: "vermieten", answers: ["vermietet"], explain: "ver-, άρα χωρίς ge-: vermietet." },
+  { id: "pp-zaehlen", tag: "Μετοχή Παρακειμένου", type: "type", prompt: "Γράψε τη Μετοχή Παρακειμένου.", front: "zählen", answers: ["gezählt"], explain: "Χωρίς πρόθεμα: gezählt." },
+  { id: "pp-erzaehlen", tag: "Μετοχή Παρακειμένου", type: "type", prompt: "Γράψε τη Μετοχή Παρακειμένου.", front: "erzählen", answers: ["erzählt"], explain: "er-, άρα χωρίς ge-: erzählt." },
+  { id: "pp-decken", tag: "Μετοχή Παρακειμένου", type: "type", prompt: "Γράψε τη Μετοχή Παρακειμένου.", front: "decken", answers: ["gedeckt"], explain: "Χωρίς πρόθεμα: gedeckt." },
+  { id: "pp-entdecken", tag: "Μετοχή Παρακειμένου", type: "type", prompt: "Γράψε τη Μετοχή Παρακειμένου.", front: "entdecken", answers: ["entdeckt"], explain: "ent-, άρα χωρίς ge-: entdeckt." },
+  { id: "pp-stoeren", tag: "Μετοχή Παρακειμένου", type: "type", prompt: "Γράψε τη Μετοχή Παρακειμένου.", front: "stören", answers: ["gestört"], explain: "Χωρίς πρόθεμα: gestört." },
+  { id: "pp-zerstoeren", tag: "Μετοχή Παρακειμένου", type: "type", prompt: "Γράψε τη Μετοχή Παρακειμένου.", front: "zerstören", answers: ["zerstört"], explain: "zer-, άρα χωρίς ge-: zerstört." },
+
+  // Ποιο πρόθεμα λείπει;
+  { id: "gap-entdeckt", tag: "Ποιο πρόθεμα λείπει;", type: "type", prompt: "Γράψε το πρόθεμα που λείπει.", front: "Kolumbus hat Amerika ___deckt.", answers: ["ent"], explain: "entdeckt: ο Κολόμβος τράβηξε την κουβέρτα (die Decke) από πάνω της." },
+  { id: "gap-verlaufen", tag: "Ποιο πρόθεμα λείπει;", type: "type", prompt: "Γράψε το πρόθεμα που λείπει.", front: "Die Touristen haben sich in der großen Stadt ___laufen.", answers: ["ver"], explain: "sich verlaufen = χάνομαι περπατώντας. Η φόρμουλα: sich ver- + ρήμα = κάνω λάθος σε αυτό που λέει το ρήμα." },
+  { id: "gap-zerbissen", tag: "Ποιο πρόθεμα λείπει;", type: "type", prompt: "Γράψε το πρόθεμα που λείπει.", front: "Der Hund hat meine Schuhe ___bissen.", answers: ["zer"], explain: "zerbissen: καταστρέφω δαγκώνοντας." },
+  { id: "gap-befragt", tag: "Ποιο πρόθεμα λείπει;", type: "type", prompt: "Γράψε το πρόθεμα που λείπει.", front: "Die Polizei hat die Zeugin ___fragt.", answers: ["be"], explain: "befragt: ρωτάω επίσημα, ανακρίνω." },
+  { id: "gap-erlebt", tag: "Ποιο πρόθεμα λείπει;", type: "type", prompt: "Γράψε το πρόθεμα που λείπει.", front: "Auf der Reise haben wir viele Abenteuer ___lebt.", answers: ["er"], explain: "erleben: ζω κάτι μέχρι το τέλος, βιώνω." },
+  { id: "gap-missverstanden", tag: "Ποιο πρόθεμα λείπει;", type: "type", prompt: "Γράψε το πρόθεμα που λείπει.", front: "Entschuldigung, ich habe dich ___verstanden.", answers: ["miss"], explain: "missverstanden: κάτι πήγε στραβά, κατάλαβα λάθος." },
+  { id: "gap-empfaengt", tag: "Ποιο πρόθεμα λείπει;", type: "type", prompt: "Γράψε το πρόθεμα που λείπει.", front: "Der Präsident ___fängt seine Gäste im Palast.", answers: ["emp"], explain: "empfangen = υποδέχομαι. Το emp- δεν έχει δική του σημασία, μάθε τη λέξη σαν λέξη." },
+  { id: "gap-verspielt", tag: "Ποιο πρόθεμα λείπει;", type: "type", prompt: "Γράψε το πρόθεμα που λείπει.", front: "Er hat sein ganzes Geld im Casino ___spielt.", answers: ["ver"], explain: "verspielt: χάνω τα λεφτά με τον τρόπο του ρήματος, παίζοντας." },
+  { id: "gap-entkalken", tag: "Ποιο πρόθεμα λείπει;", type: "type", prompt: "Γράψε το πρόθεμα που λείπει.", front: "Ich muss die Kaffeemaschine ___kalken.", answers: ["ent"], explain: "entkalken: αφαιρώ τα άλατα (der Kalk). ent- = απομακρύνω." },
+  { id: "gap-widerstehen", tag: "Ποιο πρόθεμα λείπει;", type: "type", prompt: "Γράψε το πρόθεμα που λείπει.", front: "Ich kann der Schokolade nicht ___stehen.", answers: ["wider"], explain: "widerstehen + Dativ = αντιστέκομαι (ενάντια)." },
+
+  // Ποια η διαφορά;
+  { id: "diff-mieten", tag: "Ποια η διαφορά;", type: "flip", front: "mieten / vermieten", back: "mieten: νοικιάζω ως ενοικιαστής. vermieten: νοικιάζω ως ιδιοκτήτης, δίνω το σπίτι." },
+  { id: "diff-fragen", tag: "Ποια η διαφορά;", type: "flip", front: "fragen / befragen", back: "fragen: απλώς ρωτάω. befragen: ρωτάω επίσημα, ανακρίνω." },
+  { id: "diff-graben", tag: "Ποια η διαφορά;", type: "flip", front: "begraben / vergraben", back: "begraben: θάβω με σεβασμό, καλύπτω (η μικρή Άννα και το ψαράκι). vergraben: θάβω για να εξαφανίσω, κρύβω (ο σκύλος και το κόκαλο)." },
+  { id: "diff-streiten", tag: "Ποια η διαφορά;", type: "flip", front: "sich streiten / sich zerstreiten", back: "sich streiten: τσακώνομαι. sich zerstreiten: τσακώνομαι και χαλάει η σχέση, δεν μιλάμε πια." },
+  { id: "diff-trinken", tag: "Ποια η διαφορά;", type: "flip", front: "ertrinken / ertränken", back: "ertrinken: πνίγομαι ο ίδιος. ertränken: πνίγω κάποιον άλλον." },
+
+  // Μάντεψε τη σημασία
+  { id: "guess-verrechnen", tag: "Μάντεψε τη σημασία", type: "choice", prompt: "rechnen = υπολογίζω", front: "sich verrechnen", options: ["κάνω λάθος στον υπολογισμό", "υπολογίζω μέχρι τέλους", "υπολογίζω ξανά"], answer: "κάνω λάθος στον υπολογισμό", explain: "sich ver- + ρήμα = κάνω λάθος σε αυτό που λέει το ρήμα. Όπως sich verzählen." },
+  { id: "guess-erfrieren", tag: "Μάντεψε τη σημασία", type: "choice", prompt: "frieren = κρυώνω", front: "erfrieren", options: ["πεθαίνω από το κρύο", "κρυώνω λίγο", "ζεσταίνομαι"], answer: "πεθαίνω από το κρύο", explain: "Η σκοτεινή πλευρά του er-: πεθαίνω με τον τρόπο που λέει το ρήμα." },
+  { id: "guess-entwaffnen", tag: "Μάντεψε τη σημασία", type: "choice", prompt: "die Waffe = το όπλο", front: "entwaffnen", options: ["αφοπλίζω", "οπλίζω", "κρύβω ένα όπλο"], answer: "αφοπλίζω", explain: "ent- = απομακρύνω: παίρνω το όπλο από κάποιον." },
+  { id: "guess-zerreissen", tag: "Μάντεψε τη σημασία", type: "choice", prompt: "reißen = σκίζω", front: "zerreißen", options: ["σκίζω σε κομμάτια", "σκίζω τον φάκελο για να τον ανοίξω", "σκίζω λίγο"], answer: "σκίζω σε κομμάτια", explain: "zer- = καταστρέφω. Αν σκίσεις τον φάκελο για να τον ανοίξεις, αυτό είναι aufreißen." },
+  { id: "guess-verfahren", tag: "Μάντεψε τη σημασία", type: "choice", prompt: "fahren = πάω με όχημα", front: "sich verfahren", options: ["χάνομαι με το αυτοκίνητο", "χάνομαι περπατώντας", "φεύγω με το αυτοκίνητο"], answer: "χάνομαι με το αυτοκίνητο", explain: "sich ver- + ρήμα = κάνω λάθος. Περπατώντας θα ήταν sich verlaufen." }
+];
+W2.forEach(c => { c.h = "2.1"; CARDS.push(c); });
+
+const HANDOUTS = [
+  { id: "1.1", title: "Προφορά & Αριθμοί", week: "Woche 1" },
+  { id: "2.1", title: "Τα άτονα προθέματα", week: "Woche 2" }
+];
+
+// ---------- Αναφορά προς την Κλεάνθη (μόνο στην έκδοση του site, build_site.py βάζει το URL) ----------
+const REPORT_URL = "https://script.google.com/macros/s/AKfycbwB2ACNfSkQyAiaWNeLVVU60_c-CVGE0oUWH7WA3LQfDIC_OugK2G3gmwn0lFlzIMmIDQ/exec";
+const PRIVACY_URL = "https://kleanthiliodaki.com/datenschutz.html#lernkarten";
+
+// ---------- Επανάληψη (5 κουτιά) ----------
+const INTERVALS = [0, 1, 3, 7, 16, 35]; // μέρες μέχρι την επόμενη εμφάνιση, ανά κουτί
+const NEW_PER_DAY = 15;
+const LS_KEY = "nb-karten-woche01";
+const today = () => { const d = new Date(); return Math.floor((d.getTime() - d.getTimezoneOffset() * 60000) / 86400000); };
+
+const freshState = () => ({ v: 2, cards: {}, active: ["1.1"], newToday: { day: 0, n: 0 }, updated: 0 });
+let state = freshState();
+let dbRef = null;
+
+// v1: μια καινούργια κάρτα σωστή με την πρώτη πήγαινε κατευθείαν στις 3 μέρες. Από v2 ξαναβγαίνει αύριο.
+function migrate(s) {
+  if (!s.active) s.active = ["1.1"];
+  if (!s.v || s.v < 2) {
+    const t = today();
+    Object.values(s.cards).forEach(c => { if (c.box === 2) { c.box = 1; c.due = Math.min(c.due, t + 1); } });
+    s.v = 2;
+  }
+  return s;
+}
+function loadLocal() {
+  try { const s = JSON.parse(localStorage.getItem(LS_KEY) || "null"); if (s && s.cards) state = migrate(s); } catch (e) {}
+}
+function save() {
+  state.updated = Date.now();
+  try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (e) {}
+  if (dbRef) dbRef.set({ state: JSON.stringify(state) }).catch(() => {});
+}
+async function connectDb() {
+  try {
+    if (!window.claude || !window.claude.use) return;
+    const [db, user] = await Promise.all([claude.use("db"), claude.use("user")]);
+    if (!db || !user) return;
+    const id = await user.id();
+    if (!id) return;
+    dbRef = db.doc("data/users/" + id + "/progress");
+    const snap = await dbRef.get();
+    if (snap.exists) {
+      const remote = JSON.parse(snap.data().state || "null");
+      if (remote && remote.updated > (state.updated || 0)) { state = migrate(remote); renderHome(); }
+    }
+    document.getElementById("saveNote").textContent = "Η πρόοδός σου αποθηκεύεται στον λογαριασμό σου.";
+  } catch (e) { dbRef = null; }
+}
+
+function newLeftToday() {
+  const t = today();
+  if (state.newToday.day !== t) state.newToday = { day: t, n: 0 };
+  return Math.max(0, NEW_PER_DAY - state.newToday.n);
+}
+function dueCards() { const t = today(); return CARDS.filter(c => state.cards[c.id] && state.cards[c.id].due <= t); }
+function newCards() { return CARDS.filter(c => !state.cards[c.id] && state.active.includes(c.h)); }
+
+function renderHandouts() {
+  const list = document.getElementById("handouts");
+  list.innerHTML = "";
+  HANDOUTS.forEach(h => {
+    const cards = CARDS.filter(c => c.h === h.id);
+    const seen = cards.filter(c => state.cards[c.id]).length;
+    const lab = document.createElement("label"); lab.className = "handout";
+    lab.innerHTML = `<input type="checkbox" id="h-${h.id.replace(".", "-")}" ${state.active.includes(h.id) ? "checked" : ""}>
+      <span><b>Handout ${h.id} · ${h.title}</b><small>${h.week} · ${seen} από ${cards.length} κάρτες ξεκίνησαν</small></span>`;
+    lab.querySelector("input").onchange = e => {
+      state.active = e.target.checked ? [...new Set([...state.active, h.id])] : state.active.filter(x => x !== h.id);
+      save(); renderHome();
+    };
+    list.appendChild(lab);
+  });
+}
+
+// ---------- Αρχική ----------
+function renderHome() {
+  const due = dueCards().length, nw = Math.min(newLeftToday(), newCards().length);
+  document.getElementById("nDue").textContent = due;
+  document.getElementById("nNew").textContent = nw;
+  const msg = document.getElementById("homeMsg");
+  const start = document.getElementById("start");
+  if (due + nw === 0) {
+    const next = CARDS.map(c => state.cards[c.id]).filter(Boolean).reduce((m, s) => Math.min(m, s.due), Infinity);
+    const days = next === Infinity ? null : next - today();
+    msg.textContent = days ? `Για σήμερα τελείωσες. Οι επόμενες κάρτες σε ${days === 1 ? "1 μέρα" : days + " μέρες"}.` : "Για σήμερα τελείωσες.";
+    start.disabled = true;
+  } else {
+    msg.textContent = Object.keys(state.cards).length ? "Λίγα λεπτά φτάνουν." : `Κάθε μέρα μπαίνουν μέχρι ${NEW_PER_DAY} καινούργιες κάρτες από τα Handouts που έχεις διαλέξει παρακάτω.`;
+    start.disabled = false;
+  }
+  if (!state.active.length && due === 0) msg.textContent = "Διάλεξε παρακάτω ένα Handout για να ξεκινήσεις.";
+  renderHandouts();
+  renderName();
+  const counts = [0, 0, 0, 0, 0];
+  CARDS.forEach(c => { const s = state.cards[c.id]; if (s) counts[Math.min(s.box, 5) - 1]++; });
+  const labels = ["αύριο ξανά", "σε 3 μέρες", "σε 7 μέρες", "σε 16 μέρες", "σε 35 μέρες"];
+  const box = document.getElementById("box");
+  box.innerHTML = "";
+  counts.forEach((n, i) => {
+    const d = document.createElement("div"); d.className = "slot";
+    d.innerHTML = `<b>${n}</b><span>Κουτί ${i + 1}<br>${labels[i]}</span>`;
+    box.appendChild(d);
+  });
+}
+
+// ---------- Μάθημα ----------
+let queue = [], total = 0, doneCount = 0, correctFirst = 0, seenWrong = new Set();
+
+function startSession() {
+  const due = shuffle(dueCards());
+  const fresh = newCards().slice(0, newLeftToday());
+  queue = [...due, ...fresh];
+  total = queue.length; doneCount = 0; correctFirst = 0; seenWrong = new Set(); sessionWrong = [];
+  show("study"); next();
+}
+function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function show(id) { ["home", "study", "done"].forEach(s => document.getElementById(s).hidden = s !== id); window.scrollTo(0, 0); }
+
+function grade(card, ok) {
+  const t = today();
+  let s = state.cards[card.id];
+  const isNew = !state.cards[card.id];
+  if (isNew) { s = { box: 1, due: t }; state.cards[card.id] = s; state.newToday.n++; }
+  if (seenWrong.has(card.id)) {
+    // δεύτερη προσπάθεια στην ίδια συνεδρία: μένει στο κουτί 1, ξαναβγαίνει αύριο
+    if (ok) { s.box = 1; s.due = t + 1; doneCount++; } else queue.push(card);
+  } else if (ok) {
+    // καινούργια κάρτα: πρώτα αύριο (μπορεί να ήταν τύχη), μετά 3, 7, 16, 35 μέρες
+    s.box = isNew ? 1 : Math.min(s.box + 1, 5); s.due = t + INTERVALS[s.box]; doneCount++; correctFirst++;
+  } else {
+    s.box = 1; s.due = t; seenWrong.add(card.id); sessionWrong.push(card.id); queue.push(card);
+  }
+  save();
+}
+
+function next() {
+  document.getElementById("bar").style.width = (total ? doneCount / total * 100 : 0) + "%";
+  if (!queue.length) { finish(); return; }
+  const card = queue.shift();
+  const el = document.getElementById("card");
+  const s = state.cards[card.id];
+  el.innerHTML = `<div class="card-top"><span class="tag">${card.tag}</span><span>${s ? "Κουτί " + s.box : "Νέα κάρτα"}</span></div>`;
+  if (card.prompt) el.insertAdjacentHTML("beforeend", `<p class="prompt">${card.prompt}</p>`);
+  const long = card.type === "flip" || card.front.replace(/<[^>]+>/g, "").length > 24;
+  el.insertAdjacentHTML("beforeend", `<div class="front${long ? " small" : ""}">${card.front}</div>`);
+  if (card.type === "choice") renderChoice(el, card);
+  else if (card.type === "type") renderType(el, card);
+  else renderFlip(el, card);
+}
+
+function feedback(el, ok, html) {
+  el.insertAdjacentHTML("beforeend", `<div class="feedback ${ok ? "ok" : "no"}"><span class="verdict">${ok ? "Σωστά!" : "Όχι ακόμα."}</span>${html}</div>`);
+  const b = document.createElement("button"); b.className = "primary"; b.textContent = "Επόμενη";
+  b.onclick = next; el.appendChild(b); b.focus();
+}
+
+function renderChoice(el, card) {
+  const wrap = document.createElement("div"); wrap.className = "opts";
+  card.options.forEach(o => {
+    const b = document.createElement("button"); b.textContent = o;
+    b.onclick = () => {
+      const ok = o === card.answer;
+      wrap.querySelectorAll("button").forEach(x => { x.disabled = true; if (x.textContent === card.answer) x.classList.add("right"); });
+      if (!ok) b.classList.add("wrong");
+      grade(card, ok);
+      feedback(el, ok, `<p>${card.explain}</p>`);
+    };
+    wrap.appendChild(b);
+  });
+  el.appendChild(wrap);
+}
+
+const norm = s => s.toLowerCase().replace(/\s+/g, " ").trim().replace(/[.,!?;:\-]+$/g, "").replace(/^(ich habe|hat|habe|ist) /, "").trim();
+const plain = s => norm(s).replace(/ß/g, "ss").replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue");
+
+function renderType(el, card) {
+  const form = document.createElement("form");
+  form.className = "wrap"; form.style.cssText = "max-width:none; gap:10px";
+  form.innerHTML = `<input type="text" id="ans-${card.id}" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Γράψε εδώ" aria-label="Η απάντησή σου">
+    <div class="keys">${["ä", "ö", "ü", "ß"].map(k => `<button type="button" data-k="${k}">${k}</button>`).join("")}</div>
+    <div class="row"><button type="submit" class="primary">Έλεγχος</button><button type="button" data-skip>Δεν το ξέρω</button></div>`;
+  el.appendChild(form);
+  const inp = form.querySelector("input");
+  form.querySelectorAll("[data-k]").forEach(b => b.onclick = () => {
+    const p = inp.selectionStart ?? inp.value.length;
+    inp.value = inp.value.slice(0, p) + b.dataset.k + inp.value.slice(inp.selectionEnd ?? p);
+    inp.focus(); inp.setSelectionRange(p + 1, p + 1);
+  });
+  const check = given => {
+    form.querySelectorAll("button, input").forEach(x => x.disabled = true);
+    const g = norm(given), main = card.answers[0];
+    let ok = false, note = "";
+    if (card.answers.some(a => norm(a) === g)) ok = true;
+    else if (card.alsoOk && card.alsoOk.some(a => norm(a) === g)) { ok = true; note = card.alsoNote; }
+    else if (g && card.answers.some(a => plain(a) === plain(g))) { ok = true; note = `Σωστά, μόνο η ορθογραφία: γράφεται <b>${main}</b>.`; }
+    grade(card, ok);
+    let html = "";
+    if (!ok) html += (given ? `<p>Έγραψες: ${escapeHtml(given)}</p>` : "") + `<span class="answer">${main}</span>`;
+    if (note) html += `<p>${note}</p>`;
+    feedback(el, ok, html + `<p>${card.explain}</p>`);
+  };
+  form.onsubmit = e => { e.preventDefault(); if (inp.value.trim()) check(inp.value); else inp.focus(); };
+  form.querySelector("[data-skip]").onclick = () => check("");
+  setTimeout(() => inp.focus(), 50);
+}
+function escapeHtml(s) { return s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+
+function renderFlip(el, card) {
+  const b = document.createElement("button"); b.className = "primary"; b.textContent = "Δείξε την απάντηση";
+  b.onclick = () => {
+    b.remove();
+    el.insertAdjacentHTML("beforeend", `<p class="back">${card.back}</p><p class="muted" style="font-size:14px">Το ήξερες;</p>`);
+    const row = document.createElement("div"); row.className = "row";
+    [["Το ήξερα", true], ["Όχι ακόμα", false]].forEach(([t, ok]) => {
+      const x = document.createElement("button"); x.textContent = t; if (ok) x.className = "primary";
+      x.onclick = () => { grade(card, ok); next(); };
+      row.appendChild(x);
+    });
+    el.appendChild(row); row.firstChild.focus();
+  };
+  el.appendChild(b);
+}
+
+// ---------- Όνομα και αναφορά ----------
+function renderName() {
+  if (!REPORT_URL) return;
+  document.getElementById("nameBox").hidden = state.name !== undefined;
+  const row = document.getElementById("nameRow");
+  row.hidden = state.name === undefined;
+  document.getElementById("nameShown").textContent = state.name ? "Όνομα: " + state.name : "Χωρίς όνομα (δεν στέλνεται τίποτα)";
+}
+document.getElementById("privacyLink").href = PRIVACY_URL;
+document.getElementById("nameBox").onsubmit = e => {
+  e.preventDefault();
+  const v = document.getElementById("nameInput").value.trim();
+  if (!v) { document.getElementById("nameInput").focus(); return; }
+  state.name = v; save(); renderHome();
+};
+document.getElementById("nameSkip").onclick = () => { state.name = ""; save(); renderHome(); };
+document.getElementById("nameChange").onclick = () => {
+  document.getElementById("nameInput").value = state.name || "";
+  delete state.name; renderHome(); document.getElementById("nameInput").focus();
+};
+
+let sessionWrong = [];
+function report() {
+  if (!REPORT_URL || !state.name || !doneCount) return;
+  const counts = [0, 0, 0, 0, 0];
+  Object.values(state.cards).forEach(s => counts[Math.min(s.box, 5) - 1]++);
+  const body = {
+    name: state.name,
+    handouts: state.active.join(", "),
+    cards: doneCount,
+    correct: correctFirst,
+    wrong: sessionWrong.map(id => { const c = CARDS.find(x => x.id === id); return c.h + " " + c.front.replace(/<[^>]+>/g, ""); }).join(" · "),
+    seen: Object.keys(state.cards).length,
+    boxes: counts.join("/")
+  };
+  doneCount = 0;
+  try { fetch(REPORT_URL, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(body), keepalive: true }).catch(() => {}); } catch (e) {}
+}
+
+function finish() {
+  report();
+  document.getElementById("doneMsg").textContent = total
+    ? `Πέρασες ${total} ${total === 1 ? "κάρτα" : "κάρτες"} και βρήκες ${correctFirst} με την πρώτη.`
+    : "Δεν υπήρχαν κάρτες για σήμερα.";
+  show("done"); renderHome();
+}
+
+// ---------- Μηδενισμός (επιβεβαίωση μέσα στη σελίδα) ----------
+function restoreReset() {
+  document.getElementById("resetRow").innerHTML = `<button class="link" id="reset">Μηδένισε την πρόοδο</button>`;
+  bindReset();
+}
+function bindReset() {
+  document.getElementById("reset").onclick = () => {
+    const row = document.getElementById("resetRow");
+    row.innerHTML = `<span>Σίγουρα; Η πρόοδος σβήνεται.</span><button id="resetYes">Ναι, μηδένισε</button><button id="resetNo">Άκυρο</button>`;
+    document.getElementById("resetYes").onclick = () => { state = freshState(); save(); restoreReset(); renderHome(); show("home"); };
+    document.getElementById("resetNo").onclick = restoreReset;
+  };
+}
+
+bindReset();
+document.getElementById("start").onclick = startSession;
+document.getElementById("quit").onclick = () => { report(); show("home"); renderHome(); };
+document.getElementById("back").onclick = () => { show("home"); renderHome(); };
+
+loadLocal();
+renderHome();
+connectDb();
+</script>
+
+</body>
+</html>
