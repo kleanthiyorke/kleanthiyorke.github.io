@@ -14,9 +14,15 @@
 		<link rel="stylesheet" href="css/animate.css" type="text/css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600&family=Literata:opsz,wght@7..72,600;7..72,700&display=swap" rel="stylesheet">
 		<style>
 		/* Προσθήκες 12.7.2026: στυλ για hero, h2 επικεφαλίδες, διόρθωση κινητού */
-		h2.chain { text-align: center; text-transform: uppercase; color: #353738; letter-spacing: 2px; font-size: 18px; font-weight: 600; }
+		/* 29.10.2026: γραμματοσειρές με ελληνικά (Commissioner κείμενο, Literata τίτλοι), πιο σκούρο κείμενο για να διαβάζεται */
+		body, p, .text-intro, .hero-card p, .hero-cta { font-family: "Commissioner", "Lato", sans-serif; }
+		.text-intro, p.text-intro { color: #3f4447; font-weight: 400; text-align: left; word-spacing: 0; }
+		h2.chain { text-align: center; text-transform: none; color: #24302d; letter-spacing: 0; font-family: "Literata", Georgia, serif; font-size: 30px; font-weight: 700; }
+		.hero-card h1 { font-family: "Literata", Georgia, serif; }
+		.terms h3 { font-family: "Literata", Georgia, serif; text-transform: none; letter-spacing: 0; }
 		.hero { display: flex; align-items: center; justify-content: center; }
 		.hero-card { background: rgba(255,255,255,0.93); max-width: 660px; margin: 0 20px; padding: 45px 50px; text-align: center; }
 		.hero-card h1 { margin: 0 0 18px 0; text-transform: none; color: #353738; letter-spacing: 0; font-size: 34px; font-weight: 700; line-height: 1.3; }
@@ -110,7 +116,7 @@
 				<div class="col-md-8 col-md-offset-2">
 					<h2 class="chain">Το No-Brainer</h2>
 					<p class="text-intro">
-						Το No-Brainer είναι ένα «βιντεοσκοπημένο» βιβλίο Γραμματικής, χτισμένο πάνω στα Ελληνικά. Πάνω από 1.000 λεπτά βιντεομαθήματα, Handouts, Arbeitshefte και Diktate, και τις ασκήσεις σου τις διορθώνω εγώ προσωπικά.
+						Το No-Brainer είναι ένα «βιντεοσκοπημένο» βιβλίο Γραμματικής, χτισμένο πάνω στα Ελληνικά. Πάνω από 1.000 λεπτά βιντεομαθήματα, συνοδευόμενα από Handouts, Arbeitshefte και Diktate. Τις ασκήσεις σου τις διορθώνω εγώ προσωπικά.
 					</p>
 					<p class="text-intro">
 						Είναι για όσους έχουν ήδη κάνει Γερμανικά: καλό Β1, Β2 ή σκουριασμένο Γ1. Καταλαβαίνεις αρκετά, αλλά όταν πας να μιλήσεις, μεταφράζεις από τα Ελληνικά και κολλάς. Δεν είναι για αρχάριους.
@@ -121,7 +127,10 @@
 					</div>
 					<p class="center"><a class="hero-cta" href="/no-brainer/">Δες πώς είναι στημένο</a></p>
 					<p class="text-intro" style="margin-top:30px;">
-						Θέλεις πρώτα μια γεύση; Το <a href="https://kleanthi.thrivecart.com/back-to-school/" target="_blank"><strong>Back to School</strong></a> (19 ευρώ) βάζει ξανά σε τάξη, σε ένα βίντεο 40 λεπτών, τα επτά βασικά του Β1.
+						Θέλεις πρώτα μια γεύση; Δες δωρεάν το μάθημά μου για τις <a href="https://www.youtube.com/watch?v=0dvSELHRNbc" target="_blank"><strong>καταλήξεις επιθέτων</strong></a> (40 λεπτά, στο YouTube).
+					</p>
+					<p class="text-intro">
+						Ή ξεκίνα με το <a href="https://kleanthi.thrivecart.com/back-to-school/" target="_blank"><strong>Back to School</strong></a> (19 ευρώ): βάζει ξανά σε τάξη, σε ένα βίντεο 40 λεπτών, τα επτά βασικά του Β1.
 					</p>
 				</div>
 			</div>
@@ -155,12 +164,6 @@
 		</div>
 
 		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-8 section-1 nopadding" id="work"></div>
-				<div class="col-md-4 section-text nopadding">
-					<div class="small-featured-img seat-red"></div>
-				</div>
-			</div>
 			<div class="row">
 				<div class="col-md-4 section-text nopadding">
 					<div class="small-featured-img seat-black"></div>
