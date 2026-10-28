@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="description" content="Το No-Brainer της Κλεάνθης Λιοδάκη: ο δρόμος σου στα Γερμανικά, χτισμένος πάνω στα Ελληνικά σου.">
+<title>No-Brainer · Κλεάνθη Λιοδάκη</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Commissioner:wght@400;500;600&display=swap">
+<style>
+/* Η σελίδα είναι ένας χάρτης διαδρομής: μία κάθετη γραμμή από το «τώρα» ως τον προορισμό, με σταθμούς. */
+:root{--paper:#FBFAF7;--ink:#24302D;--muted:#5D6966;--sage:#5E7F78;--sage-soft:#E6EEEC;--clay:#C2683F;--clay-soft:#F6E6DC;--line:#D5DFDC;--sheet:#FFFFFF;
+--display:"Literata",Georgia,serif;--ui:"Commissioner","Segoe UI",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#161C1B;--ink:#E8EEEC;--muted:#A3B1AD;--sage:#8FB3AA;--sage-soft:#22302D;--clay:#E0906B;--clay-soft:#3A2A22;--line:#33413E;--sheet:#1E2624;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#161C1B;--ink:#E8EEEC;--muted:#A3B1AD;--sage:#8FB3AA;--sage-soft:#22302D;--clay:#E0906B;--clay-soft:#3A2A22;--line:#33413E;--sheet:#1E2624;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--display);font-size:17px;line-height:1.65;padding:0 20px 72px}
+.wrap{max-width:720px;margin:0 auto}
+header{padding:40px 0 28px}
+.logo{display:block;width:min(340px,75%);height:auto;border-radius:6px;margin-bottom:28px}
+.eyebrow,h3{font-family:var(--ui);font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin:0 0 .5em}
+h1{font-weight:700;font-size:clamp(32px,6.4vw,50px);line-height:1.12;margin:.3em 0 .45em;text-wrap:balance}
+h1 em{font-style:italic;font-weight:400;color:var(--clay)}
+h2{font-size:clamp(24px,4vw,30px);line-height:1.2;margin:0 0 .5em;text-wrap:balance}
+p{margin:0 0 1em;max-width:64ch}
+.lead{font-size:19px;color:var(--muted)}
+section{padding:44px 0;border-top:1px solid var(--line)}
+.btn{display:inline-block;font-family:var(--ui);font-weight:600;font-size:17px;background:var(--clay);color:#fff;text-decoration:none;padding:14px 26px;border-radius:999px}
+.btn:hover{filter:brightness(.95)}
+.ghost{font-family:var(--ui);font-size:15px;color:var(--muted);margin-left:14px}
+/* τώρα / προορισμός */
+.ends{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:26px 0 6px}
+.end{border-radius:8px;padding:18px 18px 16px;min-width:0}
+.end.now{background:var(--sheet);border:1px solid var(--line)}
+.end.goal{background:var(--sage-soft)}
+.end b{display:block;font-family:var(--ui);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.end.goal b{color:var(--sage)}
+.end span{font-size:18px;line-height:1.4}
+@media (max-width:620px){.ends{grid-template-columns:1fr}}
+/* η διαδρομή */
+.path{list-style:none;margin:28px 0 0;padding:0;position:relative}
+.path::before{content:"";position:absolute;left:21px;top:10px;bottom:10px;width:3px;background:linear-gradient(var(--sage),var(--sage) 75%,var(--clay))}
+.stop{position:relative;padding:0 0 34px 66px}
+.stop:last-child{padding-bottom:0}
+.dot{position:absolute;left:0;top:0;width:45px;height:45px;border-radius:50%;background:var(--paper);border:3px solid var(--sage);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:19px;color:var(--sage)}
+.stop.apply .dot{border-color:var(--clay);border-style:dashed;color:var(--clay)}
+.stop.goal .dot{background:var(--clay);border-color:var(--clay);color:#fff}
+.stage{font-family:var(--ui);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.stop h4{font-size:22px;line-height:1.25;margin:2px 0 8px}
+.stop p{margin:0 0 10px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.tag{font-family:var(--ui);font-size:13px;background:var(--sage-soft);padding:4px 10px;border-radius:999px}
+.stop.apply .tag{background:var(--clay-soft)}
+.aside{font-family:var(--ui);font-size:14px;color:var(--muted);border-left:3px solid var(--line);padding-left:12px;margin:14px 0 0}
+/* ο κύκλος κάθε κεφαλαίου */
+.loop{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));row-gap:26px;margin:24px 0 8px}
+.loop div{position:relative;padding:16px 10px 0;border-top:3px solid var(--sage);font-family:var(--ui);font-size:14px;line-height:1.35;min-width:0}
+.loop div:nth-child(5){border-top-color:var(--clay)}
+.loop b{display:block;font-family:var(--display);font-size:17px;margin-bottom:4px}
+.loop div::before{content:"";position:absolute;top:-8px;left:10px;width:13px;height:13px;border-radius:50%;background:var(--paper);border:3px solid var(--sage)}
+.loop div:nth-child(5)::before{border-color:var(--clay)}
+@media (max-width:620px){.loop{grid-template-columns:1fr;gap:2px;row-gap:2px}.loop div{border-top:0;border-left:3px solid var(--sage);padding:4px 0 12px 18px}.loop div:nth-child(5){border-left-color:var(--clay)}.loop div::before{top:6px;left:-8px}}
+/* γιατί λειτουργεί */
+.shift{display:grid;gap:10px;margin:20px 0}
+.shift div{display:grid;grid-template-columns:minmax(0,1fr) 24px minmax(0,1.2fr);gap:10px;align-items:baseline;font-family:var(--ui);font-size:15px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.shift .from{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line)}
+.shift .arr{color:var(--clay);text-align:center}
+.shift .to{font-weight:600}
+/* τι παίρνεις */
+.get{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}
+.get div{border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-family:var(--ui);font-size:15px;min-width:0}
+.get div:last-child:nth-child(odd){grid-column:1/-1}
+.get b{display:block;font-family:var(--display);font-size:18px;margin-bottom:2px}
+@media (max-width:620px){.get{grid-template-columns:1fr}}
+.price{font-size:30px;font-weight:700;margin:4px 0 2px}
+.price small{font-family:var(--ui);font-size:15px;font-weight:400;color:var(--muted)}
+blockquote{margin:18px 0;padding:16px 18px;background:var(--sheet);border:1px solid var(--line);border-left:4px solid var(--sage);border-radius:4px;font-size:16px}
+blockquote p{margin:0 0 .5em}
+cite{font-family:var(--ui);font-style:normal;font-size:14px;color:var(--muted)}
+.note{background:var(--sage-soft);padding:16px 18px;border-radius:6px}
+.note p:last-child{margin:0}
+.sign{font-style:italic;font-size:20px;margin-top:24px}
+</style>
+</head>
+<body>
+<div class="wrap" lang="el">
+<header>
+  <img class="logo" src="logo-nb.jpg" alt="No-Brainer με την Κλεάνθη Λιοδάκη" width="1230" height="324">
+  <div class="eyebrow">Ο δρόμος σου στα Γερμανικά</div>
+  <h1>Από το «τα καταλαβαίνω» <em>στο «τα μιλάω»</em></h1>
+  <p class="lead">Το No-Brainer είναι ένα «βιντεοσκοπημένο» βιβλίο Γραμματικής, χτισμένο πάνω στα Ελληνικά σου. Δεν σου δίνει περισσότερη ύλη. Σου δίνει ένα σύστημα και μια σειρά, ώστε κάθε καινούργιο φαινόμενο να πατάει σε κάτι που ήδη έχεις.</p>
+  <div class="ends">
+    <div class="end now"><b>Πού είσαι τώρα</b><span>Καταλαβαίνεις αρκετά. Όταν πας να μιλήσεις, μεταφράζεις από τα Ελληνικά και κολλάς.</span></div>
+    <div class="end goal"><b>Πού στοχεύουμε</b><span>Η πρόταση να στήνεται στο κεφάλι σου κατευθείαν στα Γερμανικά, και το θεμέλιο να αντέχει ως το C1 και τις εξετάσεις.</span></div>
+  </div>
+</header>
+
+<section>
+  <h3>Η διαδρομή</h3>
+  <h2>Πέντε σταθμοί, με αυτή τη σειρά</h2>
+  <p>Η σειρά δεν είναι τυχαία. Τα πρώτα τρία βήματα θέλουν λίγη υπομονή. Μετά το σύστημα τρέχει γρήγορα.</p>
+  <ol class="path">
+    <li class="stop"><span class="dot">1</span>
+      <div class="stage">Η ρίζα</div>
+      <h4>Κοιτάς την ελληνική πρόταση στα μάτια</h4>
+      <p>Πριν από κάθε γερμανικό κανόνα, βλέπουμε τι δουλειά κάνει κάθε λέξη στα Ελληνικά: ποιος κάνει, τι παθαίνει, σε ποιον πάει. Αυτό είναι το εργαλείο που θα χρησιμοποιείς σε όλη τη διαδρομή.</p>
+      <div class="tags"><span class="tag">Προφορά και αριθμοί</span><span class="tag">Ρήματα και άτονα προθέματα</span><span class="tag">Αιτιατική και Δοτική</span></div>
+    </li>
+    <li class="stop"><span class="dot">2</span>
+      <div class="stage">Οι γέφυρες</div>
+      <h4>Περνάς στα Γερμανικά: πού μοιάζουν οι δύο γλώσσες, πού χωρίζουν και γιατί</h4>
+      <p>Τόπος, χρόνος, προθέσεις, άρθρα και καταλήξεις δεν μαθαίνονται ως πίνακες. Τα στήνουμε ως patterns, που τα αναγνωρίζεις και σε λέξεις που δεν έχεις ξαναδεί.</p>
+      <div class="tags"><span class="tag">Τόπος: στάση και κίνηση</span><span class="tag">Χρόνος</span><span class="tag">Προθέσεις</span><span class="tag">Γένη και πληθυντικοί</span><span class="tag">Καταλήξεις επιθέτων</span><span class="tag">Ερωτήσεις, παραθετικά</span></div>
+    </li>
+    <li class="stop"><span class="dot">3</span>
+      <div class="stage">Η πρόταση που μιλάει</div>
+      <h4>Το ρήμα σε βάθος και οι σύνθετες προτάσεις</h4>
+      <p>Οι χρόνοι, τα ρήματα με εμπρόθετο αντικείμενο, οι χρονικές προτάσεις, η Υποτακτική. Εδώ η πρόταση μεγαλώνει, και επειδή έχεις τα θεμέλια, δεν χάνεσαι μέσα της.</p>
+      <div class="tags"><span class="tag">Οι έξι χρόνοι</span><span class="tag">Εμπρόθετο αντικείμενο</span><span class="tag">Χρονικές προτάσεις</span><span class="tag">Konjunktiv II</span><span class="tag">Diktate</span></div>
+    </li>
+    <li class="stop apply"><span class="dot">4</span>
+      <div class="stage">Η εφαρμογή · μετά το No-Brainer</div>
+      <h4>Το σύστημα δοκιμάζεται σε πραγματικά κείμενα</h4>
+      <p>Αυτό το βήμα δεν είναι μέρος του No-Brainer. Είναι το επόμενο, πρακτικό κομμάτι: εφαρμόζεις όσα έμαθες σε Lückentexte και Fehlerkorrektur. Κάθε λάθος γίνεται διάγνωση: βρίσκουμε τι έγινε και γιατί, και σε στέλνω πίσω στο σημείο της Γραμματικής που το λύνει.</p>
+      <div class="tags"><span class="tag">Lückentexte B2</span><span class="tag">Fehlerkorrektur</span></div>
+    </li>
+    <li class="stop goal"><span class="dot">5</span>
+      <div class="stage">Ο προορισμός</div>
+      <h4>Σκέφτεσαι στα Γερμανικά</h4>
+      <p>Το «μάθε να σκέφτεσαι στα Γερμανικά» είναι ο προορισμός και όχι η αφετηρία. Φτάνεις εκεί επειδή κάθε κομμάτι κουμπώνει πλέον με το προηγούμενο, στο C1 και στις εξετάσεις.</p>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h3>Σε κάθε κεφάλαιο</h3>
+  <h2>Τα ίδια βήματα, ώστε να κάθεται αυτό που μαθαίνεις</h2>
+  <div class="loop">
+    <div><b>Βλέπεις</b>το βιντεομάθημα, όποτε μπορείς</div>
+    <div><b>Κάνεις</b>το Handout με τις ασκήσεις για επανάληψη</div>
+    <div><b>Δουλεύεις</b>το Arbeitsheft</div>
+    <div><b>Μου στέλνεις</b>τις ασκήσεις</div>
+    <div><b>Παίρνεις πίσω</b>τη διόρθωσή μου, από άνθρωπο</div>
+    <div><b>Ελέγχουμε</b>με το Check-In τι κάθισε και τι δεν κάθισε</div>
+  </div>
+</section>
+
+<section>
+  <h2>Γιατί αλλάζει κάτι αυτή τη φορά</h2>
+  <p>Ταλαιπωρήθηκα κι εγώ πολύ με τα Γερμανικά, ώσπου κάποιος μου έδειξε τον σωστό τρόπο να σκέφτομαι. Αυτόν τον τρόπο διδάσκω εδώ και 22 χρόνια.</p>
+  <div class="shift">
+    <div><span class="from">Κι άλλη ύλη</span><span class="arr">→</span><span class="to">Ένα σύστημα με σειρά</span></div>
+    <div><span class="from">Κανόνες σε κομμάτια</span><span class="arr">→</span><span class="to">Γέφυρες από τα Ελληνικά</span></div>
+    <div><span class="from">Πίνακες και αποστήθιση</span><span class="arr">→</span><span class="to">Patterns που αναγνωρίζεις</span></div>
+    <div><span class="from">Αυτόματες απαντήσεις</span><span class="arr">→</span><span class="to">Διορθώσεις από εμένα</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Τι παίρνεις με το No-Brainer BASIS</h2>
+  <div class="get">
+    <div><b>Πάνω από 1000 λεπτά βίντεο</b>ανοιχτά όλα από την πρώτη μέρα</div>
+    <div><b>Handouts</b>γραπτές σημειώσεις δίπλα στα βίντεο, με ασκήσεις για επανάληψη</div>
+    <div><b>Arbeitshefte</b>για κάθε κεφάλαιο</div>
+    <div><b>Diktate</b>σε δύο επίπεδα, B1/B2 και B2/C1</div>
+    <div><b>Διορθώσεις για 7 μήνες</b>από εμένα προσωπικά</div>
+    <div><b>Πρόσβαση για πάντα</b>ξεκινάς όποια μέρα θέλεις</div>
+    <div><b>Office Hours κάθε Τετάρτη</b>μου γράφεις τις ερωτήσεις σου πάνω στη θεωρία και σου απαντώ την ίδια μέρα</div>
+  </div>
+  <p class="price">489€ <small>εφάπαξ ή 3 × 170€</small></p>
+  <p style="margin-top:18px"><a class="btn" href="https://kleanthi.thrivecart.com/no-brainer-kurs/">Ξεκινάω τη διαδρομή</a></p>
+</section>
+
+<section>
+  <h2>Για ποιον είναι</h2>
+  <p>Για ενήλικες σε επίπεδο Β2, σκουριασμένο Γ1 ή καλό Β1, που έχουν κάνει Γερμανικά, καταλαβαίνουν αρκετά, και παρ' όλα αυτά μεταφράζουν από τα Ελληνικά κάθε φορά που ανοίγουν το στόμα τους. Για γονείς και επαγγελματίες σε γερμανόφωνη χώρα που θέλουν να εκφράζονται άνετα.</p>
+  <div class="note"><p>Δεν είναι για αρχάριους. Χρειάζεται υπάρχουσα βάση για να δουλέψει η μέθοδος.</p></div>
+  <p style="margin-top:22px"><a class="btn" href="https://kleanthi.thrivecart.com/no-brainer-kurs/">Ξεκινάω τη διαδρομή</a><span class="ghost">Ερωτήσεις; Γράψε μου στο <a href="mailto:hello@kleanthiliodaki.com">hello@kleanthiliodaki.com</a></span></p>
+  <p class="sign">Κλεάνθη Λιοδάκη</p>
+</section>
+</div>
+</body>
+</html>
