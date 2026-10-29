@@ -51,6 +51,15 @@
 			.hero-card p { font-size: 15px; }
 			.calendly-inline-widget { min-width: 0 !important; margin-left: -30px; margin-right: -30px; }
 		}
+		/* 29.10.2026: ενότητα No-Brainer με το "τετράδιο" του ποστερ (φασκόμηλο, πορτοκαλί, κρεμ) */
+		#no-brainer { background-color: #e3ebe8; background-image: linear-gradient(rgba(94,127,120,.10) 1px, transparent 1px), linear-gradient(90deg, rgba(94,127,120,.10) 1px, transparent 1px); background-size: 26px 26px; padding-top: 90px; padding-bottom: 90px; margin-bottom: 100px; }
+		#no-brainer .nb-logo { display: block; width: 100%; max-width: 420px; height: auto; margin: 0 auto 34px; border-radius: 8px; box-shadow: 0 2px 10px rgba(36,48,45,.08); }
+		#no-brainer .text-intro { color: #2f3a37; }
+		#no-brainer .nb-box { background: #fdf6e3; border: 2px solid #24302d; border-radius: 14px; box-shadow: 4px 4px 0 #f2c45a; }
+		#no-brainer .hero-cta { background: #c2683f; border-radius: 999px; }
+		#no-brainer .hero-cta:hover, #no-brainer .hero-cta:focus { background: #24302d; }
+		#no-brainer a:not(.hero-cta) { color: #a8532f; }
+		@media (max-width: 767px) { #no-brainer { padding-top: 55px; padding-bottom: 55px; margin-bottom: 60px; } #no-brainer .nb-box { padding: 18px 20px; } }
 		</style>
 		<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -125,7 +134,8 @@
 		<div class="container-fluid intro" id="no-brainer">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
-					<h2 class="chain">Το No-Brainer</h2>
+					<h2 class="chain sr-only">Το No-Brainer</h2>
+					<img class="nb-logo" src="/no-brainer/logo-nb.jpg" alt="No-Brainer με την Κλεάνθη Λιοδάκη" width="1230" height="324">
 					<p class="text-intro">
 						Το No-Brainer είναι ένα «βιντεοσκοπημένο» βιβλίο Γραμματικής, χτισμένο πάνω στα Ελληνικά. Πάνω από 1.000 λεπτά βιντεομαθήματα, συνοδευόμενα από Handouts, Arbeitshefte και Diktate. Τις ασκήσεις σου τις διορθώνω εγώ προσωπικά.
 					</p>
