@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Τα μαθήματα Γερμανικών της Κλεάνθης Λιοδάκη: ποιο είναι για ποιο επίπεδο, και πώς ξεκινάς.">
+<title>Τα μαθήματά μου · Κλεάνθη Λιοδάκη</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Commissioner:wght@400;500;600&display=swap">
+<style>
+/* Η σελίδα είναι ένας κατάλογος: πρώτα ο πίνακας επιπέδων, μετά μία κάρτα ανά μάθημα, στο τέλος πώς ξεκινάς. Χωρίς τιμές (κανόνας Zach: όχι βιτρίνα με τιμές). */
+:root{--paper:#FBFAF7;--ink:#24302D;--muted:#5D6966;--sage:#5E7F78;--sage-soft:#E6EEEC;--poster:#BDD0CB;--clay:#C2683F;--clay-soft:#F6E6DC;--line:#D5DFDC;--sheet:#FFFFFF;
+--display:"Literata",Georgia,serif;--ui:"Commissioner","Segoe UI",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#161C1B;--ink:#E8EEEC;--muted:#A3B1AD;--sage:#8FB3AA;--sage-soft:#22302D;--poster:#3A4A46;--clay:#E0906B;--clay-soft:#3A2A22;--line:#33413E;--sheet:#1E2624;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#161C1B;--ink:#E8EEEC;--muted:#A3B1AD;--sage:#8FB3AA;--sage-soft:#22302D;--poster:#3A4A46;--clay:#E0906B;--clay-soft:#3A2A22;--line:#33413E;--sheet:#1E2624;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--display);font-size:17px;line-height:1.65;padding:0 16px 72px}
+.wrap{max-width:760px;margin:0 auto}
+a{color:inherit}
+header{padding:40px 0 28px}
+.home{font-family:var(--ui);font-size:14px;color:var(--muted);text-decoration:none}
+.eyebrow,h3{font-family:var(--ui);font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin:22px 0 .5em}
+h1{font-weight:700;font-size:clamp(32px,6.4vw,48px);line-height:1.12;margin:.2em 0 .45em;text-wrap:balance}
+h1 em{font-style:italic;font-weight:400;color:var(--clay)}
+h2{font-size:clamp(24px,4vw,30px);line-height:1.2;margin:0 0 .5em;text-wrap:balance}
+p{margin:0 0 1em;max-width:64ch}
+.lead{font-size:19px;color:var(--muted)}
+section{padding:44px 0;border-top:1px solid var(--line)}
+.btn{display:inline-block;font-family:var(--ui);font-weight:600;font-size:16px;background:var(--clay);color:#fff;text-decoration:none;padding:12px 22px;border-radius:999px}
+.btn:hover{filter:brightness(.95)}
+.btn.soft{background:transparent;color:var(--clay);border:2px solid var(--clay);padding:10px 20px}
+/* πίνακας επιπέδων */
+.levels{margin:24px 0 10px;font-family:var(--ui)}
+.lv-row{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,1fr));gap:6px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.lv-row.head{border-bottom:0;padding-bottom:2px}
+.lv-row.head span{font-size:14px;font-weight:600;text-align:center;color:var(--muted)}
+.lv-name{font-family:var(--display);font-size:17px;line-height:1.25;min-width:0}
+.lv-name small{display:block;font-family:var(--ui);font-size:13px;color:var(--muted)}
+.cell{height:22px;border-radius:5px}
+.cell.full{background:var(--sage)}
+.cell.soft{background:var(--sage-soft);border:2px dashed var(--sage)}
+.cell.nb.full{background:var(--clay)}
+.cell.nb.soft{background:var(--clay-soft);border-color:var(--clay)}
+.legend{display:flex;flex-wrap:wrap;gap:16px;font-family:var(--ui);font-size:14px;color:var(--muted);margin:12px 0 0}
+.legend i{display:inline-block;width:26px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:6px}
+.legend .f{background:var(--sage)}
+.legend .s{background:var(--sage-soft);border:2px dashed var(--sage)}
+@media (max-width:560px){
+ .lv-row{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:4px}
+ .lv-name{grid-column:1/-1}
+ .lv-row.head span:first-child{display:none}
+}
+/* κάρτες μαθημάτων */
+.courses{display:grid;gap:22px;margin-top:24px}
+.course{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:22px;background:var(--sheet);border:1px solid var(--line);border-radius:10px;padding:16px;align-items:start}
+.poster{aspect-ratio:16/10;background:var(--poster);border-radius:6px;overflow:hidden;display:grid;place-items:center}
+.poster img{width:100%;height:100%;object-fit:contain;display:block}
+.course h4{font-size:22px;line-height:1.25;margin:0 0 6px}
+.lvl{display:inline-block;font-family:var(--ui);font-size:13px;font-weight:600;background:var(--sage-soft);color:var(--ink);padding:3px 10px;border-radius:999px;margin-bottom:10px}
+.course.nb{border:2px solid var(--clay)}
+.course.nb .lvl{background:var(--clay-soft)}
+.course p{font-size:16px;margin:0 0 12px}
+.course ul{font-family:var(--ui);font-size:15px;margin:0 0 14px;padding-left:18px}
+.course li{margin-bottom:3px}
+@media (max-width:620px){.course{grid-template-columns:1fr}}
+.members{background:var(--sage-soft);border-radius:10px;padding:20px;margin-top:28px}
+.members .course{background:var(--sheet)}
+/* πώς ξεκινάς */
+.steps{list-style:none;margin:24px 0 0;padding:0;counter-reset:s}
+.steps li{position:relative;padding:0 0 26px 62px;counter-increment:s}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:42px;height:42px;border-radius:50%;border:3px solid var(--sage);display:grid;place-items:center;font-weight:700;font-size:18px;color:var(--sage);background:var(--paper)}
+.steps li:last-child::before{background:var(--clay);border-color:var(--clay);color:#fff}
+.steps h4{font-size:20px;margin:4px 0 4px}
+.steps p{margin:0 0 8px;font-size:16px}
+.steps a.link{font-family:var(--ui);font-weight:600;font-size:15px;color:var(--clay)}
+.note{font-family:var(--ui);font-size:15px;border-left:3px solid var(--clay);padding:4px 0 4px 14px;margin:20px 0 0;color:var(--muted)}
+footer{font-family:var(--ui);font-size:14px;color:var(--muted);padding-top:30px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+<a class="home" href="/">← kleanthiliodaki.com</a>
+<p class="eyebrow">Τα μαθήματά μου</p>
+<h1>Ποιο μάθημα είναι <em>για σένα;</em></h1>
+<p class="lead">Όλα τα μαθήματά μου είναι για Έλληνες που έχουν ήδη κάνει Γερμανικά. Δες στον πίνακα πού βρίσκεσαι, και μετά διάλεξε από πού θα ξεκινήσεις.</p>
+</header>
+
+<section>
+<h2>Ανά επίπεδο</h2>
+<div class="levels" role="table" aria-label="Μαθήματα ανά επίπεδο">
+ <div class="lv-row head" role="row"><span></span><span>Β1</span><span>Β2</span><span>C1</span></div>
+ <div class="lv-row" role="row"><span class="lv-name">Back to School<small>επανάληψη των βασικών</small></span><span class="cell full" aria-label="Β1: ναι"></span><span class="cell soft" aria-label="Β2: κάνει κι αυτό"></span><span class="cell soft" aria-label="C1: κάνει κι αυτό"></span></div>
+ <div class="lv-row" role="row"><span class="lv-name">No-Brainer<small>το βασικό μου μάθημα</small></span><span class="cell nb soft" aria-label="Β1: καλό Β1"></span><span class="cell nb full" aria-label="Β2: ναι"></span><span class="cell nb soft" aria-label="C1: σκουριασμένο C1"></span></div>
+ <div class="lv-row" role="row"><span class="lv-name">Άκου και Κλέψε<small>ακουστική κατανόηση</small></span><span></span><span class="cell full" aria-label="Β2: ναι"></span><span></span></div>
+ <div class="lv-row" role="row"><span class="lv-name">Lückentext + Fehlerkorrektur<small>για όσους είναι στο No-Brainer</small></span><span></span><span class="cell full" aria-label="Β2: ναι"></span><span></span></div>
+ <div class="lv-row" role="row"><span class="lv-name">Ιδιαίτερα (1:1)<small>ξεκινάμε από εκεί που είσαι</small></span><span class="cell full" aria-label="Β1: ναι"></span><span class="cell full" aria-label="Β2: ναι"></span><span class="cell full" aria-label="C1: ναι"></span></div>
+</div>
+<div class="legend"><span><i class="f"></i>φτιαγμένο γι' αυτό το επίπεδο</span><span><i class="s"></i>κάνει κι αυτό</span></div>
+</section>
+
+<section>
+<h2>Τα μαθήματα</h2>
+<div class="courses">
+
+ <article class="course">
+  <div class="poster"><img src="back-to-school.jpg" alt="Back to School: Βάλε τα βασικά ξανά στη θέση τους" loading="lazy"></div>
+  <div>
+   <h4>Back to School</h4>
+   <span class="lvl">Β1 και πάνω</span>
+   <p>Βάζει ξανά σε τάξη τα βασικά του Β1, πριν πας στο επόμενο επίπεδο. Μια καλή πρώτη γνωριμία με τον τρόπο που διδάσκω.</p>
+   <ul><li>Βίντεο περίπου 40 λεπτών</li><li>Σημειώσεις με ασκήσεις και λύσεις</li></ul>
+   <a class="btn soft" href="https://kleanthi.thrivecart.com/back-to-school/">Δες το Back to School</a>
+  </div>
+ </article>
+
+ <article class="course nb">
+  <div class="poster"><img src="logo-nb.png" alt="No-Brainer με την Κλεάνθη Λιοδάκη" loading="lazy"></div>
+  <div>
+   <h4>No-Brainer</h4>
+   <span class="lvl">καλό Β1, Β2 ή σκουριασμένο C1</span>
+   <p>Ένα «βιντεοσκοπημένο» βιβλίο Γραμματικής, χτισμένο πάνω στα Ελληνικά. Για όσους καταλαβαίνουν αρκετά, αλλά όταν πάνε να μιλήσουν, μεταφράζουν από τα Ελληνικά και κολλάνε.</p>
+   <ul><li>Πάνω από 1.000 λεπτά βιντεομαθήματα</li><li>Handouts, Arbeitshefte και Diktate</li><li>Τις ασκήσεις σου τις διορθώνω εγώ προσωπικά</li><li>Ξεκινάς όποια μέρα θέλεις</li></ul>
+   <a class="btn" href="/no-brainer/">Δες πώς είναι στημένο</a>
+  </div>
+ </article>
+
+ <article class="course">
+  <div class="poster"><img src="akou-kai-klepse.jpg" alt="Άκου και κλέψε! Hörverstehen + Lückentext" loading="lazy"></div>
+  <div>
+   <h4>Άκου και Κλέψε</h4>
+   <span class="lvl">Β2</span>
+   <p>Για όσους θέλουν να ενισχύσουν την ακουστική κατανόηση και το λεξιλόγιο, με πραγματικά κείμενα.</p>
+   <ul><li>10 ηχητικά κείμενα σε 10 θεματικές</li><li>Ένα Lückentext για κάθε κείμενο</li><li>Βίντεο για το λεξιλόγιο</li></ul>
+   <a class="btn soft" href="https://kleanthi.thrivecart.com/akoukaiklepseb2/">Δες το Άκου και Κλέψε</a>
+  </div>
+ </article>
+
+ <article class="course">
+  <div class="poster" style="background:var(--sage-soft)"><span style="font-family:var(--ui);font-size:15px;color:var(--muted);padding:16px;text-align:center">Ζωντανά μέσω Zoom</span></div>
+  <div>
+   <h4>Ιδιαίτερα (1:1)</h4>
+   <span class="lvl">σε κάθε επίπεδο</span>
+   <p>Αν θέλεις να προχωρήσεις πιο γρήγορα, με ζωντανή δουλειά μαζί μου. Τα ιδιαίτερα πατούν πάνω στο No-Brainer: το σύστημα το βλέπεις στα βίντεο, και η ώρα μας μαζί πηγαίνει ολόκληρη στο να μιλάς και να γράφεις.</p>
+   <a class="btn soft" href="https://calendly.com/kleanthiliodaki/20min">Κλείσε μια γνωριμία</a>
+  </div>
+ </article>
+
+</div>
+
+<div class="members">
+ <h3 style="margin-top:0">Αν είσαι ήδη στο No-Brainer</h3>
+ <p style="font-size:16px">Μαθήματα που συνεχίζουν από εκεί που σε αφήνει το No-Brainer.</p>
+ <article class="course">
+  <div class="poster"><img src="b2-paket.jpg" alt="Lückentext + Fehlerkorrektur, B2" loading="lazy"></div>
+  <div>
+   <h4>Lückentext + Fehlerkorrektur</h4>
+   <span class="lvl">Β2</span>
+   <p>Πρακτική εξάσκηση για το Β2, σε πακέτα των πέντε εβδομάδων με τεστ στο τέλος.</p>
+   <a class="btn soft" href="/b2-lueckentext/">Δες πώς δουλεύει</a>
+  </div>
+ </article>
+</div>
+</section>
+
+<section>
+<h2>Πώς γίνεσαι μαθητής μου</h2>
+<ol class="steps">
+ <li><h4>Γνώρισε πώς προσεγγίζω τη γλώσσα, δωρεάν</h4><p>Μικρά μαθήματα στο E-Mail σου: παίρνουμε κάτι που ήδη κάνεις στα Ελληνικά και βλέπουμε πώς ξεκλειδώνει ένα κομμάτι των Γερμανικών.</p><a class="link" href="https://kleanthi-liodaki.kit.com/9ce0852ebf">Σκέψου Ελληνικά, Μίλα Γερμανικά →</a></li>
+ <li><h4>Πάρε μια πρώτη γεύση</h4><p>Το δωρεάν μάθημα για τις καταλήξεις των επιθέτων (40 λεπτά) ή το Back to School.</p><a class="link" href="https://kleanthi-liodaki.kit.com/9aa2877026">Το δωρεάν μάθημα →</a></li>
+ <li><h4>Μπες στο No-Brainer</h4><p>Ξεκινάς όποια μέρα θέλεις. Από εκεί και πέρα, αν θέλεις, συνεχίζουμε με ιδιαίτερα ή με τα μαθήματα για No-Brainerάδες.</p><a class="link" href="/no-brainer/">Δες το No-Brainer →</a></li>
+</ol>
+<p class="note">Δεν ξέρεις σε ποιο επίπεδο είσαι; Γράψε μου στο <a href="mailto:hello@kleanthiliodaki.com">hello@kleanthiliodaki.com</a> και θα σου πω από πού να ξεκινήσεις.</p>
+</section>
+
+<footer>
+<p>Κλεάνθη Λιοδάκη · <a href="/">kleanthiliodaki.com</a> · <a href="/datenschutz.html">Datenschutzerklärung</a></p>
+</footer>
+
+</div>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','942263332478058');fbq('track','PageView');
+</script>
+</body>
+</html>
