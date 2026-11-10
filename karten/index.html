@@ -5754,7 +5754,14 @@ function newLeftToday() {
   return Math.max(0, NEW_PER_DAY - state.newToday.n);
 }
 function dueCards() { const t = today(); return CARDS.filter(c => state.cards[c.id] && state.cards[c.id].due <= t); }
-function newCards() { return CARDS.filter(c => !state.cards[c.id] && state.active.includes(c.h)); }
+// Καινούργιες κάρτες εναλλάξ από όλα τα Handouts που έχει τσεκάρει ο μαθητής (8.11.2026).
+// Πριν έβγαιναν με τη σειρά της λίστας, άρα μόνο από το πρώτο τσεκαρισμένο Handout, ώσπου να τελειώσει.
+function newCards() {
+  const groups = state.active.map(h => CARDS.filter(c => c.h === h && !state.cards[c.id]));
+  const out = [];
+  for (let i = 0; groups.some(g => i < g.length); i++) groups.forEach(g => { if (i < g.length) out.push(g[i]); });
+  return out;
+}
 
 function renderHandouts() {
   const list = document.getElementById("handouts");
