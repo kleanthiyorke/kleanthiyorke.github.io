@@ -55,13 +55,13 @@ section{padding:44px 0;border-top:1px solid var(--line)}
 .stop.apply .tag{background:var(--clay-soft)}
 .aside{font-family:var(--ui);font-size:14px;color:var(--muted);border-left:3px solid var(--line);padding-left:12px;margin:14px 0 0}
 /* ο κύκλος κάθε κεφαλαίου */
-.loop{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));row-gap:26px;margin:24px 0 8px}
+.loop{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));row-gap:26px;margin:24px 0 8px}
 .loop div{position:relative;padding:16px 10px 0;border-top:3px solid var(--sage);font-family:var(--ui);font-size:14px;line-height:1.35;min-width:0}
-.loop div:nth-child(5){border-top-color:var(--clay)}
+.loop div:nth-child(6){border-top-color:var(--clay)}
 .loop b{display:block;font-family:var(--display);font-size:17px;margin-bottom:4px}
 .loop div::before{content:"";position:absolute;top:-8px;left:10px;width:13px;height:13px;border-radius:50%;background:var(--paper);border:3px solid var(--sage)}
-.loop div:nth-child(5)::before{border-color:var(--clay)}
-@media (max-width:620px){.loop{grid-template-columns:1fr;gap:2px;row-gap:2px}.loop div{border-top:0;border-left:3px solid var(--sage);padding:4px 0 12px 18px}.loop div:nth-child(5){border-left-color:var(--clay)}.loop div::before{top:6px;left:-8px}}
+.loop div:nth-child(6)::before{border-color:var(--clay)}
+@media (max-width:620px){.loop{grid-template-columns:1fr;gap:2px;row-gap:2px}.loop div{border-top:0;border-left:3px solid var(--sage);padding:4px 0 12px 18px}.loop div:nth-child(6){border-left-color:var(--clay)}.loop div::before{top:6px;left:-8px}}
 /* γιατί λειτουργεί */
 .shift{display:grid;gap:10px;margin:20px 0}
 .shift div{display:grid;grid-template-columns:minmax(0,1fr) 24px minmax(0,1.2fr);gap:10px;align-items:baseline;font-family:var(--ui);font-size:15px;border-bottom:1px solid var(--line);padding-bottom:10px}
@@ -143,10 +143,12 @@ cite{font-family:var(--ui);font-style:normal;font-size:14px;color:var(--muted)}
   <div class="loop">
     <div><b>Βλέπεις</b>το βιντεομάθημα, όποτε μπορείς</div>
     <div><b>Κάνεις</b>το Handout με τις ασκήσεις για επανάληψη</div>
+    <div><b>Φρεσκάρεις</b>με τις Lernkarten στο κινητό, ακόμα και στο τρένο ή στο λεωφορείο</div>
     <div><b>Δουλεύεις</b>το Arbeitsheft</div>
     <div><b>Μου στέλνεις</b>τις ασκήσεις</div>
     <div><b>Παίρνεις πίσω</b>τη διόρθωσή μου, από άνθρωπο</div>
     <div><b>Ελέγχουμε</b>με το Check-In τι κάθισε και τι δεν κάθισε</div>
+    <div><b>Κλείνεις</b>με τη Σύνοψη του κεφαλαίου, για να κρατάς τη μεγάλη εικόνα</div>
   </div>
 </section>
 
@@ -166,7 +168,9 @@ cite{font-family:var(--ui);font-style:normal;font-size:14px;color:var(--muted)}
   <div class="get">
     <div><b>Πάνω από 1000 λεπτά βίντεο</b>ανοιχτά όλα από την πρώτη μέρα</div>
     <div><b>Handouts</b>γραπτές σημειώσεις δίπλα στα βίντεο, με ασκήσεις για επανάληψη</div>
+    <div><b>Lernkarten στο κινητό</b>επανάληψη από τα Handouts όπου κι αν είσαι, ακόμα και στο τρένο ή στο λεωφορείο</div>
     <div><b>Arbeitshefte</b>για κάθε κεφάλαιο</div>
+    <div><b>Συνόψεις κεφαλαίων</b>σε PDF, για να βλέπεις τη μεγάλη εικόνα με μια ματιά</div>
     <div><b>Diktate</b>σε δύο επίπεδα, B1/B2 και B2/C1</div>
     <div><b>Διορθώσεις για 7 μήνες</b>από εμένα προσωπικά</div>
     <div><b>Πρόσβαση για πάντα</b>ξεκινάς όποια μέρα θέλεις</div>
